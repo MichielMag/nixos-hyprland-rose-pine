@@ -34,6 +34,10 @@ in {
         #        name = "rose-pine-gtk-theme";
         #    };
         #};
+
+        home.packages = with pkgs; [
+            adw-gtk3
+        ];
 #   
         qt = {
             enable = true;
@@ -42,8 +46,8 @@ in {
         gtk = {
             enable = true;
             theme = {
-                name = "rose-pine-gtk-theme";
-                package = pkgs.rose-pine-gtk-theme;
+                name = "adw-gtk3";
+                package = pkgs.adw-gtk3;
             };
             #catppuccin.enable = true;
         };
