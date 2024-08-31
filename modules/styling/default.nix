@@ -41,6 +41,10 @@ in {
         };
         gtk = {
             enable = true;
+            theme = {
+                name = "rose-pine-gtk-theme";
+                package = pkgs.rose-pine-gtk-theme;
+            };
             #catppuccin.enable = true;
         };
         #    theme = {
