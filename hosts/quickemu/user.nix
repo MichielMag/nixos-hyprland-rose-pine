@@ -14,9 +14,7 @@
         #wofi.enable = true;
 
         # cli
-        kitty.enable = true;
-        oh-my-posh.enable = true;
-        fish.enable = true;
+        terminal.enable = true;
         #nvim.enable = true;
         #zsh.enable = true;
         #git.enable = true;

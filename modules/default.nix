@@ -14,9 +14,7 @@
         #./wofi
 
         # cli
-        ./kitty
-        ./oh-my-posh
-        ./fish
+        ./terminal
         #./nvim
         #./zsh
         #./git
