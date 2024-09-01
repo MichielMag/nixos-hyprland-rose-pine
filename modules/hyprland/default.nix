@@ -12,7 +12,7 @@ in {
         wayland.windowManager.hyprland = {
             enable = true;
             xwayland.enable = true;
-            extraConfig = "source = ~/.config/hypr/conf/hyprland.conf";
+            extraConfig = "source = /home/michiel/.config/hypr/conf/hyprland.conf";
         };
 
         home.file.".config/hypr/conf" = {

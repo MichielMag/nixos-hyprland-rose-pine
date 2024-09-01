@@ -39,12 +39,18 @@ in {
             adw-gtk3
             adwaita-qt
             libsForQt5.qtstyleplugins
+            libsForQt5.qtstyleplugins-kvantum5
+            kdePackages.qtstyleplugin-kvantum
         ];
+
+        home.file.".config/Kvantum" = {
+            source = ./.config/Kvantum;
+            recursive = true;
+        };
 #   
         qt = {
             enable = true;
-            platformTheme.name = "gtk";
-            style.name = "gtk2";
+            style.name = "kvantum";
 
             #catppuccin.enable = true;
         };
