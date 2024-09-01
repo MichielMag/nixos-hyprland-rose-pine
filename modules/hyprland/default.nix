@@ -7,17 +7,23 @@ in {
     options.modules.hyprland= { enable = mkEnableOption "hyprland"; };
     config = mkIf cfg.enable {
 
-        home.file.".config/hypr" = {
-            source = ./.config/hypr;
+        home.file.".config/dunst/dunstrc".source = ./.config/dunst/dunstrc;
+       
+        wayland.windowManager.hyprland = {
+            enable = true;
+            xwayland.enable = true;
+            extraConfig = "source = ~/.config/hypr/conf/hyprland.conf";
+        };
+
+        home.file.".config/hypr/conf" = {
+            source = ./.config/hypr/conf;
             recursive = true;
         };
 
-        home.file.".config/dunst/dunstrc".source = ./.config/dunst/dunstrc;
-       
         home.packages = with pkgs; [
             dunst
-            hypridle
-            hyprland
+            #hypridle
+            #hyprland
             hyprland-monitor-attached
             hyprpicker
             hyprshot

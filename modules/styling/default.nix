@@ -37,17 +37,26 @@ in {
 
         home.packages = with pkgs; [
             adw-gtk3
+            adwaita-qt
+            libsForQt5.qtstyleplugins
         ];
 #   
         qt = {
             enable = true;
+            platformTheme.name = "gtk";
+            style.name = "gtk2";
+
             #catppuccin.enable = true;
         };
         gtk = {
             enable = true;
             theme = {
-                name = "adw-gtk3";
-                package = pkgs.adw-gtk3;
+                name = "rose-pine-moon";
+                package = pkgs.rose-pine-gtk-theme;
+            };
+            iconTheme = {
+                name = "rose-pine-moon";
+                package = pkgs.rose-pine-icon-theme;
             };
             #catppuccin.enable = true;
         };
