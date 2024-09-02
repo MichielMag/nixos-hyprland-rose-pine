@@ -10,6 +10,7 @@ in {
         home.packages = with pkgs; [
             rofi-wayland
         ];
+
         programs.rofi = {
             enable = true;
             package = pkgs.rofi-wayland;
@@ -20,6 +21,7 @@ in {
                 icon-theme = "Flat-Remix-Blue-Dark";
                 font = "SFNS Display 13";
             };
+            terminal = "kitty";
         };
     };
 }

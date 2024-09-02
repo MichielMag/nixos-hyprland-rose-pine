@@ -10,7 +10,7 @@
         enable = true;
         settings = {
             default_session = {
-                command = "${pkgs.greetd.tuigreet}/bin/tuigreet --time --time-format '%I:%M %p | %a • %h | %F' --cmd Hyprland";
+                command = "${pkgs.greetd.tuigreet}/bin/tuigreet --time --time-format '%I:%M %p | %a • %h | %F' --cmd 'bash -c hyprland'";
                 user = "greeter";
             };
         };
@@ -95,6 +95,7 @@
     programs.fish.enable = true;
     programs.thunar.enable = true;
     programs.dconf.enable = true;
+    programs.hyprland.enable = true;
     
     # Set up user and enable sudo
     users.users.michiel = {
@@ -121,7 +122,6 @@
         ELECTRON_OZONE_PLATFORM_HINT = "auto";
         XDG_SESSION_TYPE = "wayland";
         QT_QPA_PLATFORM = "wayland";
-        GDK_BACKEND = [ "wayland" "x11" "*" ];
     };
 
     # Security 

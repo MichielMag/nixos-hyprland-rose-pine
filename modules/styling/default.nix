@@ -39,8 +39,7 @@ in {
             adw-gtk3
             adwaita-qt
             libsForQt5.qtstyleplugins
-            libsForQt5.qtstyleplugins-kvantum5
-            kdePackages.qtstyleplugin-kvantum
+            libsForQt5.qtstyleplugin-kvantum
         ];
 
         home.file.".config/Kvantum" = {
@@ -54,6 +53,7 @@ in {
 
             #catppuccin.enable = true;
         };
+        
         gtk = {
             enable = true;
             theme = {
@@ -66,6 +66,16 @@ in {
             };
             #catppuccin.enable = true;
         };
+#   
+#   dconf.settings = {
+#       "org/gnome/desktop/interface" = {
+#           gtk-theme = "rose-pine-gtk-theme";
+#           color-scheme = "prefer-dark";
+#       };
+#       "org/gnome/shell/extensions/user-theme" = {
+#           name = "rose-pine-gtk-theme";
+#       };
+#   };
         #    theme = {
         #        name = "rose-pine-gtk-theme";
         #        package = pkgs.rose-pine-gtk-theme;

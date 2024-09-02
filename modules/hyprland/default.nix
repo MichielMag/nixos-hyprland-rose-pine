@@ -8,11 +8,12 @@ in {
     config = mkIf cfg.enable {
 
         home.file.".config/dunst/dunstrc".source = ./.config/dunst/dunstrc;
-       
+
         wayland.windowManager.hyprland = {
             enable = true;
             xwayland.enable = true;
             extraConfig = "source = /home/michiel/.config/hypr/conf/hyprland.conf";
+            systemd.variables = ["--all"];
         };
 
         home.file.".config/hypr/conf" = {
