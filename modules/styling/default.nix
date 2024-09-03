@@ -66,6 +66,14 @@ in {
             };
             #catppuccin.enable = true;
         };
+
+        programs.gnome-shell = {
+            enable = true;
+            theme = {
+                name = "rose-pine-moon";
+                package = pkgs.rose-pine-gtk-theme;
+            };
+        };
 #   
 #   dconf.settings = {
 #       "org/gnome/desktop/interface" = {

@@ -81,6 +81,22 @@
             efi.canTouchEfiVariables = true;
             timeout = 0;
         };
+        plymouth = {
+            enable = true;
+            theme = "spin";
+            themePackages = with pkgs; [
+                # By default we would install all themes
+                (adi1090x-plymouth-themes.override {
+                    selected_themes = [ 
+                        "angular" 
+                        "colorful_loop"
+                        "circle_flow"
+                        "hexa_retro"
+                        "spin"
+                    ];
+                })
+            ];
+        };
     };
 
     # Set up locales (timezone and keyboard layout)

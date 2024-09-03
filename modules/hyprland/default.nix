@@ -14,7 +14,6 @@ in {
             xwayland.enable = true;
             extraConfig = "
                 source = /home/michiel/.config/hypr/conf/hyprland.conf
-                exec-once = $lockScreen
             ";
             systemd.variables = ["--all"];
         };
