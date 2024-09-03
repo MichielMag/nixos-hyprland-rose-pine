@@ -3,18 +3,17 @@
 {
     # Remove unecessary preinstalled packages
     environment.defaultPackages = [ ];
-    services.xserver.desktopManager.xterm.enable = false;
 
       # Enable Display Manager
-    services.greetd = {
-        enable = true;
-        settings = {
-            default_session = {
-                command = "${pkgs.greetd.tuigreet}/bin/tuigreet --time --time-format '%I:%M %p | %a • %h | %F' --cmd 'bash -c hyprland'";
-                user = "greeter";
-            };
-        };
-    };
+    #services.greetd = {
+    #    enable = true;
+    #    settings = {
+    #        default_session = {
+    #            command = "hyprland";
+    #            user = "michiel";
+    #        };
+    #    };
+    #};
 
 
 
@@ -28,16 +27,29 @@
 
     # Wayland stuff: enable XDG integration, allow sway to use brillo
     xdg = {
+        autostart.enable = true;
         portal = {
             enable = true;
             extraPortals = with pkgs; [
-                xdg-desktop-portal-hyprland
+                xdg-desktop-portal
                 xdg-desktop-portal-gtk
             ];
-            configPackages = with pkgs; [
-                xdg-desktop-portal-hyprland
-                xdg-desktop-portal-gtk
-            ];
+        };
+    };
+
+    services = {
+        dbus.enable = true;
+        xserver = {
+            enable = true;
+            libinput.enable = true;
+            displayManager.gdm = {
+                enable = true;
+                wayland = true;
+            };
+            desktopManager = {
+                xterm.enable = false;
+            };
+            updateDbusEnvironment = true;
         };
     };
 
@@ -122,6 +134,8 @@
         ELECTRON_OZONE_PLATFORM_HINT = "auto";
         XDG_SESSION_TYPE = "wayland";
         QT_QPA_PLATFORM = "wayland";
+        GTK_USE_PORTAL = "1";
+        NIXOS_XDG_OPEN_USE_PORTAL = "1";
     };
 
     # Security 
