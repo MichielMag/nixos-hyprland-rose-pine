@@ -4,7 +4,7 @@
     # Remove unecessary preinstalled packages
     environment.defaultPackages = [ ];
 
-      # Enable Display Manager
+     # Enable Display Manager
     #services.greetd = {
     #    enable = true;
     #    settings = {
@@ -39,13 +39,17 @@
 
     services = {
         dbus.enable = true;
+        libinput.enable = true;
+        displayManager.ly = {
+            enable = true;
+        };
         xserver = {
             enable = true;
-            libinput.enable = true;
-            displayManager.gdm = {
-                enable = true;
-                wayland = true;
-            };
+            
+            #displayManager.gdm = {
+            #    enable = true;
+            #    wayland = true;
+            #};
             desktopManager = {
                 xterm.enable = false;
             };

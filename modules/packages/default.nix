@@ -12,6 +12,8 @@ in {
             fastfetch
             dolphin
             nemo-with-extensions
+
+            dconf-editor
         ];
     };
 }
