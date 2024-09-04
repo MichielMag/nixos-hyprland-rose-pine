@@ -42,10 +42,11 @@
         libinput.enable = true;
         displayManager.ly = {
             enable = true;
+            settings.animation = "matrix";
         };
         xserver = {
             enable = true;
-            
+
             #displayManager.gdm = {
             #    enable = true;
             #    wayland = true;
