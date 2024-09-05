@@ -20,6 +20,11 @@ in {
                 source = /home/michiel/.config/hypr/conf/hyprland.conf
             ";
             systemd.variables = ["--all"];
+            plugins = with pkgs; [
+                hyprlandPlugins.hyprexpo
+                hyprlandPlugins.hyprgrass
+                hyprlandPlugins.hyprtrails
+            ];
         };
 
         home.file.".config/hypr/conf" = {

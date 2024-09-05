@@ -14,6 +14,8 @@ in {
             dolphin
             nemo-with-extensions
             dconf-editor
+
+            brave
         ];
     };
 }
