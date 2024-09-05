@@ -34,6 +34,10 @@ in {
             hyprland-monitor-attached
             hyprpicker
             hyprshot
+            
+            hypr-random-wallpaper
+            hypr-random-wallpaper-loop
+
             kdePackages.qtwayland
             polkit-kde-agent
             qt5.qtwayland
