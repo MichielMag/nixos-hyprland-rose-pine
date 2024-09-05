@@ -21,9 +21,12 @@
         #gpg.enable = true;
         #direnv.enable = true;
 
+        vscode.enable = true;
+        
         # system
         xdg.enable = true;
         packages.enable = true;
+        work-packages.enable = true;
         styling.enable = true;
     };
 }

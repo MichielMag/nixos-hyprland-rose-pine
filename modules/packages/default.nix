@@ -14,8 +14,15 @@ in {
             dolphin
             nemo-with-extensions
             dconf-editor
-
             brave
         ];
+
+        services.swayosd.enable = true;
+        services.cliphist = {
+            enable = true;
+            allowImages = true;
+            extraOptions = [ "list | rofi -dmenu | cliphist decode | wl-copy" ];
+
+        };
     };
 }

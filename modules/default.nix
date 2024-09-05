@@ -21,9 +21,12 @@
         #./gpg
         #./direnv
 
+        ./vscode
+
         # system
         ./xdg
 	    ./packages
+        ./work-packages
         ./styling
     ];    
 }
