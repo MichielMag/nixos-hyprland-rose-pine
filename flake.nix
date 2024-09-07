@@ -15,13 +15,13 @@
             inputs.nixpkgs.follows = "nixpkgs";
         };
 
+        spicetify-nix.url = "github:the-argus/spicetify-nix";
         #catppuccin.url = "github:catppuccin/nix";
-
         rose-pine-hyprcursor.url = "github:ndom91/rose-pine-hyprcursor";
     };
 
     # All outputs for the system (configs)
-    outputs = { home-manager, nixpkgs, nur, ... }@inputs: 
+    outputs = { home-manager, nixpkgs, nur, spicetify-nix, ... }@inputs: 
         let
             system = "x86_64-linux"; #current system
             pkgs = import nixpkgs { 
@@ -55,16 +55,23 @@
                                 backupFileExtension = "bak";
                                 useUserPackages = true;
                                 useGlobalPkgs = true;
-                                extraSpecialArgs = { inherit inputs; };
+                                extraSpecialArgs = { inherit inputs; inherit spicetify-nix; };
                                 # Home manager config (configures programs like firefox, zsh, eww, etc)
                                 users.michiel = (./. + "/hosts/${hostname}/user.nix");
                             };
+                            nixpkgs.config.allowUnfree = true;
+                            nixpkgs.config.allowUnsupportedSystem = true;
+                            #nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
+                            #    "vscode"
+                            #    "spotify"
+                            #];
                             nixpkgs.overlays = [
                                 # Add nur overlay for Firefox addons
                                 nur.overlay
                                 (import ./overlays)
                             ];
                         }
+                        
                         #stylix.nixosModules.stylix
                     ];
                     specialArgs = { inherit inputs; };
