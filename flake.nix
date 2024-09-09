@@ -10,26 +10,30 @@
 
         nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
 
-        nur = {
-            url = "github:nix-community/NUR";
-            inputs.nixpkgs.follows = "nixpkgs";
-        };
+        #nur = {
+        #    url = "github:nix-community/NUR";
+        #    inputs.nixpkgs.follows = "nixpkgs";
+        #};
 
         spicetify-nix.url = "github:the-argus/spicetify-nix";
         #catppuccin.url = "github:catppuccin/nix";
         rose-pine-hyprcursor.url = "github:ndom91/rose-pine-hyprcursor";
+        hyprpanel.url = "github:Jas-SinghFSU/HyprPanel";
     };
 
     # All outputs for the system (configs)
-    outputs = { home-manager, nixpkgs, nur, spicetify-nix, ... }@inputs: 
+    outputs = { home-manager, nixpkgs, spicetify-nix, ... }@inputs: 
         let
             system = "x86_64-linux"; #current system
             pkgs = import nixpkgs { 
+                inherit system;
                 inherit nixpkgs; 
-                system = "x86_64-linux";
                 config = {
                     allowUnfree = true;
                 };
+                overlays = [
+                    inputs.hyprpanel.overlay.${system}
+                ];
             };
             #pkgs = inputs.nixpkgs.legacyPackages.x86_64-linux;
             lib = nixpkgs.lib;
@@ -41,9 +45,7 @@
                 pkgs.lib.nixosSystem {
                     system = system;
                     modules = [
-                        #catppuccin.nixosModules.catppuccin
                         { networking.hostName = hostname; }
-                        # General configuration (users, networking, sound, etc)
                         ./modules/system/configuration.nix
                         ./modules/styling/styling.nix
                         # Hardware config (bootloader, kernel modules, filesystems, etc)
@@ -66,9 +68,7 @@
                             #    "spotify"
                             #];
                             nixpkgs.overlays = [
-                                # Add nur overlay for Firefox addons
-                                nur.overlay
-                                (import ./overlays)
+                                inputs.hyprpanel.overlay
                             ];
                         }
                         

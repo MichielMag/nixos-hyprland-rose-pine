@@ -11,7 +11,29 @@ in {
     options.modules.hyprland= { enable = mkEnableOption "hyprland"; };
     config = mkIf cfg.enable {
 
-        home.file.".config/dunst/dunstrc".source = ./.config/dunst/dunstrc;
+        #home.file.".config/dunst/dunstrc".source = ./.config/dunst/dunstrc;
+
+        home.packages = with pkgs; [
+            #dunst
+            #hypridle
+            #hyprland
+            hyprpanel
+            #ags bun
+            hyprland-monitor-attached
+            hyprpicker
+            hyprshot
+            
+            hypr-random-wallpaper
+            hypr-random-wallpaper-loop
+
+            kdePackages.qtwayland
+            polkit-kde-agent
+            qt5.qtwayland
+            swww swww-random swww-random-loop
+            #waybar
+            wlsunset
+            wl-clipboard
+        ];
 
         wayland.windowManager.hyprland = {
             enable = true;
@@ -32,24 +54,6 @@ in {
             recursive = true;
         };
 
-        home.packages = with pkgs; [
-            dunst
-            #hypridle
-            #hyprland
-            hyprland-monitor-attached
-            hyprpicker
-            hyprshot
-            
-            hypr-random-wallpaper
-            hypr-random-wallpaper-loop
-
-            kdePackages.qtwayland
-            polkit-kde-agent
-            qt5.qtwayland
-            swww swww-random swww-random-loop
-            waybar
-            wlsunset
-            wl-clipboard
-        ];
+        home.file.".cache/ags/hyprpanel/options.json".source = ./.cache/ags/hyprpanel/options.json;
     };
 }
