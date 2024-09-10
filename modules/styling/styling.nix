@@ -24,6 +24,7 @@
 
     stylix.enable = true;
     stylix.autoEnable = false;
+    stylix.image = ./.config/stylix/wallpaper.png;
 
     console.colors = [
             "232136" #    base00-hex

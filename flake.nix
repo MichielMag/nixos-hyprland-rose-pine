@@ -23,7 +23,7 @@
     };
 
     # All outputs for the system (configs)
-    outputs = { home-manager, nixpkgs, spicetify-nix, ... }@inputs: 
+    outputs = { home-manager, nixpkgs, spicetify-nix, stylix, ... }@inputs: 
         let
             system = "x86_64-linux"; #current system
             pkgs = import nixpkgs { 
