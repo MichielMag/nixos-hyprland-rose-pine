@@ -4,29 +4,28 @@
     home.stateVersion = "21.03";
     imports = [
         # gui
-        #./firefox
-        #./foot
-        #./eww
-        #./dunst
         ./hyprland
         ./rofi
         ./swaylock
-        #./wofi
+        ./styling
 
         # cli
         ./terminal
-        #./nvim
-        #./zsh
-        #./git
-        #./gpg
-        #./direnv
 
+        # dev
         ./vscode
 
         # system
         ./xdg
 	    ./packages
+
+        # Work
         ./work-packages
-        ./styling
+
+        # Social
+        ./social
+
+        # Media
+        ./media
     ];    
 }
