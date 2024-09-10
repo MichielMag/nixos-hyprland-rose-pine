@@ -22,6 +22,9 @@
         };
     };
 
+    stylix.enable = true;
+    stylix.autoEnable = false;
+
     console.colors = [
             "232136" #    base00-hex
 

@@ -16,6 +16,7 @@
         #};
 
         spicetify-nix.url = "github:the-argus/spicetify-nix";
+        stylix.url = "github:danth/stylix";
         #catppuccin.url = "github:catppuccin/nix";
         rose-pine-hyprcursor.url = "github:ndom91/rose-pine-hyprcursor";
         hyprpanel.url = "github:Jas-SinghFSU/HyprPanel";
@@ -45,6 +46,7 @@
                 pkgs.lib.nixosSystem {
                     system = system;
                     modules = [
+                        stylix.nixosModules.stylix
                         { networking.hostName = hostname; }
                         ./modules/system/configuration.nix
                         ./modules/styling/styling.nix

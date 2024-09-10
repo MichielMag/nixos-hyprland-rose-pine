@@ -21,27 +21,51 @@ in {
 #   
         qt = {
             enable = true;
-            style.name = "kvantum";
+            #style.name = "kvantum";
         };
         
         gtk = {
             enable = true;
-            theme = {
-                name = "rose-pine-moon";
-                package = pkgs.rose-pine-gtk-theme;
-            };
-            iconTheme = {
-                name = "rose-pine-moon";
-                package = pkgs.rose-pine-icon-theme;
-            };
+            #theme = {
+            #    name = "rose-pine-moon";
+            #    package = pkgs.rose-pine-gtk-theme;
+            #};
+            #iconTheme = {
+            #    name = "rose-pine-moon";
+            #    package = pkgs.rose-pine-icon-theme;
+            #};
+        };
+        programs.gnome-shell = {
+        #    enable = true;
+        #    theme = {
+        #        name = "rose-pine-moon";
+        #        package = pkgs.rose-pine-gtk-theme;
+        #    };
+        };
+
+
+        stylix = {
+            enable = true;
+            autoEnable = false;
+            base16scheme = ./.config/stylix/rose-pine-moon.yaml;
+            image = ./.config/stylix/wallpaper.png;
+            polarity = "dark";
+            targets = {
+                gtk.enable = true;
+                gnome.enable = true;
+                qt.enable = true;
+                kde.enable = true;
+                xfce.enable = true;
+                btop.enable = true;
+            }
         };
 
         programs.gnome-shell = {
-            enable = true;
-            theme = {
-                name = "rose-pine-moon";
-                package = pkgs.rose-pine-gtk-theme;
-            };
+        #    enable = true;
+        #    theme = {
+        #        name = "rose-pine-moon";
+        #        package = pkgs.rose-pine-gtk-theme;
+        #    };
         };
     };
 }
