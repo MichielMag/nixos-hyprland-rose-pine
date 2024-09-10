@@ -18,7 +18,9 @@ let
       cat ${svg} >>"$directory/Base16Kvantum.svg"
     '';
 in {
-    options.modules.styling = { enable = mkEnableOption "styling"; };
+    options.modules.styling = { 
+        enable = mkEnableOption "styling"; 
+    };
     config = mkIf cfg.enable {
 
         home.packages = with pkgs; [
@@ -32,14 +34,14 @@ in {
             rose-pine-gtk-theme
         ];
 
-        home.file.".config/Kvantum" = {
-            source = ./.config/Kvantum;
-            recursive = true;
-        };
+        #home.file.".config/Kvantum" = {
+        #    source = ./.config/Kvantum;
+        #    recursive = true;
+        #};
 #   
         qt = {
             enable = true;
-            platformTheme = "qtct";
+            platformTheme.name = "qtct";
         };
 
         xdg.configFile."Kvantum/kvantum.kvconfig".source = (pkgs.formats.ini {}).generate "kvantum.kvconfig" {
@@ -51,13 +53,13 @@ in {
         xdg.configFile."qt5ct/qt5ct.conf".text = ''
             [Appearance]
             style=kvantum
-            icon_theme=${cfg.iconThemeName}
+            icon_theme=rose-pine-moon
             '';
 
         xdg.configFile."qt6ct/qt6ct.conf".text = ''
             [Appearance]
             style=kvantum
-            icon_theme=${cfg.iconThemeName}
+            icon_theme=rose-pine-moon
             '';
         
         gtk = {
