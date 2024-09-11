@@ -22,6 +22,8 @@ in {
             hyprland-monitor-attached
             hyprpicker
             hyprshot
+
+            hyprlock
             
             hypr-random-wallpaper
             hypr-random-wallpaper-loop
