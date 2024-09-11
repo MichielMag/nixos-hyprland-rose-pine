@@ -53,9 +53,8 @@ in {
                 "--color=always"
                 "--group-directories-first"
                 "--time-style=long-iso"
-                "--header=always"
+                "--header"
             ];
-            enableFishIntegration = true;
         };
     };
 }
