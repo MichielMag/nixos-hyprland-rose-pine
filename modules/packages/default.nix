@@ -22,7 +22,6 @@ in {
             enable = true;
             allowImages = true;
             extraOptions = [ "list | rofi -dmenu | cliphist decode | wl-copy" ];
-
         };
     };
 }

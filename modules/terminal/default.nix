@@ -44,5 +44,18 @@ in {
         programs.oh-my-posh = {
             enable = true;
         };
+
+        programs.eza = {
+            enable = true;
+            git = true;
+            icons = true;
+            extraOptions = [
+                "--color=always"
+                "--group-directories-first"
+                "--time-style=long-iso"
+                "--header=always"
+            ];
+            enableFishIntegration = true;
+        };
     };
 }

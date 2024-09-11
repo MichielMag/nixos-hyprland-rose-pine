@@ -15,7 +15,7 @@ in {
 
         home.packages = with pkgs; [
             #dunst
-            #hypridle
+            hypridle
             #hyprland
             hyprpanel
             #ags bun
@@ -55,6 +55,9 @@ in {
             source = ./.config/hypr/conf;
             recursive = true;
         };
+
+        home.file.".config/hypr/hyprlock.conf".source = ./.config/hypr/hyprlock.conf;
+        home.file.".config/hypr/hypridle.conf".source = ./.config/hypr/hypridle.conf;
 
         home.file.".cache/ags/hyprpanel/options.json".source = ./.cache/ags/hyprpanel/options.json;
     };

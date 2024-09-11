@@ -6,7 +6,6 @@
         # gui
         hyprland.enable = true;
         rofi.enable = true;
-        swaylock.enable = true;
         styling.enable = true;
 
         # cli

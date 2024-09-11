@@ -6,7 +6,6 @@
         # gui
         ./hyprland
         ./rofi
-        ./swaylock
         ./styling
 
         # cli
