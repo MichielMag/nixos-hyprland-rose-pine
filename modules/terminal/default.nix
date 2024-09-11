@@ -21,6 +21,7 @@ in {
         
         home.packages = with pkgs; [
             fastfetch
+            eza
         ];
 
         programs.kitty = {
@@ -39,22 +40,25 @@ in {
         programs.fish = {
             enable = true;
             interactiveShellInit = "oh-my-posh init fish --config $HOME/.config/oh-my-posh/config.json | source";
+            shellAliases = {
+                ls = "eza -al --color=always --group-directories-first --icons --git --header";
+            };
         };
 
         programs.oh-my-posh = {
             enable = true;
         };
 
-        programs.eza = {
-            enable = true;
-            git = true;
-            icons = true;
-            extraOptions = [
-                "--color=always"
-                "--group-directories-first"
-                "--time-style=long-iso"
-                "--header"
-            ];
-        };
+        #programs.eza = {
+        #    enable = true;
+        #    git = true;
+        #    icons = true;
+        #    extraOptions = [
+        #        "--color=always"
+        #        "--group-directories-first"
+        #        "--time-style=long-iso"
+        #        "--header"
+        #    ];
+        #};
     };
 }
