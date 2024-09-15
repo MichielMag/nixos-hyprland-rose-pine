@@ -17,6 +17,7 @@
 
         spicetify-nix.url = "github:the-argus/spicetify-nix";
         stylix.url = "github:danth/stylix";
+        nix-flatpak.url = "github:gmodena/nix-flatpak/?ref=v0.4.1";
         #catppuccin.url = "github:catppuccin/nix";
         rose-pine-hyprcursor.url = "github:ndom91/rose-pine-hyprcursor";
         hyprpanel.url = "github:Jas-SinghFSU/HyprPanel";

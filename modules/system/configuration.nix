@@ -33,6 +33,7 @@
             extraPortals = with pkgs; [
                 xdg-desktop-portal
                 xdg-desktop-portal-gtk
+                xdg-desktop-portal-wlr
             ];
         };
     };
@@ -56,6 +57,7 @@
             };
             updateDbusEnvironment = true;
         };
+        flatpak.enable = true;
     };
 
     # Nix settings, auto cleanup and enable flakes
