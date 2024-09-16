@@ -9,7 +9,7 @@ let
         rev = "3e842430d0f76fed9a5c7537f3ec39b91b931669";
         sha256 = "0000";
     };
-    quickget = pkgs.writeShellScriptBin "quickget" ''${builtins.readFile ${quickemu-pkg}/quickget}'';
+    quickget = pkgs.writeShellScriptBin "quickget" ''${builtins.readFile ("${quickemu-pkg}/quickget")}'';
 in {
     options.modules.vm-windows = { enable = mkEnableOption "vm-windows"; };
 
@@ -17,9 +17,13 @@ in {
 
         home.packages = with pkgs; [
             quickemu
-            vm-windows-wayland
         ];
 
+
+        programs.quickemu = {
+            enable = true;
+            quickget = "${quickemu-pkg}/quickget";
+        };
         #home.file.".config/vm-windows/adi1090x" = {
         #    source = "${adi1090x-vm-windows}/files";
         #    recursive = true;

@@ -57,7 +57,6 @@
             };
             updateDbusEnvironment = true;
         };
-        flatpak.enable = true;
     };
 
     # Nix settings, auto cleanup and enable flakes

@@ -20,6 +20,7 @@
 
         # Work
         work-packages.enable = true;
+        vm-windows.enable = true;
 
         # Social
         social.enable = true;

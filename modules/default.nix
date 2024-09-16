@@ -20,11 +20,14 @@
 
         # Work
         ./work-packages
+        ./vm-windows
 
         # Social
         ./social
 
         # Media
         ./media
+
+        ./quickemu
     ];    
 }
