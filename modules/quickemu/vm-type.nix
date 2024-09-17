@@ -2,7 +2,7 @@
 
 let
   inherit (lib)
-    hasPrefix hm literalExpression mkDefault mkIf mkOption removePrefix types;
+    hasPrefix hm literalExpression mkDefault mkIf mkOption removePrefix types mkEnableOption;
     diskSizes = {
         "windows" = "64G";
         "macos" = "128G";
@@ -16,8 +16,8 @@ let
         "macos" = "iso";
     };
     guest = {
-        "windows": "windows";
-        "macos": "macos";
+        "windows" = "windows";
+        "macos" = "macos";
     };
     osSpecifics = {
         "windows" = {
@@ -30,7 +30,7 @@ let
                 cpu_cores = 2;
             };
         };
-        macos = release: _macos.${release} or {
+        macos = release: osSpecifics._macos.${release} or {
             macos_release = release;
         };
     };
@@ -102,20 +102,23 @@ let
         };
     };
 in {
-    vmType = types.attrsOf (types.submodule ({ name, config, ... }: {
-        options = {
-            windows = osReleaseLanguage "windows" "11" ["10" "11"];
-            macos = osReleaseLanguage "macos" "mojave" [
-                "mojave"
-                "catalina" 
-                "big-sur"
-                "monterey"
-                "ventura"
-                "sonoma"
-            ];
-        }
-    }));
+    vmType = 
+        types.attrsOf (types.submodule (
+            { name, config, ... }: {
+                options = {
+                    windows = osReleaseLanguage "windows" "11" ["10" "11"];
+                    macos = osReleaseLanguage "macos" "mojave" [
+                        "mojave"
+                        "catalina" 
+                        "big-sur"
+                        "monterey"
+                        "ventura"
+                        "sonoma"
+                    ];
+                };
+            }
+        ));
     config = {
         os = mkDefault name;
     };
-};
+}
