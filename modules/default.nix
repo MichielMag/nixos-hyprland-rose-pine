@@ -3,6 +3,9 @@
 {
     home.stateVersion = "21.03";
     imports = [
+
+        ./quickemu
+        
         # gui
         ./hyprland
         ./rofi
@@ -28,6 +31,5 @@
         # Media
         ./media
 
-        ./quickemu
     ];    
 }
