@@ -20,14 +20,27 @@ in {
         ];
 
 
-        # programs.quickemu = {
-        #     enable = true;
-        #     vm.windows = {
-        #         enable = true;
-        #         release = "11";
-        #         language = "English (United States)";
-        #     };
-        # };
+        programs.quickemu = {
+            enable = true;
+            vm."windows-11" = {
+                os = "windows";
+                enable = true;
+                release = "11";
+                language = "English (United States)";
+            };
+            vm."windows-10" = {
+                os = "windows";
+                enable = true;
+                release = "10";
+                language = "English (United States)";
+            };
+            vm."macos" = {
+                os = "macos";
+                enable = true;
+                release = "catalina";
+                language = "English (United States)";
+            };
+        };
         #home.file.".config/vm-windows/adi1090x" = {
         #    source = "${adi1090x-vm-windows}/files";
         #    recursive = true;

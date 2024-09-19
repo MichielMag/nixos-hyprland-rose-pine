@@ -7,8 +7,9 @@ let
     vmType = (import ./vm-type.nix { inherit homeDirectory lib pkgs; }).vmType;
     vms = filterAttrs (n: f: f.enable);
 
-    makeConfig = name: vm: {
+    makeConfig = quickemupath: name: vm: {
             text = ''
+                #!${quickemupath} --vm
                 name: ${name}
                 os: ${vm.os}
                 release: ${vm.release}
@@ -40,6 +41,24 @@ in {
         home.packages = with pkgs; [
             quickemu
         ];
+        #home.file = mapAttrs' (name: vm:
+        #    nameValuePair 
+        #        (".quickemu/${name}.conf") 
+        #        ({
+        #            name = ".quickemu/${name}";
+        #            target = ".quickemu/${name}";
+        #            text = makeConfig name value;
+        #        })
+        #) cfg.vm;
+        home.file = mapAttrs' (name: vm: {
+            name = ".quickemu/${name}.conf";
+            value = makeConfig "${quickemu}" name vm;
+        }) cfg.vm;
+        #home.file = mapAttrs' (name: value: {
+        #    name = ".quickemu/${name}";
+        #    target = ".quickemu/${name}";
+        #    text = makeConfig name value;
+        #}) cfg.vm;
         # home.file.".quickemu/trace" = generators.toJSON { config = cfg; };
         #home.file = (mapAttrs' (name: vm: nameValuePair (".quickemu/${name}") (vm: makeConfig name vm)) cfg.vm);
     };
