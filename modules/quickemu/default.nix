@@ -7,16 +7,28 @@ let
     vmType = (import ./vm-type.nix { inherit homeDirectory lib pkgs; }).vmType;
     vms = filterAttrs (n: f: f.enable);
 
-    makeConfig = quickemupath: name: vm: {
-            text = ''
-                #!${quickemupath} --vm
-                name: ${name}
-                os: ${vm.os}
-                release: ${vm.release}
-            '';
+    makeIniContent = homePath: vm: lib.generators.toINI {
+        "" = {
+            guest_os = vm.guest;
+            disk_img = "${homeDirectory}/${homePath}/${vm.name}/disk.qcow2";
+            ${vm.imageType} = "${homeDirectory}/${homePath}/${vm.name}/${vm.name}.${vm.imageType}";
+            disk_size = vm.diskSize;
+            ram = vm.ram;
+        } 
+        // vm.osSpecifics 
+        // (
+            if hasAttr "guestToolsIsoFile" vm then {
+                fixed_iso = "${homeDirectory}/${homePath}/${vm.name}/${vm.guestToolsIsoFile}";
+            } else {}
+        );
+    };
+
+    makeConfig = homePath: quickemupath: name: vm: {
+            text = makeIniContent homePath vm;
+            executable = true;
         };
 
-    makeConfigurations = forEach (n: vm: makeConfig n config home vm);
+
 in {
     options.programs.quickemu = { 
         enable = mkEnableOption "quickemu"; 
@@ -35,31 +47,22 @@ in {
             default = {};
             type = vmType;
         };
+
+        path = mkOption {
+            type = types.str;
+            default = ".quickemu";
+            description = ''
+                Path to store quickemu configurations
+            '';
+        };
     };  
     config = mkIf cfg.enable {
-        #traced = trace cfg.vm;
         home.packages = with pkgs; [
             quickemu
         ];
-        #home.file = mapAttrs' (name: vm:
-        #    nameValuePair 
-        #        (".quickemu/${name}.conf") 
-        #        ({
-        #            name = ".quickemu/${name}";
-        #            target = ".quickemu/${name}";
-        #            text = makeConfig name value;
-        #        })
-        #) cfg.vm;
         home.file = mapAttrs' (name: vm: {
-            name = ".quickemu/${name}.conf";
-            value = makeConfig "${quickemu}" name vm;
+            name = "${cfg.path}/${name}.conf";
+            value = makeConfig cfg.path "${cfg.package}/bin/quickemu" name vm;
         }) cfg.vm;
-        #home.file = mapAttrs' (name: value: {
-        #    name = ".quickemu/${name}";
-        #    target = ".quickemu/${name}";
-        #    text = makeConfig name value;
-        #}) cfg.vm;
-        # home.file.".quickemu/trace" = generators.toJSON { config = cfg; };
-        #home.file = (mapAttrs' (name: vm: nameValuePair (".quickemu/${name}") (vm: makeConfig name vm)) cfg.vm);
     };
 }

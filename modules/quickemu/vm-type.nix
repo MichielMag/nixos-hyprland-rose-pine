@@ -77,48 +77,37 @@ in {
                         ISO file to use
                     '';
                 };
-                settings = mkOption {
-                    type = types.attrsOf {
-                        diskSize = mkOption {
-                            type = types.str;
-                            default = diskSizes.${config.os} or "64G";
-                            description = ''
-                                Disk size to use
-                            '';
-                        };
-                        ram = mkOption {
-                            type = types.str;
-                            default = ram.${config.os} or "4G";
-                            description = ''
-                                RAM to use
-                            '';
-                        };
-                        imageType = mkOption {
-                            type = types.enum ["img" "iso"];
-                            default = imageTypes.${config.os} or "iso";
-                            description = ''
-                                Image type to use
-                            '';
-                        };
-                        guest = mkOption {
-                            type = types.str;
-                            default = guest.${config.os} or config.os;
-                            description = ''
-                                Guest to use
-                            '';
-                        };
-                        legacyBoot = mkOption {
-                            type = types.bool;
-                            default = false;
-                            description = ''
-                                Legacy boot to use
-                            '';
-                        };
-                    };
+
+                diskSize = mkOption {
+                    type = types.str;
+                    default = diskSizes.${config.os} or "64G";
                     description = ''
-                        Settings to use
+                        Disk size to use
                     '';
                 };
+                ram = mkOption {
+                    type = types.str;
+                    default = ram.${config.os} or "4G";
+                    description = ''
+                        RAM to use
+                    '';
+                };
+                imageType = mkOption {
+                    type = types.enum ["img" "iso"];
+                    default = imageTypes.${config.os} or "iso";
+                    description = ''
+                        Image type to use
+                    '';
+                };
+                guest = mkOption {
+                    type = types.str;
+                    default = guest.${config.os} or config.os;
+                    description = ''
+                        Guest to use
+                    '';
+                };
+                
+                osSpecifics = osSpecifics.${config.os} or {};
             };
         })
     );
