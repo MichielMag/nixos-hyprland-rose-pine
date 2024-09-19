@@ -7,15 +7,13 @@ let
     vmType = (import ./vm-type.nix { inherit homeDirectory lib pkgs; }).vmType;
     vms = filterAttrs (n: f: f.enable);
 
-    makeConfig = name: home: vm: {
-        home.file.".quickemu/${name}" = {
+    makeConfig = name: vm: {
             text = ''
                 name: ${name}
                 os: ${vm.os}
                 release: ${vm.release}
             '';
         };
-    };
 
     makeConfigurations = forEach (n: vm: makeConfig n config home vm);
 in {
@@ -32,34 +30,17 @@ in {
         };
 
         vm = mkOption {
-            description = "Attribute set of VMs to create";
+            description = "Attribute set of VMs to create in your home folder";
             default = {};
             type = vmType;
         };
+    };  
+    config = mkIf cfg.enable {
+        #traced = trace cfg.vm;
+        home.packages = with pkgs; [
+            quickemu
+        ];
+        # home.file.".quickemu/trace" = generators.toJSON { config = cfg; };
+        #home.file = (mapAttrs' (name: vm: nameValuePair (".quickemu/${name}") (vm: makeConfig name vm)) cfg.vm);
     };
-
-    
-    config = mkIf cfg.enable (lib.mkMerge [
-
-        {
-            home.packages = with pkgs; [
-                quickemu
-            ];
-        }
-
-        (makeConfig "quickemu" homeDirectory cfg.vm)
-        # mapAttrs (name: value: makeConfig name home value) (filterAttrs (n: vm: vm.enable) cfg.vm)        
-
-
-        #home.file.".config/vm-windows/adi1090x" = {
-        #    source = "${adi1090x-vm-windows}/files";
-        #    recursive = true;
-        #    target = ".config/vm-windows/adi1090x";
-        #};
-
-        #home.file.".local/share/fonts" = {
-        #    source = "${adi1090x-vm-windows}/fonts";
-        #    recursive = true;
-        #};
-    ]);
 }

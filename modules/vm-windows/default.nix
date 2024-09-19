@@ -6,8 +6,8 @@ let
     quickemu-pkg = pkgs.fetchFromGitHub {
         owner = "MichielMag";
         repo = "quickemu";
-        rev = "0000000000000000000000000000000000000000000000000000";
-        sha256 = "0000";
+        rev = "60741d355eca887624889a21e876daf3f758bbcc";
+        sha256 = "0000000000000000000000000000000000000000000000000000";
     };
     quickget = pkgs.writeShellScriptBin "quickget" ''${builtins.readFile ("${quickemu-pkg}/quickget")}'';
 in {
@@ -20,14 +20,14 @@ in {
         ];
 
 
-        programs.quickemu = {
-            enable = true;
-            vm.windows = {
-                enable = true;
-                release = "11";
-                language = "English (United States)";
-            };
-        };
+        # programs.quickemu = {
+        #     enable = true;
+        #     vm.windows = {
+        #         enable = true;
+        #         release = "11";
+        #         language = "English (United States)";
+        #     };
+        # };
         #home.file.".config/vm-windows/adi1090x" = {
         #    source = "${adi1090x-vm-windows}/files";
         #    recursive = true;

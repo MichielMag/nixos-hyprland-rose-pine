@@ -105,9 +105,8 @@ in {
     vmType = 
         types.attrsOf (types.submodule (
             { name, config, ... }: {
-                options = {
-                    windows = osReleaseLanguage "windows" "11" ["10" "11"];
-                    macos = osReleaseLanguage "macos" "mojave" [
+                options = types.either osReleaseLanguage "windows" "11" ["10" "11"]
+                    osReleaseLanguage "macos" "mojave" [
                         "mojave"
                         "catalina" 
                         "big-sur"
@@ -115,10 +114,6 @@ in {
                         "ventura"
                         "sonoma"
                     ];
-                };
             }
         ));
-    config = {
-        os = mkDefault name;
-    };
 }
