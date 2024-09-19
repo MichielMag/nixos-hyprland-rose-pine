@@ -29,6 +29,8 @@ in {
             
             hypr-random-wallpaper
             hypr-random-wallpaper-loop
+            hypr-handle-open-lid
+            hypr-handle-close-lid 
 
             kdePackages.qtwayland
             polkit-kde-agent
