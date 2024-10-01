@@ -14,12 +14,12 @@
   boot.extraModulePackages = [ ];
 
   fileSystems."/" =
-    { device = "/dev/disk/by-uuid/1735fafe-7eff-4500-9fab-c3640f3a4bf9";
+    { device = "/dev/disk/by-uuid/90b0c955-a79e-4e98-a09a-9758855fecae";
       fsType = "ext4";
     };
 
   fileSystems."/boot" =
-    { device = "/dev/disk/by-uuid/4A8E-FD9B";
+    { device = "/dev/disk/by-uuid/DE34-71D2";
       fsType = "vfat";
       options = [ "fmask=0077" "dmask=0077" ];
     };
@@ -34,6 +34,4 @@
   # networking.interfaces.enp0s8.useDHCP = lib.mkDefault true;
 
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
-
-  services.qemuGuest.enable = true;
 }

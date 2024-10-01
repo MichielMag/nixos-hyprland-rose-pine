@@ -62,7 +62,7 @@ in {
 
         home.activation = {
             myActivationAction = lib.hm.dag.entryAfter ["writeBoundary"] ''
-                run ln -s ${../../dotfiles}/.config/hypr/conf $HOME/.config/hypr/conf
+                run ln -s $HOME/.dotfiles/.config/hypr/conf $HOME/.config/hypr/conf
             '';
         };
 
