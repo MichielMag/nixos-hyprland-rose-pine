@@ -55,9 +55,15 @@ in {
             ];
         };
 
-        home.file.".config/hypr/conf" = {
-            source = ./.config/hypr/conf;
-            recursive = true;
+        # home.file.".config/hypr/conf" = {
+        #     source = ./.config/hypr/conf;
+        #     recursive = true;
+        # };
+
+        home.activation = {
+            myActivationAction = lib.hm.dag.entryAfter ["writeBoundary"] ''
+                run ln -s $HOME/.dotfiles/.config/hypr/conf $HOME/.config/hypr/conf
+            '';
         };
 
         home.file.".config/hypr/hyprlock.conf".source = ./.config/hypr/hyprlock.conf;

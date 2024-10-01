@@ -23,11 +23,17 @@ let
         );
     };
 
-    makeConfig = homePath: quickemupath: name: vm: {
-            text = makeIniContent homePath vm;
-            executable = true;
-        };
+    addGuestTools = vm: {
+        inherit vm;
+        guestToolsIsoFile = "guest-tools.iso";
+    };
 
+    makeConfig = homePath: quickemupath: name: vm: {
+        text = makeIniContent homePath vm;
+        executable = true;
+    };
+
+    web_get = import ./web-get.nix { inherit pkgs; };
 
 in {
     options.programs.quickemu = { 
