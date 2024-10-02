@@ -26,6 +26,6 @@
         social.enable = true;
 
         # Media
-        media.enable = true;
+		media.enable = true;
     };
 }

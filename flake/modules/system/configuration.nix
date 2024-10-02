@@ -134,7 +134,7 @@
     # Set up user and enable sudo
     users.users.michiel = {
         isNormalUser = true;
-        extraGroups = [ "input" "wheel" "networkmanager" ];
+        extraGroups = [ "input" "wheel" "networkmanager" "ydotool" ];
         shell = pkgs.fish;
     };
 

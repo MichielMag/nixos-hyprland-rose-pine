@@ -60,7 +60,10 @@
                                 backupFileExtension = "bak";
                                 useUserPackages = true;
                                 useGlobalPkgs = true;
-                                extraSpecialArgs = { inherit inputs; inherit spicetify-nix; };
+                                extraSpecialArgs = { 
+                                    inherit inputs; 
+                                    inherit spicetify-nix; 
+                                };
                                 # Home manager config (configures programs like firefox, zsh, eww, etc)
                                 users.michiel = (./. + "/hosts/${hostname}/user.nix");
                             };
