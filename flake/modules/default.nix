@@ -10,6 +10,7 @@
         ./hyprland
         ./rofi
         ./styling
+        ./fuzzel
 
         # cli
         ./terminal

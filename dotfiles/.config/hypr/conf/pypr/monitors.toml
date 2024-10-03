@@ -1,0 +1,20 @@
+[monitors.placement.eDP-1]
+rate = 60
+scale = 2
+resolution = [3840, 2160]
+leftCenterOf = "Dell Inc. DELL U2723QE HZK8BP3"
+
+[monitors.placement."Dell Inc. DELL U2723QE HZK8BP3"]
+rate = 60
+scale = 1.25
+resolution = [3840, 2160]
+rightOf = "eDP-1"
+
+[monitors.placement."Dell Inc. DELL U2723QE 4VK8BP3"]
+rate = 60
+scale = 1.25
+resolution = [3840, 2160]
+rightOf = "Dell Inc. DELL U2723QE HZK8BP3"
+
+[monitors]
+unknown = "wlrlui"

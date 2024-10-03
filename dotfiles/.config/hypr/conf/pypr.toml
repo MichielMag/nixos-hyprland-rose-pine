@@ -1,0 +1,10 @@
+[pyprland]
+plugins = [ "expose" ]
+include = [
+    "pypr/expose.toml", 
+    "pypr/monitors.toml",
+    "pypr/shift_monitors.toml",
+    "pypr/toggle_dpms.toml",
+    "pypr/toggle_special.toml",
+    "pypr/scratchpads.toml"
+]

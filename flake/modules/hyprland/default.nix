@@ -43,13 +43,18 @@ in
 
       kdePackages.qtwayland
       polkit-kde-agent
+
+      pyprland
+
       qt5.qtwayland
       swww
       swww-random
       swww-random-loop
       #waybar
-      wlsunset
+
       wl-clipboard
+      wlsunset
+      wlr-layout-ui
     ];
 
     wayland.windowManager.hyprland = {
@@ -67,8 +72,8 @@ in
     };
 
     home.activation = {
-      myActivationAction = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
-        				run rm $HOME/.config/hypr/conf;
+      hyprlandAction = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
+        				run rm -f $HOME/.config/hypr/conf;
                         run ln -s $HOME/.dotfiles/.config/hypr/conf $HOME/.config/hypr/conf;
       '';
     };

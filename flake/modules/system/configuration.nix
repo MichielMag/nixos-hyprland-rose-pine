@@ -130,6 +130,10 @@
     programs.thunar.enable = true;
     programs.dconf.enable = true;
     programs.hyprland.enable = true;
+    programs.ydotool = {
+        enable = true;
+        group = "ydotool";
+    };
     
     # Set up user and enable sudo
     users.users.michiel = {

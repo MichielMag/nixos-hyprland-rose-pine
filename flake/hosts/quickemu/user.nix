@@ -7,6 +7,7 @@
         hyprland.enable = true;
         rofi.enable = true;
         styling.enable = true;
+        fuzzel.enable = true;
 
         # cli
         terminal.enable = true;
