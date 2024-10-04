@@ -80,6 +80,7 @@ in
 
     home.file.".config/hypr/hyprlock.conf".source = ./.config/hypr/hyprlock.conf;
     home.file.".config/hypr/hypridle.conf".source = ./.config/hypr/hypridle.conf;
+    home.file.".config/hypr/pyprland.toml".source = ./.config/hypr/pyprland.toml;
 
     home.file.".cache/ags/hyprpanel/options.json".source = ./.cache/ags/hyprpanel/options.json;
   };
