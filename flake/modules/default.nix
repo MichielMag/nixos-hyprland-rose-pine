@@ -14,7 +14,6 @@
     # gui
     ./gui/hyprland
     ./gui/rofi
-    ./gui/styling
     ./gui/fuzzel
     ./gui/terminal
 
@@ -36,6 +35,9 @@
 
     # Media
     ./media
+
+    # Styling
+    ./styling
 
   ];
 }

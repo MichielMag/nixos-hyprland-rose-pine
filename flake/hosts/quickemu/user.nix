@@ -18,7 +18,11 @@
 
       # dev
       vscode.enable = true;
-      git = (./git.nix);
+      git = {
+        user = "MichielMag";
+        email = "michiel_m@live.nl";
+        enable = true;
+      };
 
       # system
       xdg.enable = true;

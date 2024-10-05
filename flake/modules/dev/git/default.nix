@@ -29,8 +29,8 @@ in
   config = mkIf cfg.enable {
     programs.git = {
       enable = true;
-      userName = user;
-      userEmail = email;
+      userName = cfg.user;
+      userEmail = cfg.email;
       extraConfig = {
         push = {
           autoSetupRemote = true;
