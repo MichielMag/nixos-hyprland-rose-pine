@@ -1,2 +1,2 @@
 [pyprland]
-include = ["~/.config/hypr/conf/pypr.toml"]
+include = ["~/.config/hypr/conf/pypr/"]
