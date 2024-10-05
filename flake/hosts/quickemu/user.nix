@@ -18,6 +18,7 @@
 
       # dev
       vscode.enable = true;
+
       git = {
         user = "MichielMag";
         email = "michiel_m@live.nl";

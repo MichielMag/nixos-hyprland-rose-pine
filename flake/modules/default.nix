@@ -9,6 +9,8 @@
   home.stateVersion = "21.03";
   imports = [
 
+    inputs.spicetify-nix.homeManagerModules.default
+
     ./quickemu
 
     # gui
