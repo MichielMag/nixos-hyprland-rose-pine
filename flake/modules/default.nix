@@ -1,36 +1,41 @@
-{ inputs, pkgs, config, ... }:
+{
+  inputs,
+  pkgs,
+  config,
+  ...
+}:
 
 {
-    home.stateVersion = "21.03";
-    imports = [
+  home.stateVersion = "21.03";
+  imports = [
 
-        ./quickemu
-        
-        # gui
-        ./hyprland
-        ./rofi
-        ./styling
-        ./fuzzel
+    ./quickemu
 
-        # cli
-        ./terminal
+    # gui
+    ./gui/hyprland
+    ./gui/rofi
+    ./gui/styling
+    ./gui/fuzzel
+    ./gui/terminal
 
-        # dev
-        ./vscode
+    # dev
+    ./dev/vscode
+    ./dev/git
 
-        # system
-        ./xdg
-	    ./packages
+    # system
+    ./system/xdg
+    ./system/packages
+    ./system/ssh
 
-        # Work
-        ./work-packages
-        ./vm-windows
+    # Work
+    ./work-packages
+    ./vm-windows
 
-        # Social
-        ./social
+    # Social
+    ./social
 
-        # Media
-        ./media
+    # Media
+    ./media
 
-    ];    
+  ];
 }
