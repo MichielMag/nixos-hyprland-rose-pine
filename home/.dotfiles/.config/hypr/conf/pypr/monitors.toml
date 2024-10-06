@@ -1,7 +1,7 @@
 [monitors.placement.eDP-1]
 rate = 60
-scale = 2
-resolution = [3840, 2160]
+scale = 1
+resolution = [1920, 1200]
 leftCenterOf = "Dell Inc. DELL U2723QE HZK8BP3"
 
 [monitors.placement."Dell Inc. DELL U2723QE HZK8BP3"]

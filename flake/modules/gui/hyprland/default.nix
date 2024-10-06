@@ -15,6 +15,7 @@ let
   hypr-random-wallpaper-loop = pkgs.writeShellScriptBin "hypr-random-wallpaper-loop" ''${builtins.readFile ./.scripts/hyprland/random-wallpaper-loop.sh}'';
   hypr-handle-open-lid = pkgs.writeShellScriptBin "hypr-handle-open-lid" ''${builtins.readFile ./.scripts/hyprland/handle-open-lid.sh}'';
   hypr-handle-close-lid = pkgs.writeShellScriptBin "hypr-handle-close-lid" ''${builtins.readFile ./.scripts/hyprland/handle-close-lid.sh}'';
+  hypr-x-clip-sync = pkgs.writeShellScriptBin "hypr-x-clip-sync" ''${builtins.readFile ./.scripts/util/clip-sync.sh}'';
 in
 {
   options.modules.hyprland = {
@@ -25,6 +26,7 @@ in
     #home.file.".config/dunst/dunstrc".source = ./.config/dunst/dunstrc;
 
     home.packages = with pkgs; [
+      clipnotify
       #dunst
       hypridle
       #hyprland
