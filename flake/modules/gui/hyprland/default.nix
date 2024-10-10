@@ -38,6 +38,7 @@ in
 
       hyprlock
 
+      hypr-x-clip-sync
       hypr-random-wallpaper
       hypr-random-wallpaper-loop
       hypr-handle-open-lid

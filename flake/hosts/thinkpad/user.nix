@@ -29,6 +29,7 @@
       xdg.enable = true;
       packages.enable = true;
       ssh.enable = true;
+      keyring.enable = true;
 
       # Work
       work-packages.enable = true;
