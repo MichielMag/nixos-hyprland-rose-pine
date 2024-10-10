@@ -3,7 +3,7 @@
 	"less.validate": false,
 	"scss.validate": false,
 	"stylelint.validate": ["css", "postcss", "scss"],
-	"prettier.configPath": "prettier.config.mjs",
+	//"prettier.configPath": "prettier.config.mjs",
 	"prettier.tabWidth": 4,
 	"prettier.useTabs": true,
 	"prettier.singleQuote": true,
@@ -71,12 +71,14 @@
 		"editor.defaultFormatter": "esbenp.prettier-vscode",
 		"editor.formatOnSave": true
 	},
-	"[yaml]":{
+	"[yaml]": {
 		"editor.insertSpaces": true,
 		"editor.tabSize": 2,
 		"editor.autoIndent": "advanced",
 		"diffEditor.ignoreTrimWhitespace": false,
-		"editor.defaultFormatter": "esbenp.prettier-vscode"
+		"editor.defaultFormatter": "esbenp.prettier-vscode",
+		"prettier.tabWidth": 2,
+		"prettier.useTabs": false
 	},
 
 	"javascript.updateImportsOnFileMove.enabled": "always",
@@ -84,5 +86,12 @@
 
 	"git.confirmSync": false,
 	"git.enableSmartCommit": true,
-	"window.menuBarVisibility": "toggle"
+	"window.menuBarVisibility": "toggle",
+	"nix.enableLanguageServer": true,
+	"nix.serverPath": "nil",
+	"nix.serverSettings": {
+		"nil": {
+			"formatting": { "command": ["nixfmt"] }
+		}
+	}
 }
