@@ -26,6 +26,16 @@ in
                         cat $HOME/.config/Code/User/settings_source.json > $HOME/.config/Code/User/settings.json; 
                         chmod ug+rw $HOME/.config/Code/User/settings.json; }";
     };
+
+    home.activation = {
+      vscodeActivation = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
+        				run rm -f $HOME/.config/Code/User/settings.json;
+                run ln -s $HOME/.dotfiles/.config/Code/User/settings.json $HOME/.config/Code/User/settings.json;
+                run rm -f $HOME/.vscode/argv.json;
+                run ln -s $HOME/.dotfiles/.vscode/argv.json $HOME/.vscode/argv.json;
+      '';
+    };
+
     programs.vscode = {
       enable = true;
       mutableExtensionsDir = true;

@@ -66,7 +66,11 @@ in
       extraConfig = "
                 source = /home/michiel/.config/hypr/conf/hyprland.conf
             ";
+
       systemd.variables = [ "--all" ];
+      systemd.extraCommands = [
+        "${pkgs.gnome-keyring}/bin/gnome-keyring-daemon --start --components=secrets,pkcs11,ssh"
+      ];
       plugins = with pkgs; [
         hyprlandPlugins.hyprexpo
         hyprlandPlugins.hyprgrass

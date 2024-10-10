@@ -7,25 +7,16 @@
 
 {
   # Remove unecessary preinstalled packages
-  environment.defaultPackages = [ ];
+  environment.defaultPackages = [
 
-  # Enable Display Manager
-  #services.greetd = {
-  #    enable = true;
-  #    settings = {
-  #        default_session = {
-  #            command = "hyprland";
-  #            user = "michiel";
-  #        };
-  #    };
-  #};
+  ];
 
   # Laptop-specific packages (the other ones are installed in `packages.nix`)
   environment.systemPackages = with pkgs; [
     acpi
     tlp
     git
-    greetd.tuigreet
+    #networkmanager
   ];
 
   # Wayland stuff: enable XDG integration, allow sway to use brillo
@@ -175,6 +166,7 @@
       allowPing = false;
     };
     enableIPv6 = false;
+    networkmanager.enable = true;
   };
 
   # Set environment variables
@@ -201,8 +193,16 @@
 
     # Extra security
     protectKernelImage = true;
-    pam.services.swaylock = { };
+
+    pam.services = {
+      swaylock = { };
+      ly = {
+        enableGnomeKeyring = true;
+      };
+    };
   };
+
+  services.gnome.gnome-keyring.enable = true;
 
   hardware.pulseaudio.enable = true;
   security.rtkit.enable = true;

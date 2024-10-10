@@ -15,6 +15,14 @@ in
     enable = mkEnableOption "keyring";
   };
   config = mkIf cfg.enable {
-    sservices.gnome-keyring.enable = true;
+    home.packages = with pkgs; [
+      seahorse
+    ];
+    services.gnome-keyring.enable = true;
+    services.gnome-keyring.components = [
+      "secrets"
+      "ssh"
+      "pkcs11"
+    ];
   };
 }
