@@ -18,6 +18,7 @@ in
   nixpkgs.config.packageOverrides = pkgs: {
     intel-vaapi-driver = pkgs.intel-vaapi-driver.override { enableHybridCodec = true; };
   };
+
   environment.defaultPackages = with pkgs; [
     nvidia-offload
     libva-utils
@@ -34,6 +35,5 @@ in
     NIXOS_OZONE_WL = "1";
     NVD_BACKEND = "direct";
     LIBVA_DRIVER_NAME = "iHD";
-    AQ_DRM_DEVICES = "/dev/dri/card2:/dev/dri/card1";
   };
 }

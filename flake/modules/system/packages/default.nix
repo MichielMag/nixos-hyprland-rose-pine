@@ -20,56 +20,17 @@ in
       libnotify
       fastfetch
       dolphin
-      nemo-with-extensions
       dconf-editor
     ];
 
     programs.firefox.enable = true;
-
-    home.activation = {
-      firefoxAction = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
-        				run rm -f $HOME/.mozilla/firefox/default/chrome;
-        				run rm -f $HOME/.mozilla/firefox/default/user.js;
-                run ln -s $HOME/.dotfiles/.mozilla/firefox/default/user.js $HOME/.mozilla/firefox/default/user.js;
-                run ln -s $HOME/.dotfiles/.mozilla/firefox/default/chrome $HOME/.mozilla/firefox/default/chrome;
-      '';
-    };
-
-    # xdg.desktopEntries = {
-    #   brave-browser = {
-    #     name = "Brave Web Browser";
-    #     exec = "${pkgs.brave}/bin/brave --enable-feature=UseOzonePlatform --ozone-platform=wayland %U";
-    #     startupNotify = true;
-    #     terminal = false;
-    #     icon = "brave-browser";
-    #     type = "Application";
-    #     categories = [
-    #       "Network"
-    #       "WebBrowser"
-    #     ];
-    #     mimeType = [
-    #       "application/pdf"
-    #       "application/rdf+xml"
-    #       "application/rss+xml"
-    #       "application/xhtml+xml"
-    #       "application/xhtml_xml"
-    #       "application/xml"
-    #       "image/gif"
-    #       "image/jpeg"
-    #       "image/png"
-    #       "image/webp"
-    #       "text/html"
-    #       "text/xml"
-    #       "x-scheme-handler/http"
-    #       "x-scheme-handler/https"
-    #     ];
-    # 
-    #     actions = {
-    #       new-window.exec = "${pkgs.brave}/bin/brave --enable-feature=UseOzonePlatform --ozone-platform=wayland";
-    #       new-private-window.exec = "${pkgs.brave}/bin/brave --enable-feature=UseOzonePlatform --ozone-platform=wayland --incognito";
-    #     };
-    #   };
-    # };
+    xdg.enable = true;
+    #xdg.mimeApps = {
+    #  enable = true;
+    #  defaultApplications = {
+    #    "inode/directory" = [ "org.kde.dolphin.desktop" ];
+    #  };
+    #};
 
     services.swayosd.enable = true;
     services.cliphist = {

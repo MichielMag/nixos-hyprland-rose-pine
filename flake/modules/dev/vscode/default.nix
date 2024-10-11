@@ -46,6 +46,9 @@ in
         vscode-extensions.bbenoist.nix
         vscode-extensions.jnoortheen.nix-ide
       ];
+      package = pkgs.vscode.override {
+        commandLineArgs = "--use-gl=egl";
+      };
     };
   };
 }

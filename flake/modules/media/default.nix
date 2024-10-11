@@ -26,26 +26,26 @@ in
       colorScheme = "rose-pine-moon";
     };
 
-    # xdg.desktopEntries = {
-    #   spotify = {
-    #     name = "Spotify";
-    #     type = "Application";
-    #     genericName = "Music Player";
-    #     icon = "spotify-client";
-    #     exec = "spotify --enable-feature=UseOzonePlatform --ozone-platform=wayland %U";
-    #     terminal = false;
-    #     mimeType = [ "x-scheme-handler/spotify" ];
-    #     categories = [
-    #       "Audio"
-    #       "Music"
-    #       "Player"
-    #       "AudioVideo"
-    #     ];
-    #     settings = {
-    #       StartupWMClass = "spotify";
-    #     };
-    #   };
-    # };
+    xdg.desktopEntries = {
+      spotify = {
+        name = "Spotify";
+        type = "Application";
+        genericName = "Music Player";
+        icon = "spotify-client";
+        exec = "spotify --use-gl=egl %U";
+        terminal = false;
+        mimeType = [ "x-scheme-handler/spotify" ];
+        categories = [
+          "Audio"
+          "Music"
+          "Player"
+          "AudioVideo"
+        ];
+        settings = {
+          StartupWMClass = "spotify";
+        };
+      };
+    };
 
   };
 }
