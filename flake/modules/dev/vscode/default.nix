@@ -19,13 +19,6 @@ in
       nil
       nixfmt-rfc-style
     ];
-    home.file.".config/Code/User/settings.json" = {
-      source = ./.config/Code/User/settings.json;
-      target = ".config/Code/User/settings_source.json";
-      onChange = "test -f $HOME/.config/Code/User/settings.json || { 
-                        cat $HOME/.config/Code/User/settings_source.json > $HOME/.config/Code/User/settings.json; 
-                        chmod ug+rw $HOME/.config/Code/User/settings.json; }";
-    };
 
     home.activation = {
       vscodeActivation = lib.hm.dag.entryAfter [ "writeBoundary" ] ''

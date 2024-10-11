@@ -22,7 +22,11 @@
     "sd_mod"
   ];
   boot.initrd.kernelModules = [ ];
-  boot.kernelModules = [ "kvm-intel" ];
+  boot.kernelModules = [
+    "kvm-intel"
+  ];
+  boot.kernelParams = [ "i915.force_probe=a7a0k" ];
+
   boot.extraModulePackages = [ ];
 
   fileSystems."/" = {
@@ -39,6 +43,13 @@
     ];
   };
 
+  fileSystems."/windows" = {
+    device = "/dev/disk/by-uuid/8A582DA3582D8ECF";
+    fsType = "ntfs";
+    options = [
+      "ro"
+    ];
+  };
   swapDevices = [ ];
 
   # Enables DHCP on each ethernet and wireless interface. In case of scripted networking
@@ -53,7 +64,10 @@
   hardware.cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
 
   # Load nvidia driver for Xorg and Wayland
-  services.xserver.videoDrivers = [ "nvidia" ];
+  services.xserver.videoDrivers = [
+    "nvidia"
+    "i915"
+  ];
 
   hardware = {
     nvidia = {

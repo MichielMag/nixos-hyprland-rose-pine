@@ -102,6 +102,8 @@
 
   # Set up locales (timezone and keyboard layout)
   time.timeZone = "Europe/Amsterdam";
+  time.hardwareClockInLocalTime = true;
+
   # Select internationalisation properties.
   i18n.defaultLocale = "en_US.UTF-8";
 
@@ -143,6 +145,8 @@
       "wheel"
       "networkmanager"
       "ydotool"
+      "video"
+      "render"
     ];
     shell = pkgs.fish;
   };

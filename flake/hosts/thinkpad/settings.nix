@@ -15,15 +15,25 @@ let
   '';
 in
 {
+  nixpkgs.config.packageOverrides = pkgs: {
+    intel-vaapi-driver = pkgs.intel-vaapi-driver.override { enableHybridCodec = true; };
+  };
   environment.defaultPackages = with pkgs; [
     nvidia-offload
-    nvidia-vaapi-driver
-    libva-vdpau-driver
     libva-utils
   ];
 
+  hardware.graphics.extraPackages = with pkgs; [
+    nvidia-vaapi-driver
+    intel-media-driver
+    libvdpau-va-gl
+    libva-vdpau-driver
+    vpl-gpu-rt
+  ];
   environment.variables = {
     NIXOS_OZONE_WL = "1";
     NVD_BACKEND = "direct";
+    LIBVA_DRIVER_NAME = "iHD";
+    AQ_DRM_DEVICES = "/dev/dri/card2:/dev/dri/card1";
   };
 }

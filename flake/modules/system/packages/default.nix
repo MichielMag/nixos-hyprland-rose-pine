@@ -22,8 +22,18 @@ in
       dolphin
       nemo-with-extensions
       dconf-editor
-      brave
     ];
+
+    programs.firefox.enable = true;
+
+    home.activation = {
+      firefoxAction = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
+        				run rm -f $HOME/.mozilla/firefox/default/chrome;
+        				run rm -f $HOME/.mozilla/firefox/default/user.js;
+                run ln -s $HOME/.dotfiles/.mozilla/firefox/default/user.js $HOME/.mozilla/firefox/default/user.js;
+                run ln -s $HOME/.dotfiles/.mozilla/firefox/default/chrome $HOME/.mozilla/firefox/default/chrome;
+      '';
+    };
 
     # xdg.desktopEntries = {
     #   brave-browser = {
