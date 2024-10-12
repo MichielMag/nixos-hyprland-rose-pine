@@ -20,6 +20,7 @@ in
       libnotify
       fastfetch
       dolphin
+      ark
       dconf-editor
       wtype
     ];

@@ -102,6 +102,11 @@ in
         xfce.enable = true;
         #btop.enable = true;
       };
+      cursor = {
+        name = "BreezeX-RosePine-Linux";
+        package = pkgs.rose-pine-cursor;
+        size = 24;
+      };
     };
 
     programs.gnome-shell = {

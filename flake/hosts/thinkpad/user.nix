@@ -11,6 +11,7 @@
     modules = {
       # gui
       hyprland.enable = true;
+      waybar.enable = true;
       rofi.enable = true;
       styling.enable = true;
       fuzzel.enable = true;

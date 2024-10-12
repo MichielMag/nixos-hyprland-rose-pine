@@ -15,6 +15,7 @@
 
     # gui
     ./gui/hyprland
+    ./gui/waybar
     ./gui/rofi
     ./gui/fuzzel
     ./gui/terminal

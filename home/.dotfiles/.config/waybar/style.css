@@ -50,8 +50,8 @@ tooltip {
 #workspaces button.active {
 	color: @active-fg;
 	background: @active-bg;
-	text-shadow: 0px 0px 2px rgba(0, 0, 0, 0.6);
-	box-shadow: 0px 0px 2px 1px rgba(0, 0, 0, 1);
+	/* text-shadow: 0px 0px 2px rgba(0, 0, 0, 0.6); */
+	/* box-shadow: 0px 0px 2px 1px rgba(0, 0, 0, 1); */
 	margin-right: 2px;
 	margin-left: 2px;
 	padding-right: 6px;
@@ -86,7 +86,7 @@ tooltip {
 	margin-bottom: 0px;
 	padding-right: 4px;
 	padding-left: 4px;
-	text-shadow: 0px 0px 2px rgba(0, 0, 0, 1);
+	text-shadow: 0px 0px 4px rgba(0, 0, 0, 1);
 }
 
 /* General Left Arrow Styling */
@@ -114,18 +114,19 @@ tooltip {
 }
 
 /* Color Definitions */
-@define-color workspaces #181825;
-@define-color cpuinfo #181825;
-@define-color memory #1e1e2e;
-@define-color cpu #313244;
-@define-color arch #9399b2;
-@define-color time #313244;
-@define-color date #1e1e2e;
-@define-color wifi #181825;
-@define-color pulseaudio #181825;
-@define-color backlight #1e1e2e;
-@define-color battery #313244;
-@define-color power #6c7086;
+@define-color workspaces @overlay;
+@define-color cpuinfo @iris;
+@define-color memory @pine;
+@define-color cpu @love;
+@define-color arch @overlay;
+@define-color time @love;
+@define-color date @pine;
+@define-color wifi @iris;
+@define-color pulseaudio @iris;
+@define-color backlight @pine;
+@define-color battery @love;
+@define-color power @highlightHigh;
+
 
 /* Window Icon */
 #custom-ws {
@@ -164,6 +165,7 @@ tooltip {
 	background: @cpuinfo;
 	padding-left: 1px;
 	padding-right: 0px;
+	color: @base;
 }
 
 /* Memory */
@@ -177,6 +179,8 @@ tooltip {
 	background: @memory;
 	padding-left: 1px;
 	padding-right: 0px;
+
+	text-shadow: 0px 0px 4px rgba(0, 0, 0, 1);
 }
 
 /* CPU */
@@ -188,6 +192,7 @@ tooltip {
 
 #cpu {
 	background: @cpu;
+	text-shadow: 0px 0px 4px rgba(0, 0, 0, 1);
 }
 
 #custom-leftin1 {
@@ -205,14 +210,22 @@ tooltip {
 }
 
 #custom-arch {
-	color: black;
+	color: @gold;
 	background: @arch;
 	font-size: 11pt;
 	margin-right: -1px;
-	margin-bottom: -2px;
+	margin-top: 0px;
+	margin-bottom: 0px;
 	padding-right: 0px;
 	padding-left: 3px;
 	text-shadow: 0px 0px 1.5px rgba(0, 0, 0, 1);
+}
+
+#custom-arch:hover {
+	color: @arch;
+	background: @gold;
+	box-shadow: none;
+	transition: all 0.3s cubic-bezier(.55, -0.68, .48, 1.682);
 }
 
 #custom-right2 {
@@ -229,6 +242,7 @@ tooltip {
 
 #clock.time {
 	background: @time;
+	text-shadow: 0px 0px 4px rgba(0, 0, 0, 1);
 }
 
 #custom-right3 {
@@ -249,9 +263,10 @@ tooltip {
 /* Network */
 #custom-wi {
 	background: @wifi;
-	text-shadow: 0px 0px 2px rgba(0, 0, 0, 1);
 	margin-right: -2px;
 	padding-left: 5px;
+	color: @base;
+	text-shadow: 0px 0px 1.5px rgba(0, 0, 0, 1);
 }
 
 #custom-wifi {
@@ -281,6 +296,8 @@ tooltip {
 
 #pulseaudio {
 	background: @pulseaudio;
+	color: @base;
+	text-shadow: 0px 0px 1.5px rgba(0, 0, 0, 1);
 }
 
 /* Brightness */
@@ -322,7 +339,7 @@ tooltip {
 }
 
 #custom-power {
-	color: @background;
+	color: @love;
 	background: @power;
 	text-shadow: 0px 0px 2px rgba(0, 0, 0, 0.6);
 	box-shadow: 0px 0px 2px 1px rgba(0, 0, 0, 1);
@@ -335,8 +352,8 @@ tooltip {
 }
 
 #custom-power:hover {
-	color: @hover-fg;
-	background: @hover-bg;
+	color: @power;
+	background: @love;
 	box-shadow: none;
 	transition: all 0.3s cubic-bezier(.55, -0.68, .48, 1.682);
 }

@@ -58,11 +58,6 @@ in
       wl-clipboard
       wlsunset
       wlr-layout-ui
-
-      waybar
-      wlogout
-      brightnessctl
-      playerctl
     ];
 
     wayland.windowManager.hyprland = {
@@ -88,16 +83,10 @@ in
         run rm -f $HOME/.config/hypr/conf;
         run ln -s $HOME/.dotfiles/.config/hypr/conf $HOME/.config/hypr/conf;
       '';
-      waybarAction = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
-        run rm -f $HOME/.config/waybar;
-        run ln -s $HOME/.dotfiles/.config/waybar $HOME/.config/waybar;
-      '';
     };
 
     home.file.".config/hypr/hyprlock.conf".source = ./.config/hypr/hyprlock.conf;
     home.file.".config/hypr/hypridle.conf".source = ./.config/hypr/hypridle.conf;
     home.file.".config/hypr/pyprland.toml".source = ./.config/hypr/pyprland.toml;
-
-    home.file.".cache/ags/hyprpanel/options.json".source = ./.cache/ags/hyprpanel/options.json;
   };
 }

@@ -5,15 +5,34 @@ act - active
 hvr - hover
 */
 
+@define-color base #232136;
+@define-color surface #2a273f;
+@define-color overlay #393552;
+
+@define-color muted #6e6a86;
+@define-color subtle #908caa;
+@define-color text #e0def4;
+
+@define-color love #eb6f92;
+@define-color gold #f6c177;
+@define-color rose #ea9a97;
+@define-color pine #3e8fb0;
+@define-color foam #9ccfd8;
+@define-color iris #c4a7e7;
+
+@define-color highlightLow #2a283e;
+@define-color highlightMed #44415a;
+@define-color highlightHigh #56526e;
+
 /* Main Colors */
-@define-color background #232136;
-@define-color foreground #e0def4;
+@define-color background @base;
+@define-color foreground @text;
 
 /* Workspace Button Colors */
-@define-color active-bg #ea9a97;
-@define-color active-fg #232136;
-@define-color hover-bg #3e8fb0;
-@define-color hover-fg #cdd6f4;
+@define-color active-bg @rose;
+@define-color active-fg @highlightLow;
+@define-color hover-bg @pine;
+@define-color hover-fg @highlightLow;
 
 /* Wlogout Colors */
 @define-color bar-bg #11111b;
@@ -23,3 +42,4 @@ hvr - hover
 @define-color wb-act-fg #11111b;
 @define-color wb-hvr-bg #6c7086;
 @define-color wb-hvr-fg #11111b;
+
