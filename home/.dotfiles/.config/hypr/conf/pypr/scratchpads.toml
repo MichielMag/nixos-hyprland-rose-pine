@@ -6,4 +6,12 @@ command = "kitty --class kitty-dropterm"
 class = "kitty-dropterm"
 size = "75% 60%"
 max_size = "75% 60%"
+margin = 60
+
+[scratchpads.btop]
+animation = "fromTop"
+command = "kitty --class kitty-btop btop"
+class = "kitty-btop"
+size = "75% 75%"
+max_size = "75% 75%"
 margin = 50

@@ -9,7 +9,7 @@
     };
 
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-
+    nixpkgs-stable.url = "github:NixOS/nixpkgs/nixos-24.05";
     #nur = {
     #    url = "github:nix-community/NUR";
     #    inputs.nixpkgs.follows = "nixpkgs";
@@ -32,6 +32,7 @@
     {
       home-manager,
       nixpkgs,
+      nixpkgs-stable,
       spicetify-nix,
       stylix,
       ...
@@ -81,13 +82,20 @@
                 users.michiel = (./. + "/hosts/${hostname}/user.nix");
               };
               nixpkgs.config.allowUnfree = true;
-              nixpkgs.config.allowUnsupportedSystem = true;
+              #nixpkgs.config.allowUnsupportedSystem = true;
               #nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
               #    "vscode"
               #    "spotify"
               #];
               nixpkgs.overlays = [
                 inputs.hyprpanel.overlay
+                (final: prev: {
+                  stable = import inputs.nixpkgs-stable {
+                    system = final.system;
+                    config.allowUnfree = true;
+                  };
+                })
+
               ];
             }
 

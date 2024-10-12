@@ -1,6 +1,7 @@
 {
   inputs,
   pkgs,
+  stable,
   config,
   ...
 }:
@@ -27,9 +28,6 @@ in
   hardware.graphics.extraPackages = with pkgs; [
     nvidia-vaapi-driver
     intel-media-driver
-    libvdpau-va-gl
-    libva-vdpau-driver
-    vpl-gpu-rt
   ];
   environment.variables = {
     NIXOS_OZONE_WL = "1";

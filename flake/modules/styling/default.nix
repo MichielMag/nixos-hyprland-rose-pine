@@ -100,7 +100,7 @@ in
         gnome.enable = true;
         kde.enable = true;
         xfce.enable = true;
-        btop.enable = true;
+        #btop.enable = true;
       };
     };
 

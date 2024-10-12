@@ -74,7 +74,7 @@ in
       plugins = with pkgs; [
         hyprlandPlugins.hyprexpo
         hyprlandPlugins.hyprgrass
-        hyprlandPlugins.hyprtrails
+        #hyprlandPlugins.hyprtrails
       ];
     };
 

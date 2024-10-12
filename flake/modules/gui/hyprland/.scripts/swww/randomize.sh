@@ -15,7 +15,6 @@ fi
 # This controls (in seconds) when to switch to the next image
 INTERVAL=300
 
-swww clear
-
 RANDOMFILE=$(ls $1 | shuf -n 1)
-swww img "$1/$RANDOMFILE"
+swww img "$1/$RANDOMFILE" --transition-type random
+ln -sf "$1/$RANDOMFILE" ~/.wallpaper/.hyprlock

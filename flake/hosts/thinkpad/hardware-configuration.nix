@@ -69,7 +69,15 @@
     "i915"
   ];
 
+  services.blueman = {
+    enable = true;
+  };
+  services.hardware.bolt.enable = true;
   hardware = {
+    bluetooth = {
+      enable = true;
+      powerOnBoot = true;
+    };
     nvidia = {
 
       # Modesetting is required.

@@ -23,7 +23,7 @@ in
 
     programs.kitty = {
       enable = true;
-      theme = "Rosé Pine Moon";
+      themeFile = "rose-pine-moon";
       shellIntegration.enableFishIntegration = true;
       font = {
         name = "JetBrainsMono Nerd Font";

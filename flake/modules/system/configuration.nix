@@ -222,7 +222,6 @@
 
   # Disable bluetooth, enable pulseaudio, enable opengl (for Wayland)
   hardware = {
-    bluetooth.enable = false;
     graphics = {
       enable = true;
     };

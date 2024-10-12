@@ -26,7 +26,6 @@
 	"workbench.colorCustomizations": {
 		"gitDecoration.modifiedResourceForeground": "#f6c177"
 	},
-	"workbench.colorTheme": "Rosé Pine Moon (no italics)",
 
 	"terminal.integrated.fontFamily": "JetBrainsMono NF Light",
 
@@ -93,5 +92,6 @@
 		"nil": {
 			"formatting": { "command": ["nixfmt"] }
 		}
-	}
+	},
+	"workbench.colorTheme": "Rosé Pine Moon (no italics)"
 }
