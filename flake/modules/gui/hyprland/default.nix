@@ -58,6 +58,11 @@ in
       wl-clipboard
       wlsunset
       wlr-layout-ui
+
+      waybar
+      wlogout
+      brightnessctl
+      playerctl
     ];
 
     wayland.windowManager.hyprland = {
@@ -80,8 +85,12 @@ in
 
     home.activation = {
       hyprlandAction = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
-        				run rm -f $HOME/.config/hypr/conf;
-                        run ln -s $HOME/.dotfiles/.config/hypr/conf $HOME/.config/hypr/conf;
+        run rm -f $HOME/.config/hypr/conf;
+        run ln -s $HOME/.dotfiles/.config/hypr/conf $HOME/.config/hypr/conf;
+      '';
+      waybarAction = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
+        run rm -f $HOME/.config/waybar;
+        run ln -s $HOME/.dotfiles/.config/waybar $HOME/.config/waybar;
       '';
     };
 

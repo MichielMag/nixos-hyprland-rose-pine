@@ -31,6 +31,7 @@ in
       };
       settings = {
         background_opacity = "0.9";
+        title = "kitty";
       };
     };
 

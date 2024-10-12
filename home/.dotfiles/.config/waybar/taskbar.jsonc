@@ -1,0 +1,144 @@
+{
+	"layer": "overlay",
+	"position": "bottom",
+	"mode": "overlay",
+	// "height": 20, // removed for dynamic height (I don't see a difference)
+	"exclusive": false,
+	"passthrough": false,
+	"gtk-layer-shell": true,
+	"reload_style_on_change": true,
+	"start-hidden": true,
+
+	// Positions
+	"modules-left": ["custom/paddw"],
+
+	"modules-center": [
+		"custom/paddc",
+		"custom/left2",
+		"custom/cpuinfo", // temperature
+
+		"custom/left3",
+		"memory", // memory
+
+		"custom/left4",
+		"cpu", // cpu
+		"custom/leftin1",
+
+		"custom/left5",
+		"wlr/taskbar", // arch logo
+		"custom/right2",
+
+		"custom/rightin1",
+		"clock#time", // time
+		"custom/right3",
+
+		"clock#date", // date
+		"custom/right4",
+
+		"custom/wi",
+		"custom/wifi", // connection
+		"custom/right5"
+	],
+
+	"modules-right": [],
+
+	"wlr/taskbar": {
+		"all-outputs": false,
+		"format": "{icon}",
+		"rotate": "${r_deg}",
+		"icon-size": "${i_task}",
+		"icon-theme": "${i_theme}",
+		"spacing": 0,
+		"tooltip-format": "{title}",
+		"on-click": "activate",
+		"on-click-middle": "close",
+		"ignore-list": ["Alacritty"],
+		"app_ids-mapping": {
+			"firefoxdeveloperedition": "firefox-developer-edition"
+		}
+	},
+
+	// Padding
+	"custom/paddw": {
+		"format": " ",
+		"tooltip": false
+	},
+
+	// adjust this if you have a long network name so that the modules remain centered.
+	"custom/paddc": {
+		"format": "     ",
+		"tooltip": false
+	},
+
+	// Left Arrows
+	"custom/left1": {
+		"format": "",
+		"tooltip": false
+	},
+	"custom/left2": {
+		"format": "",
+		"tooltip": false
+	},
+	"custom/left3": {
+		"format": "",
+		"tooltip": false
+	},
+	"custom/left4": {
+		"format": "",
+		"tooltip": false
+	},
+	"custom/left5": {
+		"format": "",
+		"tooltip": false
+	},
+	"custom/left6": {
+		"format": "",
+		"tooltip": false
+	},
+	"custom/left7": {
+		"format": "",
+		"tooltip": false
+	},
+	"custom/left8": {
+		"format": "",
+		"tooltip": false
+	},
+
+	// Right Arrows
+	"custom/right1": {
+		"format": "",
+		"tooltip": false
+	},
+	"custom/right2": {
+		"format": "",
+		"tooltip": false
+	},
+	"custom/right3": {
+		"format": "",
+		"tooltip": false
+	},
+	"custom/right4": {
+		"format": "",
+		"tooltip": false
+	},
+	"custom/right5": {
+		"format": "",
+		"tooltip": false
+	},
+
+	// Left Inverse
+	"custom/leftin1": {
+		"format": "",
+		"tooltip": false
+	},
+	"custom/leftin2": {
+		"format": "",
+		"tooltip": false
+	},
+
+	// Right Inverse
+	"custom/rightin1": {
+		"format": "",
+		"tooltip": false
+	}
+}

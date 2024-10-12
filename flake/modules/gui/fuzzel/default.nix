@@ -25,6 +25,8 @@ in
     home.packages = with pkgs; [
       bemoji
       emoji-picker
+
+      networkmanager_dmenu
     ];
 
     programs.fuzzel = {
@@ -36,6 +38,8 @@ in
       fuzzelAction = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
         run rm -f $HOME/.config/fuzzel;
         run ln -s $HOME/.dotfiles/.config/fuzzel $HOME/.config/fuzzel;
+        run rm -f $HOME/.config/networkmanager-dmenu;
+        run ln -s $HOME/.dotfiles/.config/networkmanager-dmenu $HOME/.config/networkmanager-dmenu;
       '';
     };
   };
