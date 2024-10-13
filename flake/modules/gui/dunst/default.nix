@@ -21,7 +21,7 @@ in
     ];
 
     home.activation = {
-      waybarAction = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
+      dunstAction = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
         run rm -f $HOME/.config/dunst;
         run ln -s $HOME/.dotfiles/.config/dunst $HOME/.config/dunst;
       '';

@@ -14,6 +14,7 @@
     ./quickemu
 
     # gui
+    ./gui
     ./gui/hyprland
     ./gui/waybar
     ./gui/rofi

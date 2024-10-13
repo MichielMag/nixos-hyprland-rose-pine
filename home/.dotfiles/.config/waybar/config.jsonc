@@ -244,14 +244,14 @@
 	},
 
 	"custom/wifi": {
-		"exec": "~/.config/waybar/scripts/essid.sh",
+		"exec": "wb-ssid",
 		"interval": 30,
-		"format": "Wi-Fi", // use "{}" to display wifi name
+		"format": " {}", // use "{}" to display wifi name
 		"tooltip": true,
 		"tooltip-format": "{}",
 		"on-click": "networkmanager_dmenu",
 		"min-length": 7,
-		"max-length": 7
+		"max-length": 10
 	},
 
 	"custom/media": {
@@ -270,10 +270,10 @@
 			"headphone": "󰋋",
 			"default": ["󰖀", "󰕾"]
 		},
-		"on-click": "~/.config/waybar/scripts/volumecontrol.sh -o m",
+		"on-click": "wb-volume -o m",
 		"on-click-right": "pavucontrol -t 3",
-		"on-scroll-up": "~/.config/waybar/scripts/volumecontrol.sh -o i",
-		"on-scroll-down": "~/.config/waybar/scripts/volumecontrol.sh -o d",
+		"on-scroll-up": "wb-volume -o i",
+		"on-scroll-down": "wb-volume -o d",
 		"scroll-step": 10,
 		"min-length": 6,
 		"max-length": 6
@@ -309,8 +309,8 @@
 	"custom/power": {
 		"format": " ",
 		"tooltip": false,
-		"on-click": "~/.config/waybar/scripts/logoutlaunch.sh 2",
-		"on-click-right": "~/.config/waybar/scripts/logoutlaunch.sh 1",
+		"on-click": "wb-logout 2",
+		"on-click-right": "wb-logout 1",
 		"interval": 86400
 	},
 

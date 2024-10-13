@@ -273,6 +273,8 @@ tooltip {
 	background: @wifi;
 	padding-right: 0px;
 	padding-left: 0px;
+	padding-right: 4px;
+	color: @base;
 }
 
 #custom-right5 {
