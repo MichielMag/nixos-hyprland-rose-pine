@@ -159,7 +159,7 @@
 	},
 
 	"custom/cpuinfo": {
-		"exec": "~/.config/waybar/scripts/cpuinfo.sh",
+		"exec": "wb-cpuinfo",
 		"return-type": "json",
 		"format": "{}",
 		"tooltip": true,

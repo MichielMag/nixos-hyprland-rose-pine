@@ -16,6 +16,8 @@
       styling.enable = true;
       fuzzel.enable = true;
       terminal.enable = true;
+      dunst.enable = true;
+      wlogout.enable = true;
 
       # dev
       vscode.enable = true;

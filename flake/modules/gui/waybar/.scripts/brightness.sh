@@ -1,8 +1,5 @@
 #!/usr/bin/env sh
 
-scrDir=$(dirname "$(realpath "$0")")
-source $scrDir/globalcontrol.sh
-
 # Function to print error message
 function print_error {
 cat << "EOF"
@@ -18,7 +15,7 @@ function send_notification {
     brightness=$(brightnessctl info | grep -oP "(?<=\()\d+(?=%)" | cat)
     brightinfo=$(brightnessctl info | awk -F "'" '/Device/ {print $2}')
     angle="$(((($brightness + 2) / 5) * 5))"
-    ico="$HOME/.config/dunst/icons/vol/vol-${angle}.svg"
+    ico="$vol-${angle}"
     bar=$(seq -s "." $(($brightness / 15)) | sed 's/[0-9]//g')
     notify-send -a "t2" -r 91190 -t 800 -i "${ico}" "${brightness}${bar}" "${brightinfo}"
 }

@@ -181,7 +181,7 @@
     QT_QPA_PLATFORM = "wayland";
     GTK_USE_PORTAL = "1";
     NIXOS_XDG_OPEN_USE_PORTAL = "1";
-    XDG_CURRENT_DESKTOP = "hyprland";
+    XDG_CURRENT_DESKTOP = "Hyprland";
   };
 
   # Security 

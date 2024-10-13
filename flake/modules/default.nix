@@ -19,6 +19,8 @@
     ./gui/rofi
     ./gui/fuzzel
     ./gui/terminal
+    ./gui/dunst
+    ./gui/wlogout
 
     # dev
     ./dev/vscode
