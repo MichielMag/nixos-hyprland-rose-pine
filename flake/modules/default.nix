@@ -31,6 +31,9 @@
     ./dev/vscode
     ./dev/git
 
+    # office
+    ./office/obsidian
+
     # system
     ./system/xdg
     ./system/packages

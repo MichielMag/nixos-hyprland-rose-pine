@@ -22,6 +22,9 @@
       # networking
       onedrive.enable = true;
 
+      # office
+      obsidian.enable = true;
+
       # dev
       vscode.enable = true;
 
