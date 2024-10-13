@@ -93,5 +93,6 @@
 			"formatting": { "command": ["nixfmt"] }
 		}
 	},
-	"workbench.colorTheme": "Rosé Pine Moon (no italics)"
+	"workbench.colorTheme": "Rosé Pine Moon (no italics)",
+	"git.autofetch": true
 }
