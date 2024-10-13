@@ -76,10 +76,10 @@ in
       #    name = "rose-pine-moon";
       #    package = pkgs.rose-pine-gtk-theme;
       #};
-      #iconTheme = {
-      #    name = "rose-pine-moon";
-      #    package = pkgs.rose-pine-icon-theme;
-      #};
+      iconTheme = {
+        name = "rose-pine-moon";
+        package = pkgs.rose-pine-icon-theme;
+      };
     };
     programs.gnome-shell = {
       #    enable = true;

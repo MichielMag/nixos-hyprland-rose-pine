@@ -17,7 +17,7 @@ function send_notification {
     angle="$(((($brightness + 2) / 5) * 5))"
     ico="$vol-${angle}"
     bar=$(seq -s "." $(($brightness / 15)) | sed 's/[0-9]//g')
-    notify-send -a "t2" -r 91190 -t 800 -i "${ico}" "${brightness}${bar}" "${brightinfo}"
+    # notify-send -a "t2" -r 91190 -t 800 -i "${ico}" "${brightness}${bar}" "${brightinfo}"
 }
 
 # Function to get current brightness percentage

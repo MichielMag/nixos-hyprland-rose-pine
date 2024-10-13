@@ -71,6 +71,7 @@ tooltip {
 
 /* General Module Styling */
 #custom-ws,
+#custom-notification,
 #workspaces,
 #window,
 #custom-cpuinfo,
@@ -88,6 +89,7 @@ tooltip {
 	padding-left: 4px;
 	text-shadow: 0px 0px 4px rgba(0, 0, 0, 1);
 }
+
 
 /* General Left Arrow Styling */
 #custom-left1,
@@ -135,8 +137,8 @@ tooltip {
 
 /* Workspaces */
 #custom-left1 {
-	color: @workspaces;
-	background: @background;
+	color: @background;
+	background: @workspaces;
 	padding-left: 2px;
 }
 
@@ -356,6 +358,26 @@ tooltip {
 #custom-power:hover {
 	color: @power;
 	background: @love;
+	box-shadow: none;
+	transition: all 0.3s cubic-bezier(.55, -0.68, .48, 1.682);
+}
+
+#custom-notification {
+	color: @gold;
+	background: @power;
+	text-shadow: 0px 0px 2px rgba(0, 0, 0, 0.6);
+	box-shadow: 0px 0px 2px 1px rgba(0, 0, 0, 1);
+	border-radius: 20px;
+	margin-top: 2px;
+	margin-right: 4px;
+	margin-bottom: 2px;
+	padding-right: 6px;
+	padding-left: 9px;
+}
+
+#custom-notification:hover {
+	color: @power;
+	background: @gold;
 	box-shadow: none;
 	transition: all 0.3s cubic-bezier(.55, -0.68, .48, 1.682);
 }
