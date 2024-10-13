@@ -19,6 +19,9 @@
       swaync.enable = true;
       wlogout.enable = true;
 
+      # networking
+      onedrive.enable = true;
+
       # dev
       vscode.enable = true;
 

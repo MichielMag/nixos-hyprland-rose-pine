@@ -24,6 +24,9 @@
     ./gui/swaync
     ./gui/wlogout
 
+    # networking
+    ./networking/onedrive
+
     # dev
     ./dev/vscode
     ./dev/git
