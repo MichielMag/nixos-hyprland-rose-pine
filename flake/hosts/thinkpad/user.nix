@@ -16,7 +16,7 @@
       styling.enable = true;
       fuzzel.enable = true;
       terminal.enable = true;
-      dunst.enable = true;
+      swaync.enable = true;
       wlogout.enable = true;
 
       # dev

@@ -21,6 +21,7 @@
     ./gui/fuzzel
     ./gui/terminal
     ./gui/dunst
+    ./gui/swaync
     ./gui/wlogout
 
     # dev
