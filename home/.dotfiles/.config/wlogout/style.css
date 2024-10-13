@@ -20,7 +20,7 @@ by Stephan Raabe (2023)
  * ----------------------------------------------------- */
 
 * {
-	font-family: "Fira Sans Semibold", FontAwesome, Roboto, Helvetica, Arial, sans-serif;
+	font-family: "JetBrainsMono Nerd Font";
 	background-image: none;
 	transition: 20ms;
 	box-shadow: none;
@@ -44,6 +44,9 @@ button {
 	border: @rose;
 
 	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+	margin: 25rem 1rem;
+	border-radius: 20px;
 }
 
 button:focus,
@@ -61,37 +64,25 @@ Buttons
 */
 
 #lock {
-	margin: 10px;
-	border-radius: 20px;
 	background-image: image(url("icons/lock_white.png"));
 }
 
 #logout {
-	margin: 10px;
-	border-radius: 20px;
 	background-image: image(url("icons/logout_white.png"));
 }
 
 #suspend {
-	margin: 10px;
-	border-radius: 20px;
 	background-image: image(url("icons/suspend_white.png"));
 }
 
 #hibernate {
-	margin: 10px;
-	border-radius: 20px;
 	background-image: image(url("icons/hibernate_white.png"));
 }
 
 #shutdown {
-	margin: 10px;
-	border-radius: 20px;
 	background-image: image(url("icons/shutdown_white.png"));
 }
 
 #reboot {
-	margin: 10px;
-	border-radius: 20px;
 	background-image: image(url("icons/reboot_white.png"));
 }

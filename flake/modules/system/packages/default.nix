@@ -23,6 +23,8 @@ in
       ark
       dconf-editor
       wtype
+      pavucontrol
+      pamixer
     ];
 
     programs.firefox.enable = true;

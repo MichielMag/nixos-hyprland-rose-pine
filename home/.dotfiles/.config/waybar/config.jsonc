@@ -309,7 +309,8 @@
 	"custom/power": {
 		"format": " ",
 		"tooltip": false,
-		"on-click": "wb-logout 2",
+		"on-click": "wlogout -b 6 -c 0 -r 0 -m 0 --protocol layer-shell",
+		//"on-click": "wb-logout 2",
 		"on-click-right": "wb-logout 1",
 		"interval": 86400
 	},
