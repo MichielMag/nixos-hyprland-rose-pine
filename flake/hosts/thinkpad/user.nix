@@ -17,6 +17,7 @@
       fuzzel.enable = true;
       terminal.enable = true;
       swaync.enable = true;
+      swayosd.enable = true;
       wlogout.enable = true;
 
       # networking

@@ -21,9 +21,9 @@ in
   config = mkIf cfg.enable {
     services.swayosd.enable = true;
     services.swayosd.package = cfg.package;
-
+    # Does not work for now
     systemd.user = {
-      services.swayosd = {
+      services.swayosd-libinput-backend = {
         Unit = {
           Description = "SwayOSD LibInput backend for listening to certain keys like CapsLock, ScrollLock, VolumeUp, etc...";
           PartOf = [ "graphical.target" ];

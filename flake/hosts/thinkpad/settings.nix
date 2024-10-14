@@ -14,6 +14,47 @@ let
     export __VK_LAYER_NV_optimus=NVIDIA_only
     exec "$@"
   '';
+  lcdshadowctl = pkgs.writeShellScriptBin "toggle-lcd-shadow" ''
+    if [ $# -eq 0 ]; then
+    	echo "Usage: $0 {toggle|on|off}"
+    	exit 1
+    fi
+
+    on() {
+    	echo 1 > /proc/acpi/ibm/lcdshadow
+    }
+
+    off() {
+    	echo 0 > /proc/acpi/ibm/lcdshadow
+    }
+
+    toggle() {
+    	status=$(awk '/status:/ {print $2}' /proc/acpi/ibm/lcdshadow)
+    	if [ "$status" -eq "0" ]; then
+    		on
+    	else
+    		off
+    	fi
+    }
+
+    case "$1" in
+    	toggle)
+    		toggle
+    		;;
+    	on)
+    		on
+    		;;
+    	off)
+    		off
+    		;;
+    	*)
+    		echo "Invalid option: $1"
+    		echo "Usage: $0 {toggle|on|off}"
+    		exit 1
+    		;;
+    esac
+
+  '';
 in
 {
   nixpkgs.config.packageOverrides = pkgs: {
@@ -23,6 +64,7 @@ in
   environment.defaultPackages = with pkgs; [
     nvidia-offload
     libva-utils
+    lcdshadowctl
   ];
 
   hardware.graphics.extraPackages = with pkgs; [

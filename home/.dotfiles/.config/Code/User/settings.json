@@ -94,5 +94,6 @@
 		}
 	},
 	"git.autofetch": true,
-	"workbench.colorTheme": "Rosé Pine Moon (no italics)"
+	"workbench.colorTheme": "Rosé Pine Moon (no italics)",
+	"github.experimental.multipleAccounts": true
 }
