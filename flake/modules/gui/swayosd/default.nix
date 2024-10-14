@@ -8,7 +8,6 @@
 with lib;
 let
   cfg = config.modules.swayosd;
-
 in
 {
   options.modules.swayosd = {
@@ -46,5 +45,12 @@ in
         };
       };
     };
+  };
+
+  home.activation = {
+    swayOSDActivation = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
+      run rm -f $HOME/.config/swayosd;
+      run ln -s $HOME/.dotfiles/.config/swayosd $HOME/.config/swayosd;
+    '';
   };
 }
