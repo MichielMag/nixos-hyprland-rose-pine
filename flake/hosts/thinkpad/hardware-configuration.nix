@@ -73,6 +73,136 @@
     enable = true;
   };
   services.hardware.bolt.enable = true;
+  services.pipewire.wireplumber.configPackages = [
+    (pkgs.writeTextDir "share/wireplumber/main.lua.d/98-rename-speakers" ''
+      alsa_monitor.rules = {
+        {
+          matches = {{{ "node.name", "matches", "alsa_output.pci-0000_00_1f.3-platform-skl_hda_dsp_generic.HiFi__HDMI1__sink" }}};
+          actions = {
+            update-props = {
+              node.description = "External Monitor Speakers [1]"
+            }
+          }
+        },
+        {
+          matches = {{{ "node.name", "matches", "alsa_output.pci-0000_00_1f.3-platform-skl_hda_dsp_generic.HiFi__HDMI2__sink" }}};
+          actions = {
+            update-props = {
+              node.description = "External Monitor Speakers [2]"
+            }
+          }
+        },
+        {
+          matches = {{{ "node.name", "matches", "alsa_output.pci-0000_00_1f.3-platform-skl_hda_dsp_generic.HiFi__HDMI3__sink" }}};
+          actions = {
+            update-props = {
+              node.description = "External Monitor Speakers [3]"
+            }
+          }
+        },
+        {
+          matches = {{{ "node.name", "matches", "alsa_output.usb-Sony_Interactive_Entertainment_Wireless_Headset-00.analog-stereo" }}};
+          actions = {
+            update-props = {
+              node.description = "PS5 Headset Speakers"
+            }
+          }
+        },
+        {
+          matches = {{{ "node.name", "matches", "alsa_output.pci-0000_00_1f.3-platform-skl_hda_dsp_generic.HiFi__Headphones__sink" }}};
+          actions = {
+            update-props = {
+              node.description = "Internal Headset Speakers"
+            }
+          }
+        },
+        {
+          matches = {{{ "node.name", "matches", "alsa_output.pci-0000_00_1f.3-platform-skl_hda_dsp_generic.HiFi__Speaker__sink" }}};
+          actions = {
+            update-props = {
+              node.description = "Internal Speakers"
+            }
+          }
+        },
+      }
+    '')
+    (pkgs.writeTextDir "share/wireplumber/main.lua.d/98-rename-microphones" ''
+      alsa_monitor.rules = {
+        {
+          matches = {{{ "node.name", "matches", "alsa_input.usb-Sonix_Technology_Co.__Ltd._QHD_Webcam_SN0001-02.analog-stereo" }}};
+          actions = {
+            update-props = {
+              node.description = "Foscam Mic."
+            }
+          }
+        },
+        {
+          matches = {{{ "node.name", "matches", "alsa_output.pci-0000_00_1f.3-platform-skl_hda_dsp_generic.HiFi__HDMI1__sink.monitor" }}};
+          actions = {
+            update-props = {
+              node.description = "External Monitor Mic. [1]"
+            }
+          }
+        },
+        {
+          matches = {{{ "node.name", "matches", "alsa_output.pci-0000_00_1f.3-platform-skl_hda_dsp_generic.HiFi__HDMI2__sink.monitor" }}};
+          actions = {
+            update-props = {
+              node.description = "External Monitor Mic. [2]"
+            }
+          }
+        },
+        {
+          matches = {{{ "node.name", "matches", "alsa_output.pci-0000_00_1f.3-platform-skl_hda_dsp_generic.HiFi__HDMI3__sink.monitor" }}};
+          actions = {
+            update-props = {
+              node.description = "External Monitor Mic. [3]"
+            }
+          }
+        },
+        {
+          matches = {{{ "node.name", "matches", "alsa_output.pci-0000_00_1f.3-platform-skl_hda_dsp_generic.HiFi__Headphones__sink.monitor" }}};
+          actions = {
+            update-props = {
+              node.description = "Internal Headset Mic."
+            }
+          }
+        },
+        {
+          matches = {{{ "node.name", "matches", "alsa_input.pci-0000_00_1f.3-platform-skl_hda_dsp_generic.HiFi__Mic1__source" }}};
+          actions = {
+            update-props = {
+              node.description = "Internal Digital Mic."
+            }
+          }
+        },
+        {
+          matches = {{{ "node.name", "matches", "alsa_input.pci-0000_00_1f.3-platform-skl_hda_dsp_generic.HiFi__Mic2__source" }}};
+          actions = {
+            update-props = {
+              node.description = "Internal Stereo Mic."
+            }
+          }
+        },
+        {
+          matches = {{{ "node.name", "matches", "alsa_output.usb-Sony_Interactive_Entertainment_Wireless_Headset-00.analog-stereo.monitor" }}};
+          actions = {
+            update-props = {
+              node.description = "PS5 Headset Stereo Mic."
+            }
+          }
+        },
+        {
+          matches = {{{ "node.name", "matches", "alsa_input.usb-Sony_Interactive_Entertainment_Wireless_Headset-00.mono-fallback" }}};
+          actions = {
+            update-props = {
+              node.description = "PS5 Headset Mono Mic."
+            }
+          }
+        }
+      }
+    '')
+  ];
   hardware = {
     bluetooth = {
       enable = true;

@@ -17,4 +17,4 @@ resolution = [3840, 2160]
 rightOf = "Dell Inc. DELL U2723QE HZK8BP3"
 
 [monitors]
-unknown = "wlrlui"
+unknown = "wlrlui -m"

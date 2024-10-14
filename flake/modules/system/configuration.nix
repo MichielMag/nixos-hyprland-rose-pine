@@ -223,8 +223,7 @@
     alsa.support32Bit = true;
     pulse.enable = true;
     wireplumber.enable = true;
-    #socketActivation = false;
-    #systemWide = true;
+
   };
 
   services.openssh.enable = true;
