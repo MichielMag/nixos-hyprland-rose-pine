@@ -25,6 +25,7 @@ in
       wtype
       pavucontrol
       pamixer
+      kooha
     ];
 
     programs.firefox.enable = true;

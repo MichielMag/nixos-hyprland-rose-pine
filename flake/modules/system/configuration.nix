@@ -23,12 +23,12 @@
   xdg = {
     autostart.enable = true;
     portal = {
+      #wlr.enable = true;
       enable = true;
       extraPortals = with pkgs; [
-        xdg-desktop-portal
         xdg-desktop-portal-gtk
-        xdg-desktop-portal-gnome
-        xdg-desktop-portal-wlr
+        #xdg-desktop-portal-gnome
+        #xdg-desktop-portal-wlr
       ];
     };
   };
@@ -126,7 +126,6 @@
   programs.fish.enable = true;
   programs.thunar.enable = true;
   programs.dconf.enable = true;
-  programs.hyprland.enable = true;
   programs.ydotool = {
     enable = true;
     group = "ydotool";
@@ -135,6 +134,11 @@
   programs.ssh = {
     startAgent = true;
     agentTimeout = "1h";
+  };
+
+  programs.hyprland = {
+    enable = true;
+    #    portalPackage = pkgs.xdg-desktop-portal-wlr;
   };
 
   # Set up user and enable sudo
@@ -147,6 +151,7 @@
       "ydotool"
       "video"
       "render"
+      "pipewire"
     ];
     shell = pkgs.fish;
   };
@@ -209,15 +214,17 @@
 
   services.gnome.gnome-keyring.enable = true;
 
-  hardware.pulseaudio.enable = true;
+  #hardware.pulseaudio.enable = true;
   security.rtkit.enable = true;
 
   services.pipewire = {
-    enable = false;
+    enable = true;
     alsa.enable = true;
     alsa.support32Bit = true;
     pulse.enable = true;
     wireplumber.enable = true;
+    #socketActivation = false;
+    #systemWide = true;
   };
 
   services.openssh.enable = true;

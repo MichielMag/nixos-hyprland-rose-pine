@@ -49,7 +49,7 @@ action_playerctl() {
 select_output() {
     if [ "$@" ]; then
         desc="$*"
-        device=$(pactl list sinks | grep -C2 -F "Description: $desc" | grep Name | cut -d: -f2 | xargs)
+        device=$(pamixer list sinks | grep -C2 -F "Description: $desc" | grep Name | cut -d: -f2 | xargs)
         if pactl set-default-sink "$device"; then
             notify-send -t 2000 -r 2 -u low "Activated: $desc"
         else

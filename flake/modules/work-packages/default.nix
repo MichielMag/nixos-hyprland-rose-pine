@@ -23,7 +23,7 @@ in
 
     xdg.desktopEntries = {
       teams-for-linux = {
-        exec = "teams-for-linux --use-gl=egl %U";
+        exec = "teams-for-linux --use-gl=egl --enable-features=WebRTCPipeWireCapturer %U";
         icon = "teams-for-linux";
         name = "Microsoft Teams for Linux";
         comment = "Unofficial Microsoft Teams client for Linux using Electron";

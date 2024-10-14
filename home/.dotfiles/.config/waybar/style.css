@@ -28,7 +28,7 @@ tooltip {
 	border: solid;
 	border-width: 1.5px;
 	border-radius: 7px;
-	border-color: white;
+	border-color: @rose;
 }
 
 /* Workspace Button */

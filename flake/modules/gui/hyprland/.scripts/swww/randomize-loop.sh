@@ -18,6 +18,6 @@ INTERVAL=300
 swww clear
 
 while true; do
-    ./randomize.sh $1
+    swww-random $1
     sleep $INTERVAL
 done

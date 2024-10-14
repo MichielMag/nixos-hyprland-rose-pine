@@ -16,8 +16,8 @@ in
   };
   config = mkIf cfg.enable {
 
-    home.packages = with pkgs; [
-      obsidian
+    home.packages = [
+      pkgs.obsidian
     ];
 
     # home.activation = {

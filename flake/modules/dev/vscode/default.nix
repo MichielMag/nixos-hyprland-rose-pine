@@ -45,6 +45,7 @@ in
         vscode-extensions.esbenp.prettier-vscode
         vscode-extensions.bbenoist.nix
         vscode-extensions.jnoortheen.nix-ide
+        vscode-extensions.eamodio.gitlens
       ];
       package = pkgs.vscode.override {
         commandLineArgs = "--use-gl=egl";

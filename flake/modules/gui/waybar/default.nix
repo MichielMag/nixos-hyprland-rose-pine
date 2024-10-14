@@ -30,6 +30,7 @@ in
       brightnessctl
       playerctl
       lm_sensors
+      jq
 
       wb-globalcontrol
       wb-brightness

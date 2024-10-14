@@ -54,6 +54,7 @@
 		//"wlr/taskbar",
 		"custom/left6",
 		"pulseaudio", // output device
+		"pulseaudio#microphone",
 
 		"custom/left7",
 		"backlight", // brightness
@@ -280,7 +281,7 @@
 
 	"pulseaudio": {
 		"format": "{icon} {volume}%",
-		"format-muted": "婢 {volume}%",
+		"format-muted": "󰝟 {volume}%",
 		"format-icons": {
 			"headphone": "󰋋",
 			"default": ["󰖀", "󰕾"]
@@ -291,9 +292,19 @@
 		"on-scroll-down": "wb-volume -o d",
 		"scroll-step": 10,
 		"min-length": 6,
-		"max-length": 6
+		"max-length": 7
 	},
-
+	"pulseaudio#microphone": {
+		"format": "{format_source} {source_volume}%",
+		"format-source": "",
+		"format-source-muted": "",
+		"on-click": "wb-volume -i m",
+		"on-click-right": "pavucontrol -t 3",
+		"on-scroll-up": "wb-volume -i i",
+		"on-scroll-down": "wb-volume -i d",
+		"tooltip-format": "{format_source} {source_desc} // {source_volume}%",
+		"scroll-step": 5
+	},
 	"backlight": {
 		"format": "{icon} {percent}%",
 		"format-icons": ["", "", "", "", "", "", "", "", ""],
