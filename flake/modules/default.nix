@@ -22,6 +22,7 @@
     ./gui/terminal
     ./gui/dunst
     ./gui/swaync
+    ./gui/swayosd
     ./gui/wlogout
 
     # networking

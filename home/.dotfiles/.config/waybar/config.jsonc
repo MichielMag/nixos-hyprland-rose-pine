@@ -279,6 +279,10 @@
 		"max-length": 35
 	},
 
+	"tray": {
+		"spacing": 10
+	},
+
 	"pulseaudio": {
 		"format": "{icon} {volume}%",
 		"format-muted": "󰝟 {volume}%",

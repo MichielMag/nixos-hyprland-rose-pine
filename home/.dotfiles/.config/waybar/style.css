@@ -90,6 +90,9 @@ tooltip {
 	text-shadow: 0px 0px 4px rgba(0, 0, 0, 1);
 }
 
+#tray {
+	margin-right: 0.2rem;
+}
 
 /* General Left Arrow Styling */
 #custom-left1,

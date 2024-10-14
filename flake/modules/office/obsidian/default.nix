@@ -20,11 +20,16 @@ in
       pkgs.obsidian
     ];
 
-    # home.activation = {
-    #   swayncActivation = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
-    #     run rm -f $HOME/.config/swaync;
-    #     run ln -s $HOME/.dotfiles/.config/swaync $HOME/.config/swaync;
-    #   '';
-    # };
+    xdg.desktopEntries."obsidian" = {
+      name = "Obsidian";
+      terminal = false;
+      type = "Application";
+      comment = "Knowledge base";
+      genericName = "Notes";
+      exec = "obsidian --use-gl=egl --enable-features=ozone --ozone-platform=wayland %u";
+      icon = "obsidian";
+      categories = [ "Office" ];
+      mimeType = [ "x-scheme-handler/obsidian" ];
+    };
   };
 }
