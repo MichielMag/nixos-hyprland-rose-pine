@@ -20,6 +20,14 @@ in
   config = mkIf cfg.enable {
     services.swayosd.enable = true;
     services.swayosd.package = cfg.package;
+
+    home.activation = {
+      swayOSDActivation = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
+        run rm -f $HOME/.config/swayosd;
+        run ln -s $HOME/.dotfiles/.config/swayosd $HOME/.config/swayosd;
+      '';
+    };
+
     # Does not work for now
     systemd.user = {
       services.swayosd-libinput-backend = {
@@ -47,10 +55,4 @@ in
     };
   };
 
-  home.activation = {
-    swayOSDActivation = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
-      run rm -f $HOME/.config/swayosd;
-      run ln -s $HOME/.dotfiles/.config/swayosd $HOME/.config/swayosd;
-    '';
-  };
 }

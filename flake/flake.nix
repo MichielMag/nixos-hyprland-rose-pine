@@ -19,12 +19,14 @@
       url = "github:Gerg-L/spicetify-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
+    hyprland.url = "github:hyprwm/Hyprland";
     stylix.url = "github:danth/stylix";
-    nix-flatpak.url = "github:gmodena/nix-flatpak/?ref=v0.4.1";
+    split-monitor-workspaces = {
+      url = "github:Duckonaut/split-monitor-workspaces";
+      inputs.hyprland.follows = "hyprland"; # <- make sure this line is present for the plugin to work as intended
+    };
     #catppuccin.url = "github:catppuccin/nix";
     rose-pine-hyprcursor.url = "github:ndom91/rose-pine-hyprcursor";
-    hyprpanel.url = "github:Jas-SinghFSU/HyprPanel";
   };
 
   # All outputs for the system (configs)
@@ -35,6 +37,7 @@
       nixpkgs-stable,
       spicetify-nix,
       stylix,
+      split-monitor-workspaces,
       ...
     }@inputs:
     let
@@ -88,8 +91,8 @@
               #    "spotify"
               #];
               nixpkgs.overlays = [
-                inputs.hyprpanel.overlay
                 (final: prev: {
+                  split-monitor-workspaces = split-monitor-workspaces.packages.${system}.split-monitor-workspaces;
                   stable = import inputs.nixpkgs-stable {
                     system = final.system;
                     config.allowUnfree = true;

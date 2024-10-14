@@ -9,6 +9,7 @@
 with lib;
 let
   cfg = config.modules.hyprland;
+
   swww-random = pkgs.writeShellScriptBin "swww-random" ''${builtins.readFile ./.scripts/swww/randomize.sh}'';
   swww-random-loop = pkgs.writeShellScriptBin "swww-random-loop" ''${builtins.readFile ./.scripts/swww/randomize-loop.sh}'';
   hypr-random-wallpaper = pkgs.writeShellScriptBin "hypr-random-wallpaper" ''${builtins.readFile ./.scripts/hyprland/random-wallpaper.sh}'';
@@ -27,11 +28,8 @@ in
 
     home.packages = with pkgs; [
       clipnotify
-      #dunst
+
       hypridle
-      #hyprland
-      hyprpanel
-      #ags bun
       hyprland-monitor-attached
       hyprpicker
       hyprshot
@@ -74,6 +72,7 @@ in
       plugins = with pkgs; [
         hyprlandPlugins.hyprexpo
         hyprlandPlugins.hyprgrass
+        split-monitor-workspaces
         #hyprlandPlugins.hyprtrails
       ];
     };

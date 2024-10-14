@@ -16,6 +16,7 @@
     acpi
     tlp
     git
+    alsa-utils
     #networkmanager
   ];
 
@@ -223,15 +224,30 @@
     alsa.support32Bit = true;
     pulse.enable = true;
     wireplumber.enable = true;
-
   };
 
   services.openssh.enable = true;
 
   # Disable bluetooth, enable pulseaudio, enable opengl (for Wayland)
   hardware = {
-    graphics = {
-      enable = true;
+    graphics.enable = true;
+    #doesnt work for now
+    #alsa.enablePersistence = true;
+  };
+
+  # ALSA provides a udev rule for restoring volume settings.
+  services.udev.packages = [ pkgs.alsa-utils ];
+
+  systemd.services.alsa-store = {
+    description = "Store Sound Card State";
+    wantedBy = [ "multi-user.target" ];
+    unitConfig.RequiresMountsFor = "/var/lib/alsa";
+    unitConfig.ConditionVirtualization = "!systemd-nspawn";
+    serviceConfig = {
+      Type = "oneshot";
+      RemainAfterExit = true;
+      ExecStart = "${pkgs.coreutils}/bin/mkdir -p /var/lib/alsa";
+      ExecStop = "${pkgs.alsa-utils}/sbin/alsactl store --ignore";
     };
   };
 

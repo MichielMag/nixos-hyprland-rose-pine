@@ -28,7 +28,7 @@
 
       # dev
       vscode.enable = true;
-
+      direnv.enable = true;
       git = {
         user = "MichielMag";
         email = "michiel_m@live.nl";

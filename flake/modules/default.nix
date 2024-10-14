@@ -31,6 +31,7 @@
     # dev
     ./dev/vscode
     ./dev/git
+    ./dev/direnv
 
     # office
     ./office/obsidian
