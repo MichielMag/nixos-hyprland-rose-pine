@@ -14,7 +14,7 @@ let
     export __VK_LAYER_NV_optimus=NVIDIA_only
     exec "$@"
   '';
-  lcdshadowctl = pkgs.writeShellScriptBin "toggle-lcd-shadow" ''
+  lcdshadowctl = pkgs.writeShellScriptBin "lcdshadowctl" ''
     if [ $# -eq 0 ]; then
     	echo "Usage: $0 {toggle|on|off}"
     	exit 1
