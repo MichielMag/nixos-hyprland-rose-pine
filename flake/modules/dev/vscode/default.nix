@@ -39,7 +39,7 @@ in
         vscode-extensions.jock.svg
 
         vscode-extensions.mvllow.rose-pine
-
+        vscode-extensions.mkhl.direnv
         vscode-extensions.dbaeumer.vscode-eslint
         vscode-extensions.stylelint.vscode-stylelint
         vscode-extensions.esbenp.prettier-vscode

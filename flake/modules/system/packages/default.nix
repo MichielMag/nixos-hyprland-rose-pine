@@ -26,6 +26,8 @@ in
       pavucontrol
       pamixer
       kooha
+      lazydocker
+      docker-compose
     ];
 
     programs.firefox.enable = true;

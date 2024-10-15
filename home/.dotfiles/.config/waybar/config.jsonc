@@ -96,14 +96,19 @@
 		"disable-scroll": false,
 		"on-scroll-up": "hyprctl dispatch workspace -1",
 		"on-scroll-down": "hyprctl dispatch workspace +1",
-		"persistent-workspaces": {
-			"1": [],
-			"2": [],
-			"3": [],
-			"4": [],
-			"5": []
-		},
 		"sort-by-number": true
+	},
+	"hyprland/workspaces#triforce": {
+		"all-outputs": false,
+		"active-only": true,
+		"disable-scroll": false,
+		"sort-by-number": true,
+		"format": "{icon}",
+		"format-icon": {
+			"default": "󰯙 ",
+			"urgent": "󰯙 ",
+			"active": "󰯙 "
+		}
 	},
 
 	"hyprland/window": {

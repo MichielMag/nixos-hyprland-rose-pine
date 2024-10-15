@@ -24,12 +24,9 @@
   xdg = {
     autostart.enable = true;
     portal = {
-      #wlr.enable = true;
       enable = true;
       extraPortals = with pkgs; [
         xdg-desktop-portal-gtk
-        #xdg-desktop-portal-gnome
-        #xdg-desktop-portal-wlr
       ];
     };
   };
@@ -43,11 +40,6 @@
     };
     xserver = {
       enable = true;
-
-      #displayManager.gdm = {
-      #    enable = true;
-      #    wayland = true;
-      #};
       desktopManager = {
         xterm.enable = false;
       };
@@ -124,22 +116,18 @@
     keyMap = "us";
   };
 
+  # Default programs
   programs.fish.enable = true;
   programs.thunar.enable = true;
   programs.dconf.enable = true;
+  programs.hyprland.enable = true;
   programs.ydotool = {
     enable = true;
     group = "ydotool";
   };
-
   programs.ssh = {
     startAgent = true;
     agentTimeout = "1h";
-  };
-
-  programs.hyprland = {
-    enable = true;
-    #    portalPackage = pkgs.xdg-desktop-portal-wlr;
   };
 
   # Set up user and enable sudo
@@ -153,6 +141,7 @@
       "video"
       "render"
       "pipewire"
+      "docker"
     ];
     shell = pkgs.fish;
   };
@@ -179,6 +168,8 @@
     networkmanager.enable = true;
   };
 
+  services.openssh.enable = true;
+
   # Set environment variables
   environment.variables = {
     DOT_CONFIG = "$HOME/.config";
@@ -193,16 +184,6 @@
   # Security 
   security = {
     sudo.enable = true;
-    #doas = {
-    #    enable = true;
-    #    extraRules = [{
-    #        users = [ "michiel" ];
-    #        keepEnv = true;
-    #        persist = true;
-    #    }];
-    #};
-
-    # Extra security
     protectKernelImage = true;
 
     pam.services = {
@@ -215,7 +196,7 @@
 
   services.gnome.gnome-keyring.enable = true;
 
-  #hardware.pulseaudio.enable = true;
+  # Audio
   security.rtkit.enable = true;
 
   services.pipewire = {
@@ -224,15 +205,6 @@
     alsa.support32Bit = true;
     pulse.enable = true;
     wireplumber.enable = true;
-  };
-
-  services.openssh.enable = true;
-
-  # Disable bluetooth, enable pulseaudio, enable opengl (for Wayland)
-  hardware = {
-    graphics.enable = true;
-    #doesnt work for now
-    #alsa.enablePersistence = true;
   };
 
   # ALSA provides a udev rule for restoring volume settings.
@@ -251,11 +223,24 @@
     };
   };
 
+  # Say yes to a GUI
+  hardware = {
+    graphics.enable = true;
+    #doesnt work for now
+    #alsa.enablePersistence = true;
+  };
+
+  # Virtualisation
+  virtualisation.docker.enable = true;
+  virtualisation.docker.rootless = {
+    enable = true;
+    setSocketVariable = true;
+  };
+
+  virtualisation.docker.daemon.settings = {
+    data-root = "/data/docker";
+  };
+
   # This value determines the NixOS release from which the default
-  # settings for stateful data, like file locations and database versions
-  # on your system were taken. It‘s perfectly fine and recommended to leave
-  # this value at the release version of the first install of this system.
-  # Before changing this value read the documentation for this option
-  # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "24.05"; # Did you read the comment?
 }
