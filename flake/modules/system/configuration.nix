@@ -232,6 +232,7 @@
 
   # Virtualisation
   virtualisation.docker.enable = true;
+  virtualisation.docker.enableOnBoot = false;
   virtualisation.docker.rootless = {
     enable = true;
     setSocketVariable = true;
