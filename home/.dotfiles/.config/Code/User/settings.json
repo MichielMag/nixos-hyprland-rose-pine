@@ -101,6 +101,7 @@
 		}
 	},
 	"git.autofetch": true,
-	"workbench.colorTheme": "Rosé Pine Moon (no italics)",
-	"github.experimental.multipleAccounts": true
+	"github.experimental.multipleAccounts": true,
+	"workbench.iconTheme": "vscode-icons",
+	"workbench.colorTheme": "Rosé Pine Moon (no italics)"
 }

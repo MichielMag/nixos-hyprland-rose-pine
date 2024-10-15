@@ -17,17 +17,28 @@ in
   config = mkIf cfg.enable {
 
     home.packages = with pkgs; [
-      libnotify
-      fastfetch
+      # File Explorers
       dolphin
       ark
+
+      # Utilities
+      libnotify
       dconf-editor
       wtype
+
+      # Audio Control
       pavucontrol
       pamixer
+
+      # Screen Recorder
       kooha
+
+      # Docker utilities
       lazydocker
       docker-compose
+
+      # Image Viewer
+      loupe
     ];
 
     programs.firefox.enable = true;
