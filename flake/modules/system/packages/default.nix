@@ -9,6 +9,7 @@ with lib;
 let
   cfg = config.modules.packages;
   drun = pkgs.writeShellScriptBin "drun" ''${builtins.readFile ./.scripts/drun.sh}'';
+  lrun = pkgs.writeShellScriptBin "lrun" ''${builtins.readFile ./.scripts/lrun.sh}'';
 
 in
 {
@@ -44,6 +45,8 @@ in
       # Desktop application launcher
       dex
       drun
+      lrun
+
     ];
 
     programs.firefox.enable = true;

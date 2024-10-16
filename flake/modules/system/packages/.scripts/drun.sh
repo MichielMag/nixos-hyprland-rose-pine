@@ -24,4 +24,4 @@ for dir in "${DIRS[@]}"; do
 done
 
 # If the entry was not found, send a notification
-notify-send --urgency=warning "Could not find application ${name}"
+notify-send --urgency=normal "Could not find application ${name}"
