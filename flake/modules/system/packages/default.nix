@@ -8,6 +8,7 @@
 with lib;
 let
   cfg = config.modules.packages;
+  drun = pkgs.writeShellScriptBin "drun" ''${builtins.readFile ./.scripts/drun.sh}'';
 
 in
 {
@@ -39,6 +40,10 @@ in
 
       # Image Viewer
       loupe
+
+      # Desktop application launcher
+      dex
+      drun
     ];
 
     programs.firefox.enable = true;
