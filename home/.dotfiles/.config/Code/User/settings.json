@@ -60,14 +60,18 @@
 		"editor.codeActionsOnSave": {
 			"source.fixAll.stylelint": "explicit"
 		},
-		"editor.formatOnSave": true
+		"editor.formatOnSave": true,
+		"prettier.tabWidth": 4,
+		"prettier.useTabs": true
 	},
 	"[css]": {
 		"editor.defaultFormatter": "esbenp.prettier-vscode",
 		"editor.codeActionsOnSave": {
 			"source.fixAll.stylelint": "explicit"
 		},
-		"editor.formatOnSave": true
+		"editor.formatOnSave": true,
+		"prettier.tabWidth": 4,
+		"prettier.useTabs": true
 	},
 	"[json]": {
 		"editor.defaultFormatter": "esbenp.prettier-vscode",
