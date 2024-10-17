@@ -47,6 +47,8 @@ in
       drun
       lrun
 
+      # Simple text editor
+      gedit
     ];
 
     programs.firefox.enable = true;
@@ -64,11 +66,13 @@ in
     #  };
     #};
 
-    services.cliphist = {
-      enable = true;
-      allowImages = true;
-      extraOptions = [ "list | rofi -dmenu | cliphist decode | wl-copy" ];
-    };
+    /*
+      services.cliphist = {
+        enable = true;
+        allowImages = true;
+        extraOptions = [ "list | rofi -dmenu | cliphist decode | wl-copy" ];
+      };
+    */
 
     home.activation = {
       btopActivation = lib.hm.dag.entryAfter [ "writeBoundary" ] ''

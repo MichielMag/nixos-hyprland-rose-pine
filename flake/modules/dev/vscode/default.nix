@@ -50,7 +50,7 @@ in
         vscode-extensions.eamodio.gitlens
       ];
       package = pkgs.vscode.override {
-        commandLineArgs = "--use-gl=egl";
+        commandLineArgs = "--use-gl=egl --enable-features=WebRTCPipeWireCapturer";
       };
     };
   };
