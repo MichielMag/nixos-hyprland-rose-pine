@@ -20,6 +20,9 @@
       swayosd.enable = true;
       wlogout.enable = true;
 
+      # graphics
+      gimp.enable = true;
+
       # networking
       onedrive.enable = true;
 
@@ -28,6 +31,7 @@
 
       # dev
       vscode.enable = true;
+      nix-ld.enable = true;
       direnv.enable = true;
       git = {
         user = "MichielMag";

@@ -25,6 +25,9 @@
     ./gui/swayosd
     ./gui/wlogout
 
+    # graphics
+    ./graphics/gimp
+
     # networking
     ./networking/onedrive
 
@@ -32,6 +35,7 @@
     ./dev/vscode
     ./dev/git
     ./dev/direnv
+    ./dev/nix-ld
 
     # office
     ./office/obsidian
