@@ -49,6 +49,9 @@ in
 
       # Simple text editor
       gedit
+
+      # Simple calculator
+      gnome-calculator
     ];
 
     programs.firefox.enable = true;

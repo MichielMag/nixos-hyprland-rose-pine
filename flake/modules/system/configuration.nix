@@ -129,6 +129,9 @@
     startAgent = true;
     agentTimeout = "1h";
   };
+  programs.nix-ld = {
+    enable = true;
+  };
 
   # Set up user and enable sudo
   users.users.michiel = {

@@ -20,14 +20,14 @@ by Stephan Raabe (2023)
  * ----------------------------------------------------- */
 
 * {
-	font-family: "JetBrainsMono Nerd Font";
+	font-family: 'JetBrainsMono Nerd Font';
 	background-image: none;
 	transition: 20ms;
 	box-shadow: none;
 }
 
 window {
-	background: url("../../.wallpaper/.hyprlock");
+	background: url('../../.wallpaper/.hyprlock');
 	background-size: cover;
 }
 
@@ -41,11 +41,12 @@ button {
 
 	border-style: solid;
 	background-color: @overlay;
+	opacity: 0.8;
 	border: @rose;
 
 	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 
-	margin: 25rem 1rem;
+	margin: 40rem 1rem;
 	border-radius: 20px;
 }
 
@@ -64,25 +65,25 @@ Buttons
 */
 
 #lock {
-	background-image: image(url("icons/lock_white.png"));
+	background-image: image(url('icons/lock_white.png'));
 }
 
 #logout {
-	background-image: image(url("icons/logout_white.png"));
+	background-image: image(url('icons/logout_white.png'));
 }
 
 #suspend {
-	background-image: image(url("icons/suspend_white.png"));
+	background-image: image(url('icons/suspend_white.png'));
 }
 
 #hibernate {
-	background-image: image(url("icons/hibernate_white.png"));
+	background-image: image(url('icons/hibernate_white.png'));
 }
 
 #shutdown {
-	background-image: image(url("icons/shutdown_white.png"));
+	background-image: image(url('icons/shutdown_white.png'));
 }
 
 #reboot {
-	background-image: image(url("icons/reboot_white.png"));
+	background-image: image(url('icons/reboot_white.png'));
 }

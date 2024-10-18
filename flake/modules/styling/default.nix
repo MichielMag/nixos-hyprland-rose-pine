@@ -38,6 +38,7 @@ in
       rose-pine-cursor
       rose-pine-icon-theme
       rose-pine-gtk-theme
+      papirus-icon-theme
     ];
 
     #home.file.".config/Kvantum" = {
@@ -61,13 +62,13 @@ in
     xdg.configFile."qt5ct/qt5ct.conf".text = ''
       [Appearance]
       style=kvantum
-      icon_theme=rose-pine-moon
+      icon_theme=Papirus
     '';
 
     xdg.configFile."qt6ct/qt6ct.conf".text = ''
       [Appearance]
       style=kvantum
-      icon_theme=rose-pine-moon
+      icon_theme=Papirus
     '';
 
     gtk = {
@@ -77,8 +78,8 @@ in
       #    package = pkgs.rose-pine-gtk-theme;
       #};
       iconTheme = {
-        name = "rose-pine-moon";
-        package = pkgs.rose-pine-icon-theme;
+        name = "Papirus";
+        package = pkgs.papirus-icon-theme;
       };
     };
     programs.gnome-shell = {

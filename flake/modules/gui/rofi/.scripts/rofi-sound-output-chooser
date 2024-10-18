@@ -1,0 +1,70 @@
+#!/usr/bin/env bash
+LANG="en_US.utf8"
+# Outputs have spaces in them, so let's make \n the IFS
+IFS=$'\n'
+
+# Make script independent on particular implementation of send client
+if command -v notify-send > /dev/null 2>&1; then
+    SEND="notify-send"
+elif command -v dunstify > /dev/null 2>&1; then
+    SEND="dunstify"
+else
+    SEND="/bin/false"
+fi
+
+get_device_type() {
+	local input=$(echo "$1" | tr '[:upper:]' '[:lower:]')
+	if [[ $input == *"headset"* ]]; then
+		echo ""
+	elif [[ $input == *"hdmi"* || $input == *"displayport"* ]]; then
+		echo "󰽟"
+	elif [[ $input == *"speaker"* ]]; then
+		echo "󰌢"
+	elif [[ $input == *"headphone"* ]]; then
+		echo ""
+	else
+		echo "󰓃"
+	fi
+}
+
+state_icon() {
+	local input=$(echo "$1" | tr '[:upper:]' '[:lower:]')
+	if [[ $input == *"running"* ]]; then
+		echo " "
+	else
+		echo " "
+	fi
+}
+
+devices() {
+	echo -en "\x00prompt\x1fSelect Output\n"
+	list=$(pamixer --list-sinks | grep '"')
+	while IFS= read -r line; do
+		description=$(echo "$line" | awk -F'"' '{print $6}')
+        status=$(echo "$line" | awk -F'"' '{print $4}')
+		description=${description//Raptor Lake-P\/U\/H cAVS /}
+
+		echo -e "$(state_icon "$status") [$(get_device_type "$description")] $description"|xargs
+	done <<< "$list"
+}
+
+
+# An option was passed, so let's check it
+if [ "$@" ]
+then
+    # the output from the selection will be the desciption.  Save that for alerts
+    desc="$*"
+    # Figure out what the device name is based on the description passed
+    device=$(pamixer --list-sinks|grep -C2 -F "Description: $desc"|grep Name|cut -d: -f2|xargs)
+    # Try to set the default to the device chosen
+    if pactl set-default-sink "$device"
+    then
+        # if it worked, alert the user
+        $SEND -t 2000 -r 2 -u low "Activated: $desc"
+    else
+        # didn't work, critically alert the user
+        $SEND -t 2000 -r 2 -u critical "Error activating $desc"
+    fi
+else
+    devices
+fi

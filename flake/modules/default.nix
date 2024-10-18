@@ -35,7 +35,7 @@
     ./dev/vscode
     ./dev/git
     ./dev/direnv
-    ./dev/nix-ld
+    ./dev/bruno
 
     # office
     ./office/obsidian
@@ -59,5 +59,13 @@
     # Styling
     ./styling
 
+    {
+      config.xdg.configFile."nixpkgs/config.nix".text = ''
+        {
+          allowUnfree = true;
+        }
+      '';
+    }
   ];
+
 }

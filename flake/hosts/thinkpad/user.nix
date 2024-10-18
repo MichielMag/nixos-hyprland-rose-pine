@@ -8,6 +8,7 @@
 {
   imports = [ ../../modules/default.nix ];
   config = {
+
     modules = {
       # gui
       hyprland.enable = true;
@@ -31,13 +32,13 @@
 
       # dev
       vscode.enable = true;
-      nix-ld.enable = true;
       direnv.enable = true;
       git = {
         user = "MichielMag";
         email = "michiel_m@live.nl";
         enable = true;
       };
+      bruno.enable = true;
 
       # system
       xdg.enable = true;

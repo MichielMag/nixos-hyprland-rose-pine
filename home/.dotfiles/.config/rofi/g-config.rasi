@@ -1,0 +1,17 @@
+@import "default"
+
+configuration {
+    show-icons: true;
+	icon-theme: "Papirus";
+	font: "JetBrainsMono Nerd Font 12";
+	terminal: "kitty";
+}
+
+element-icon {
+    size: 2.5em;
+}
+element-text {
+    vertical-align: 0.5;
+}
+
+@import "theme"

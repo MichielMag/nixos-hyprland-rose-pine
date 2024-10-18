@@ -133,6 +133,9 @@
 			"(.*)Spotify": "<span foreground='#a6e3a1'> </span> Spotify",
 			"(.*)Spotify Premium": "<span foreground='#a6e3a1'> </span> Spotify Premium",
 
+			// Teams
+
+			"WhatsApp for Linux": "<span foreground='#015B4B'>󰖣 </span> WhatsApp",
 			// Discord
 			"vesktop": "<span foreground='#89b4fa'> </span> Discord",
 			"• Discord(.*)": "Discord$1",
