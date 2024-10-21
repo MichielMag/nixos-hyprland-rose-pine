@@ -43,7 +43,6 @@
     # system
     ./system/xdg
     ./system/packages
-    ./system/ssh
     ./system/keyring
 
     # Work

@@ -38,12 +38,11 @@
         email = "michiel_m@live.nl";
         enable = true;
       };
-      bruno.enable = true;
+      #bruno.enable = true; # Won't work in wayland for now
 
       # system
       xdg.enable = true;
       packages.enable = true;
-      ssh.enable = true;
       keyring.enable = true;
 
       # Work

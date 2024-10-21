@@ -65,8 +65,8 @@
           modules = [
             stylix.nixosModules.stylix
             { networking.hostName = hostname; }
-            ./modules/system/configuration.nix
-            ./modules/styling/styling.nix
+            ./modules/nixos/system
+            ./modules/nixos/stylix
             # Hardware config (bootloader, kernel modules, filesystems, etc)
             # DO NOT USE MY HARDWARE CONFIG!! USE YOUR OWN!!
             (./. + "/hosts/${hostname}/hardware-configuration.nix")

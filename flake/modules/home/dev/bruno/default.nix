@@ -20,13 +20,18 @@ in
     ];
 
     xdg.desktopEntries."bruno" = {
-      name = "bruno";
-      desktopName = "Bruno";
+      name = "Bruno";
       exec = "bruno --use-gl=egl %U";
       icon = "bruno";
       comment = "Opensource API Client for Exploring and Testing APIs";
       categories = [ "Development" ];
-      startupWMClass = "Bruno";
+
+      type = "Application";
+      genericName = "Rest API Client";
+      mimeType = [ "x-scheme-handler/obsidian" ];
+      settings = {
+        StartupWMClass = "Bruno";
+      };
     };
   };
 }
