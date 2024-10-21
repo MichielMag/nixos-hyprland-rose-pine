@@ -17,5 +17,6 @@ in
   config = mkIf cfg.enable {
 
     programs.evolution.enable = true;
+    programs.evolution.plugins = [ pkgs.evolution-ews ];
   };
 }

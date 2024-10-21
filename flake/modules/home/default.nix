@@ -24,6 +24,7 @@
     ./gui/swaync
     ./gui/swayosd
     ./gui/wlogout
+    ./gui/wlsunset
 
     # graphics
     ./graphics/gimp

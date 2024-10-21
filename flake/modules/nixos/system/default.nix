@@ -44,6 +44,10 @@
         xterm.enable = false;
       };
       updateDbusEnvironment = true;
+      videoDrivers = [
+        "displaylink"
+        "modesetting"
+      ];
     };
   };
 
