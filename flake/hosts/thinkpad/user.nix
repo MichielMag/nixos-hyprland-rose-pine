@@ -6,7 +6,7 @@
 }:
 
 {
-  imports = [ ../../modules/default.nix ];
+  imports = [ ../../modules/home/default.nix ];
   config = {
 
     modules = {
