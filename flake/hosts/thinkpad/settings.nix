@@ -57,6 +57,14 @@ let
   '';
 in
 {
+  imports = [ ../../modules/nixos/default.nix ];
+  config = {
+
+    modules = {
+      evolution.enable = true;
+    };
+
+  };
   nixpkgs.config.packageOverrides = pkgs: {
     intel-vaapi-driver = pkgs.intel-vaapi-driver.override { enableHybridCodec = true; };
   };
