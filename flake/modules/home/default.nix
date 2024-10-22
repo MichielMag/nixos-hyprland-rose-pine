@@ -11,6 +11,8 @@
 
     inputs.spicetify-nix.homeManagerModules.default
 
+    ./networking/firefox-pwa
+
     ./quickemu
 
     # gui
@@ -41,6 +43,7 @@
 
     # office
     ./office/obsidian
+    ./office/outlook-pwa
 
     # system
     ./system/xdg

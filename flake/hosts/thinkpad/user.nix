@@ -30,6 +30,7 @@
 
       # office
       obsidian.enable = true;
+      outlook-pwa.enable = true;
 
       # dev
       vscode.enable = true;
