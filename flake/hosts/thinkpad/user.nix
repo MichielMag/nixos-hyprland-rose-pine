@@ -26,11 +26,13 @@
       gimp.enable = true;
 
       # networking
-      onedrive.enable = true;
+      onedrive = {
+        enable = true;
+        configFiles."4dotnet" = ./.config/onedrive;
+      };
 
       # office
       obsidian.enable = true;
-      outlook-pwa.enable = true;
 
       # dev
       vscode.enable = true;

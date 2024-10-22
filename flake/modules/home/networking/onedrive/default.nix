@@ -26,6 +26,10 @@ in
 {
   options.modules.onedrive = {
     enable = mkEnableOption "onedrive";
+    configFiles = mkOption {
+      type = types.attrsOf types.path;
+      description = "Dictionary of OneDrive configuration files with keys as names and values as file paths.";
+    };
   };
   config = mkIf cfg.enable {
 
@@ -33,6 +37,13 @@ in
       onedrive
       onedrivegui
     ];
+
+    home.file = mapAttrs' (name: source: {
+      name = ".config/onedrive/${name}";
+      value = {
+        inherit source;
+      };
+    }) cfg.configFiles;
 
     systemd.user.services."onedrive@" = {
       Unit = {
