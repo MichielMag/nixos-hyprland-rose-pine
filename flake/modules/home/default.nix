@@ -37,6 +37,7 @@
     ./dev/git
     ./dev/direnv
     ./dev/bruno
+    ./dev/jetbrains-rider
 
     # office
     ./office/obsidian

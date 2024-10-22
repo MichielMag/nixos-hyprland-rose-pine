@@ -20,6 +20,7 @@
       swaync.enable = true;
       swayosd.enable = true;
       wlogout.enable = true;
+      wlsunset.enable = true;
 
       # graphics
       gimp.enable = true;
@@ -38,6 +39,7 @@
         email = "michiel_m@live.nl";
         enable = true;
       };
+      jetbrains-rider.enable = true;
       #bruno.enable = true; # Won't work in wayland for now
 
       # system

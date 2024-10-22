@@ -16,7 +16,7 @@ in
   };
   config = mkIf cfg.enable {
 
-    programs.wlsunset = {
+    services.wlsunset = {
       enable = true;
       latitude = 52.090736;
       longitude = 5.12142;

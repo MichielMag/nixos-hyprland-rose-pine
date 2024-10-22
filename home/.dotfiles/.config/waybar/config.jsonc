@@ -125,6 +125,10 @@
 			"(.*) — Mozilla Firefox": "<span foreground='#f38ba8'>󰈹 </span> $1",
 			"(.*)Mozilla Firefox": "<span foreground='#f38ba8'>󰈹 </span> Firefox",
 
+			// Edge
+			"(.*) — Microsoft Edge": "<span foreground='#118BD6'>󰇩 </span> $1",
+			"(.*)Microsoft Edge": "<span foreground='#118BD6'>󰇩 </span> Microsoft Edge",
+
 			// VSCode
 			"(.*) - Visual Studio Code": "<span foreground='#89b4fa'>󰨞 </span> $1",
 			"(.*)Visual Studio Code": "<span foreground='#89b4fa'>󰨞 </span> Visual Studio Code",
