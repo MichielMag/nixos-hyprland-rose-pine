@@ -1,3 +1,4 @@
 **/hosts/**/git.nix
 **/.wallpaper/.hyprlock
 .hyprlock
+/home/.dotfiles/.config/rofi/config.rasi
