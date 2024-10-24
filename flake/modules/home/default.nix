@@ -27,6 +27,7 @@
     ./gui/swayosd
     ./gui/wlogout
     ./gui/wlsunset
+    ./gui/ulauncher
 
     # graphics
     ./graphics/gimp

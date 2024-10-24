@@ -8,6 +8,7 @@
 with lib;
 let
   cfg = config.modules.terminal;
+  terminal-class = pkgs.writeShellScriptBin "terminal-class" ''${builtins.readFile ./.scripts/terminal-class.sh}'';
 
 in
 {
@@ -19,6 +20,7 @@ in
     home.packages = with pkgs; [
       fastfetch
       eza
+      terminal-class
     ];
 
     programs.kitty = {

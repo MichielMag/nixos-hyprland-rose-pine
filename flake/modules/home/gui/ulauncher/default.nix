@@ -18,5 +18,11 @@ in
     home.packages = with pkgs; [
       ulauncher
     ];
+    home.activation = {
+      ulauncherAction = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
+        run rm -f $HOME/.config/ulauncher;
+        run ln -s $HOME/.dotfiles/.config/ulauncher $HOME/.config/ulauncher;
+      '';
+    };
   };
 }

@@ -1,0 +1,106 @@
+@import url('../../../shared/gtk-colors.css');
+
+/**
+ * App Window
+ */
+@define-color bg_color @base;
+@define-color window_shadow rgba(0, 0, 0, 0.5);
+@define-color window_bg @bg_color;
+@define-color window_border_color @rose;
+@define-color prefs_background @overlay;
+
+/**
+ * Input
+ */
+@define-color selected_bg_color @foam;
+@define-color selected_fg_color @rose;
+@define-color input_color @text;
+@define-color caret_color darker(@input_color);
+
+/**
+ * Result items
+ */
+@define-color item_name @muted;
+@define-color item_text @rose;
+@define-color item_box_selected @overlay;
+@define-color item_text_selected @gold;
+@define-color item_name_selected @text;
+@define-color item_shortcut_color @foam;
+@define-color item_shortcut_shadow darker(@bg_color);
+@define-color item_shortcut_color_sel @pine;
+@define-color item_shortcut_shadow_sel darker(@item_box_selected);
+
+.app {
+	box-shadow: 0 0 5px @window_shadow;
+	background-color: @window_bg;
+	border: 1px solid @window_border_color;
+	border-radius: 4px;
+	padding: 0;
+}
+
+.input {
+	font-size: 170%;
+	padding: 5px 0 5px 7px;
+	caret-color: @caret_color;
+	color: @input_color;
+}
+
+/**
+ * Selected text in input
+ */
+.input *:selected,
+.input *:focus,
+*:selected:focus {
+	background-color: alpha (@selected_bg_color, 0.9);
+	color: @selected_fg_color;
+}
+
+.item-text {
+	color: @item_text;
+}
+.item-name {
+	font-size: 120%;
+	color: @item_name;
+}
+
+/* Small result item  */
+.small-result-item .item-name {
+	font-size: 100%;
+}
+.item-descr {
+	font-size: 80%;
+}
+
+.selected.item-box {
+	background-color: @item_box_selected;
+	border: none;
+}
+.selected.item-box .item-text {
+	color: @item_text_selected;
+}
+.selected.item-box .item-name {
+	color: @item_name_selected;
+}
+.item-shortcut {
+	color: @item_shortcut_color;
+	text-shadow: 1px 1px 1px @item_shortcut_shadow;
+}
+.selected.item-box .item-shortcut {
+	color: @item_shortcut_color_sel;
+	text-shadow: 1px 1px 1px @item_shortcut_shadow_sel;
+}
+
+.prefs-btn {
+	border-radius: 12px;
+	opacity: 0.8;
+}
+.prefs-btn * {
+	box-shadow: none;
+}
+.prefs-btn:hover {
+	background-color: @prefs_background;
+}
+
+.item-highlight {
+	color: #99ccff;
+}

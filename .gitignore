@@ -1,4 +1,7 @@
 **/hosts/**/git.nix
 **/.wallpaper/.hyprlock
 .hyprlock
-/home/.dotfiles/.config/rofi/config.rasi
+home/.dotfiles/.config/rofi/config.rasi
+
+ext_preferences
+**/user-themes/**/generated.css

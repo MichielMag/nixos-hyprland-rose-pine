@@ -21,6 +21,7 @@
       swayosd.enable = true;
       wlogout.enable = true;
       wlsunset.enable = true;
+      ulauncher.enable = true;
 
       # graphics
       gimp.enable = true;
