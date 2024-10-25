@@ -82,4 +82,8 @@ in
     NVD_BACKEND = "direct";
     LIBVA_DRIVER_NAME = "iHD";
   };
+  networking.nameservers = [
+    "9.9.9.9"
+    "149.112.112.112"
+  ];
 }

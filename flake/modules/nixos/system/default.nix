@@ -17,6 +17,11 @@
     tlp
     git
     alsa-utils
+    libnotify
+    wtype
+    zip
+    traceroute
+    wev
     #networkmanager
   ];
 
@@ -251,4 +256,7 @@
 
   # This value determines the NixOS release from which the default
   system.stateVersion = "24.05"; # Did you read the comment?
+
+  # Gaming mouse config
+  services.ratbagd.enable = true;
 }

@@ -24,9 +24,8 @@ in
       ark
 
       # Utilities
-      libnotify
+
       dconf-editor
-      wtype
 
       # Audio Control
       pavucontrol
@@ -52,6 +51,12 @@ in
 
       # Simple calculator
       gnome-calculator
+
+      # Passwordmanager
+      bitwarden-cli
+
+      # Gaming mouse GUI
+      piper
     ];
 
     programs.firefox.enable = true;
