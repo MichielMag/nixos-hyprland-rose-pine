@@ -178,6 +178,7 @@
     };
     enableIPv6 = false;
     networkmanager.enable = true;
+    networkmanager.wifi.backend = "iwd";
   };
 
   services.openssh.enable = true;

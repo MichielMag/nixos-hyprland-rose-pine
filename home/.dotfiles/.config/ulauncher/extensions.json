@@ -2,42 +2,42 @@
     "com.github.iboyperson.ulauncher-system": {
         "id": "com.github.iboyperson.ulauncher-system",
         "url": "https://github.com/iboyperson/ulauncher-system",
-        "updated_at": "2024-10-24T08:57:40.414177",
+        "updated_at": "2024-10-26T10:09:55.299330",
         "last_commit": "7dedd992709fa2297735cddf852404144d4da47c",
         "last_commit_time": "2023-11-14T16:53:20"
     },
     "com.github.manahter.ulauncher-translate": {
         "id": "com.github.manahter.ulauncher-translate",
         "url": "https://github.com/manahter/ulauncher-translate",
-        "updated_at": "2024-10-24T08:58:42.458869",
+        "updated_at": "2024-10-26T10:09:59.865107",
         "last_commit": "f81d32c583c7e3542bdba655e991a56e6d9a2c28",
         "last_commit_time": "2021-04-09T18:12:40"
     },
     "com.github.noam09.ulauncher-units": {
         "id": "com.github.noam09.ulauncher-units",
         "url": "https://github.com/noam09/ulauncher-units",
-        "updated_at": "2024-10-24T10:34:18.036820",
+        "updated_at": "2024-10-26T10:10:02.192676",
         "last_commit": "0b0a5f8c760b9b369baac1499484c0d00847e349",
         "last_commit_time": "2021-12-21T06:32:17"
     },
     "com.github.ikorjefocur.ulauncher-commandrunner": {
         "id": "com.github.ikorjefocur.ulauncher-commandrunner",
         "url": "https://github.com/IkorJefocur/ulauncher-commandrunner",
-        "updated_at": "2024-10-24T10:36:41.050000",
+        "updated_at": "2024-10-26T10:10:03.545675",
         "last_commit": "c306301468cbaba23625bf0ef0639b7ad6602783",
         "last_commit_time": "2022-03-01T19:34:35"
     },
     "com.github.michielmag.ulauncher-emoji-ydotool": {
         "id": "com.github.michielmag.ulauncher-emoji-ydotool",
         "url": "https://github.com/MichielMag/ulauncher-emoji-ydotool",
-        "updated_at": "2024-10-25T08:11:50.548353",
+        "updated_at": "2024-10-26T10:10:09.577115",
         "last_commit": "d106c18dd6a5e5f227dcde1c670471d90b95bc69",
         "last_commit_time": "2024-10-25T06:11:03"
     },
     "com.github.kbialek.ulauncher-bitwarden": {
         "id": "com.github.kbialek.ulauncher-bitwarden",
         "url": "https://github.com/kbialek/ulauncher-bitwarden",
-        "updated_at": "2024-10-25T08:16:06.970670",
+        "updated_at": "2024-10-26T10:10:10.980197",
         "last_commit": "a57acb3394ba2d1aaefc743b5bff819a9eb8d619",
         "last_commit_time": "2024-05-08T06:35:12"
     }

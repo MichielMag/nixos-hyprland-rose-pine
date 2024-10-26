@@ -116,6 +116,7 @@
         #                                Architecture   Hostname
         quickemu = mkSystem inputs.nixpkgs "x86_64-linux" "quickemu";
         thinkpad = mkSystem inputs.nixpkgs "x86_64-linux" "thinkpad";
+	xps13 = mkSystem inputs.nixpkgs "x86_64-linux" "xps13";
       };
     };
 }

@@ -1,7 +1,13 @@
-[monitors.placement.eDP-1]
+[monitors.placement."Chimei Innolux Corporation"]
 rate = 60
 scale = 1
 resolution = [1920, 1200]
+leftCenterOf = "Dell Inc. DELL U2723QE HZK8BP3"
+
+[monitors.placement."AU Optronics 0x282B"]
+rate = 60
+scale = 1.666667
+resolution = [3840, 2160]
 leftCenterOf = "Dell Inc. DELL U2723QE HZK8BP3"
 
 [monitors.placement."Dell Inc. DELL U2723QE HZK8BP3"]
