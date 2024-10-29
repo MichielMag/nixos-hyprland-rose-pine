@@ -8,13 +8,9 @@
 with lib;
 let
   cfg = config.modules.rofi;
+
+  bwmenu = pkgs.callPackage ../../../../packages/bwmenu.nix { };
 in
-#adi1090x-rofi = pkgs.fetchFromGitHub {
-#    owner = "MichielMag";
-#    repo = "adi1090x-rofi";
-#    rev = "e13471745d2b825baf5a82173f9d126512379a8c";
-#    sha256 = "08g2bvciy2mg5fkvhz3x06im5ayrcaihixghnzxkg8jhwk5dzpxb";
-#};
 {
   options.modules.rofi = {
     enable = mkEnableOption "rofi";
@@ -24,6 +20,7 @@ in
 
     home.packages = with pkgs; [
       rofi-wayland
+      bwmenu
     ];
 
     programs.rofi = {
