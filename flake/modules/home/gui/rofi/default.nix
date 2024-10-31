@@ -9,7 +9,7 @@ with lib;
 let
   cfg = config.modules.rofi;
 
-  bwmenu = pkgs.callPackage ../../../../packages/bwmenu.nix { };
+  bwmenu-rofi = pkgs.callPackage ../../../../packages/bwmenu.nix { };
 in
 {
   options.modules.rofi = {
@@ -20,7 +20,7 @@ in
 
     home.packages = with pkgs; [
       rofi-wayland
-      bwmenu
+      bwmenu-rofi
     ];
 
     programs.rofi = {

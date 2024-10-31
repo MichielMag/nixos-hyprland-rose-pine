@@ -27,6 +27,8 @@
       inputs.hyprland.follows = "hyprland"; # <- make sure this line is present for the plugin to work as intended
     };
 
+    nix-vscode-extensions.url = "github:nix-community/nix-vscode-extensions";
+
     rose-pine-hyprcursor.url = "github:ndom91/rose-pine-hyprcursor";
 
     rycee-nurpkgs = {
@@ -97,6 +99,8 @@
                     system = final.system;
                     config.allowUnfree = true;
                   };
+                  vscode-marketplace = inputs.nix-vscode-extensions.extensions.${system}.vscode-marketplace;
+                  prev.vscode = ./packages/vscode/vscode.nix;
                 })
                 inputs.nurpkgs.overlay
               ];

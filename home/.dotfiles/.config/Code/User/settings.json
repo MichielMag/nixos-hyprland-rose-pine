@@ -114,5 +114,9 @@
 	"git.autofetch": true,
 	"github.experimental.multipleAccounts": true,
 	"workbench.iconTheme": "vscode-icons",
-	"workbench.colorTheme": "Rosé Pine Moon (no italics)"
+	"workbench.colorTheme": "Rosé Pine Moon (no italics)",
+	"workbench.panel.showLabels": false,
+	"github.copilot.chat.edits.enabled": true,
+	"chat.commandCenter.enabled": true,
+	"github.copilot.chat.followUps": "always"
 }

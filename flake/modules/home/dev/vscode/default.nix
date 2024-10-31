@@ -48,6 +48,12 @@ in
         vscode-extensions.bbenoist.nix
         vscode-extensions.jnoortheen.nix-ide
         vscode-extensions.eamodio.gitlens
+
+        vscode-marketplace.ms-vscode.vscode-copilot-data-analysis
+        vscode-marketplace.ms-vscode.vscode-websearchforcopilot
+        vscode-marketplace.ms-vscode.vscode-commander
+        vscode-marketplace.ms-vscode.vscode-copilot-vision
+
       ];
       package = pkgs.vscode.override {
         commandLineArgs = "--use-gl=egl --enable-features=WebRTCPipeWireCapturer";

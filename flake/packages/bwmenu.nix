@@ -7,17 +7,17 @@
 
 stdenv.mkDerivation {
   pname = "bwmenu";
-  version = "0.5.0"; # Adjust version as needed
+  version = "unstable-2024-10-29"; # Adjust version as needed
 
   src = fetchFromGitHub {
     owner = "MichielMag";
     repo = "bitwarden-rofi";
-    rev = "8be76fdd647c2bdee064e52603331d8e6ed5e8e2";
-    sha256 = "1ia2v9cj5v3scyf4xp9iihgqnmydik2h7sf03fc39i6y3ql3wr0j";
+    rev = "77bbf735b72a0c17f68fdbcc953e5d1c512f1224";
+    sha256 = "08h61nc9ihi9n77h33kzklpnlph33r8x35ahas5hnmk0ijnami1i";
   };
 
   # List runtime dependencies
-  buildInputs = [
+  propagatedBuildInputs = [
     pkgs.keyutils
   ];
 
@@ -27,18 +27,20 @@ stdenv.mkDerivation {
   installPhase = ''
     # Create necessary directories
     mkdir -p $out/bin
-    mkdir -p $out/lib/bwmenu
 
     # Install the main executable
     install -Dm755 bwmenu $out/bin/bwmenu
 
     # Install the library file
-    install -Dm644 lib-bwmenu $out/lib/bwmenu/lib-bwmenu
+    install -Dm644 lib-bwmenu $out/bin/lib-bwmenu
 
-    # Modify the main script to look for lib-bwmenu in the correct relative path
-    substituteInPlace $out/bin/bwmenu \
-      --replace './lib-bwmenu' "$out/lib/bwmenu/lib-bwmenu"
+    wrapProgram $out/bin/bwmenu \
+      --prefix PATH : "${lib.makeBinPath [ pkgs.keyutils ]}"
   '';
+
+  nativeBuildInputs = [
+    pkgs.makeWrapper
+  ];
 
   meta = with lib; {
     description = "Bitwarden menu utility";
