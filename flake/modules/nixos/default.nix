@@ -8,6 +8,7 @@
 {
   imports = [
     ./office/evolution
+    ./office/gaming/steam
   ];
 
 }

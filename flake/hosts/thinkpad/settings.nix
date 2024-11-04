@@ -61,6 +61,7 @@ in
 
   modules = {
     evolution.enable = true;
+    steam.enable = true;
   };
 
   nixpkgs.config.packageOverrides = pkgs: {

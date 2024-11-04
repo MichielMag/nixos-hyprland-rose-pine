@@ -100,7 +100,10 @@
                     config.allowUnfree = true;
                   };
                   vscode-marketplace = inputs.nix-vscode-extensions.extensions.${system}.vscode-marketplace;
-                  prev.vscode = ./packages/vscode/vscode.nix;
+                  vscode =
+                    final.callPackage ./packages/vscode/vscode.nix
+                      {
+                      };
                 })
                 inputs.nurpkgs.overlay
               ];
