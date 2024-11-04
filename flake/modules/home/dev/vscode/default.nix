@@ -8,7 +8,7 @@
 with lib;
 let
   cfg = config.modules.vscode;
-
+  code-recent = pkgs.writeShellScriptBin "code-recent" ''${builtins.readFile ./.scripts/rofi-vscode-recents.sh}'';
 in
 {
   options.modules.vscode = {
@@ -18,6 +18,7 @@ in
     home.packages = with pkgs; [
       nil
       nixfmt-rfc-style
+      code-recent
     ];
 
     home.activation = {
