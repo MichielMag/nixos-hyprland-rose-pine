@@ -8,21 +8,21 @@
 
 with lib;
 let
-  cfg = config.modules.bruno;
+  cfg = config.modules.insomnia;
 in
 {
-  options.modules.bruno = {
-    enable = mkEnableOption "bruno";
+  options.modules.insomnia = {
+    enable = mkEnableOption "insomnia";
   };
   config = mkIf cfg.enable {
     home.packages = with pkgs; [
-      bruno
+      insomnia
     ];
 
-    xdg.desktopEntries."bruno" = {
-      name = "Bruno";
-      exec = "bruno --use-gl=egl %U";
-      icon = "bruno";
+    xdg.desktopEntries."insomnia" = {
+      name = "insomnia";
+      exec = "insomnia --use-gl=egl %U";
+      icon = "insomnia";
       comment = "Opensource API Client for Exploring and Testing APIs";
       categories = [ "Development" ];
 
@@ -30,7 +30,7 @@ in
       genericName = "Rest API Client";
       mimeType = [ "x-scheme-handler/obsidian" ];
       settings = {
-        StartupWMClass = "Bruno";
+        StartupWMClass = "insomnia";
       };
     };
   };

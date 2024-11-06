@@ -22,6 +22,7 @@
     zip
     traceroute
     wev
+    nvtopPackages.full
     #networkmanager
   ];
 

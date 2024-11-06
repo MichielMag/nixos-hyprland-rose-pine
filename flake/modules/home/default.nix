@@ -39,7 +39,7 @@
     ./dev/vscode
     ./dev/git
     ./dev/direnv
-    ./dev/bruno
+    ./dev/insomnia
     ./dev/jetbrains-rider
 
     # office

@@ -118,5 +118,6 @@
 	"workbench.panel.showLabels": false,
 	"github.copilot.chat.edits.enabled": true,
 	"chat.commandCenter.enabled": true,
-	"github.copilot.chat.followUps": "always"
+	"github.copilot.chat.followUps": "always",
+	"explorer.confirmDelete": false
 }
