@@ -21,6 +21,7 @@ in
       fastfetch
       eza
       terminal-class
+      gh
     ];
 
     programs.kitty = {
