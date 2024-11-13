@@ -36,6 +36,10 @@ in
           autoSetupRemote = true;
         };
       };
+      ignores = [
+        ".nix-node"
+        ".direnv"
+      ];
     };
     programs.git-credential-oauth.enable = true;
   };
