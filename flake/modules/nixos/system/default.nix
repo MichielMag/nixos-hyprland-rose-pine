@@ -23,6 +23,8 @@
     traceroute
     wev
     nvtopPackages.full
+    freerdp
+    wget
     #networkmanager
   ];
 

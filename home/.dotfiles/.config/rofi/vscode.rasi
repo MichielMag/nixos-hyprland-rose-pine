@@ -1,0 +1,13 @@
+@import "default"
+
+configuration {
+    show-icons: false;
+	font: "JetBrainsMono Nerd Font 12";
+	terminal: "kitty";
+}
+
+@import "theme"
+
+#textbox-prompt-colon {
+	str:        " 󰨞  ";
+}

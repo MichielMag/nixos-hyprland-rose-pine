@@ -2,7 +2,7 @@
 # Default parameters
 DEFAULT_PATH="$HOME/.config/Code/User/workspaceStorage"
 DEFAULT_AMOUNT=10
-DEFAULT_DMENU_CMD="rofi -dmenu -i -p 'Select recent' -config $HOME/.config/rofi/network-menu.rasi"
+DEFAULT_DMENU_CMD="rofi -dmenu -i -p 'Select recent' -config $HOME/.config/rofi/vscode.rasi"
 
 DMENU="${DMENU_CMD:-$DEFAULT_DMENU_CMD}"
 

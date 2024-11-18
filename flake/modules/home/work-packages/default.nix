@@ -19,7 +19,15 @@ in
     home.packages = with pkgs; [
       slack
       teams-for-linux
-      thunderbird
+      (citrix_workspace.override {
+        libvorbis = pkgs.libvorbis.override {
+          libogg = pkgs.libogg.overrideAttrs (prevAttrs: {
+            cmakeFlags = (prevAttrs.cmakeFlags or [ ]) ++ [
+              (lib.cmakeBool "BUILD_SHARED_LIBS" true)
+            ];
+          });
+        };
+      })
     ];
 
     xdg.desktopEntries = {
