@@ -9,6 +9,13 @@ with lib;
 let
   cfg = config.modules.vscode;
   code-recent = pkgs.writeShellScriptBin "code-recent" ''${builtins.readFile ./.scripts/rofi-vscode-recents.sh}'';
+  dotnet-full =
+    with pkgs.dotnetCorePackages;
+    combinePackages [
+      sdk_8_0
+      runtime_8_0
+      aspnetcore_8_0
+    ];
 in
 {
   options.modules.vscode = {
@@ -19,6 +26,9 @@ in
       nil
       nixfmt-rfc-style
       code-recent
+      dotnet-full
+      icu.dev
+      icu
     ];
 
     home.activation = {
@@ -54,6 +64,11 @@ in
         vscode-marketplace.ms-vscode.vscode-websearchforcopilot
         vscode-marketplace.ms-vscode.vscode-commander
         vscode-marketplace.ms-vscode.vscode-copilot-vision
+
+        vscode-marketplace.ms-dotnettools.vscode-dotnet-runtime
+        vscode-marketplace.ms-dotnettools.csdevkit
+        vscode-marketplace.ms-dotnettools.csharp
+        vscode-marketplace.ms-dotnettools.vscodeintellicode-csharp
 
       ];
       package = pkgs.vscode.override {

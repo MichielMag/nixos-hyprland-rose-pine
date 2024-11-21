@@ -37,7 +37,7 @@ button {
 
 	background-repeat: no-repeat;
 	background-position: center;
-	background-size: 25%;
+	background-size: 35%;
 
 	border-style: solid;
 	background-color: @overlay;
@@ -46,7 +46,7 @@ button {
 
 	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 
-	margin: 40rem 1rem;
+	margin: 5rem;
 	border-radius: 20px;
 }
 

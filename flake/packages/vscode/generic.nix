@@ -23,6 +23,7 @@
   wayland,
   libglvnd,
   libkrb5,
+  icu,
 
   # Populate passthru.tests
   tests,
@@ -80,7 +81,7 @@ stdenv.mkDerivation (
 
             # dotnet
             curl
-            icu
+            pkgs.icu
             libunwind
             libuuid
             lttng-ust
@@ -212,6 +213,7 @@ stdenv.mkDerivation (
       libdbusmenu
       wayland
       libsecret
+      icu
     ];
 
     nativeBuildInputs =
@@ -270,7 +272,12 @@ stdenv.mkDerivation (
           ${
             # we cannot use runtimeDependencies otherwise libdbusmenu do not work on kde
             lib.optionalString stdenv.hostPlatform.isLinux
-              "--prefix LD_LIBRARY_PATH : ${lib.makeLibraryPath [ libdbusmenu ]}"
+              "--prefix LD_LIBRARY_PATH : ${
+                lib.makeLibraryPath [
+                  libdbusmenu
+                  icu
+                ]
+              }"
           }
         # Add gio to PATH so that moving files to the trash works when not using a desktop environment
         --prefix PATH : ${glib.bin}/bin
