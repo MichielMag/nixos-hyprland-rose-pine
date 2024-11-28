@@ -35,10 +35,13 @@ in
         };
         dev = {
           id = 1;
-          extensions = extensions // [
-            angular-devtools
-            reduxdevtools
-          ];
+          extensions =
+            with firefox-addons.packages;
+            extensions
+            // [
+              angular-devtools
+              reduxdevtools
+            ];
         };
       };
     };
