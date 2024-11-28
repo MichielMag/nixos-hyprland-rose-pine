@@ -11,9 +11,9 @@ let
   cfg = config.modules.firefox;
   customAddons = pkgs.callPackage ./addons.nix {
     inherit lib;
-    inherit (firefox-addons.lib."x86_64-linux") buildFirefoxXpiAddon;
+    inherit (firefox-addons.lib) buildFirefoxXpiAddon;
   };
-  extensions = with firefox-addons; [
+  extensions = with firefox-addons.packages; [
     bitwarden
     ublock-origin
     ghostery
