@@ -2,19 +2,23 @@
   pkgs,
   lib,
   config,
-  addons,
+  firefox-addons,
   ...
 }:
 
 with lib;
 let
   cfg = config.modules.firefox;
-  extensions = with addons; [
+  customAddons = pkgs.callPackage ./addons.nix {
+    inherit lib;
+    inherit (firefox-addons.lib."x86_64-linux") buildFirefoxXpiAddon;
+  };
+  extensions = with firefox-addons; [
     bitwarden
     ublock-origin
     ghostery
     sponsorblock
-    firefox-color
+    customAddons.rose-pine-moon-modified
   ];
 in
 {
@@ -35,7 +39,7 @@ in
             angular-devtools
             reduxdevtools
           ];
-        }
+        };
       };
     };
   };

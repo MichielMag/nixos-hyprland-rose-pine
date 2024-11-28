@@ -34,6 +34,7 @@
 
     # networking
     ./networking/onedrive
+    ./networking/firefox
 
     # dev
     ./dev/vscode
