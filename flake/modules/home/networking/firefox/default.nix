@@ -3,6 +3,7 @@
   lib,
   config,
   firefox-addons,
+  inputs,
   ...
 }:
 
