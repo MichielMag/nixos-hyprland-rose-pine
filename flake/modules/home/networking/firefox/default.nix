@@ -13,7 +13,7 @@ let
     inherit lib;
     inherit (firefox-addons.lib) buildFirefoxXpiAddon;
   };
-  extensions = with firefox-addons.packages; [
+  addons = with firefox-addons.packages; [
     bitwarden
     ublock-origin
     ghostery
@@ -31,17 +31,14 @@ in
       profiles = {
         default = {
           id = 0;
-          inherit extensions;
+          extensions = addons;
         };
         dev = {
           id = 1;
-          extensions =
-            with firefox-addons.packages;
-            extensions
-            // [
-              angular-devtools
-              reduxdevtools
-            ];
+          extensions = addons ++ [
+            firefox-addons.packages.angular-devtools
+            firefox-addons.packages.reduxdevtools
+          ];
         };
       };
     };
