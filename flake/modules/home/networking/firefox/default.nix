@@ -14,8 +14,22 @@ let
     inherit lib;
     inherit (firefox-addons.lib) buildFirefoxXpiAddon;
   };
-  shyfox-settings = pkgs.callPackage ./shyfox.nix {
-    inherit lib;
+  shyfox-settings = {
+    "toolkit.legacyUserProfileCustomizations.stylesheets" = true; # Enable userChrome.css
+    "svg.context-properties.content.enabled" = true;
+    "layout.css.has-selector.enabled" = true;
+    "browser.urlbar.suggest.calculator" = true;
+    "browser.urlbar.unitConversion.enabled" = true;
+    "browser.urlbar.trimHttps" = true;
+    "browser.urlbar.trimURLs" = true;
+    "widget.gtk.rounded-bottom-corners.enabled" = true;
+    "widget.gtk.ignore-bogus-leave-notify" = true;
+  };
+  shyfox = lib.fetchFromGitHub {
+    owner = "Naezr";
+    repo = "ShyFox";
+    rev = "6488ff1934c184a7b81770c67f5c3b5e983152e3";
+    sha256 = "0rs9bxxrw4wscf4a8yl776a8g880m5gcm75q06yx2cn3lw2b7v22";
   };
   addons = with firefox-addons.packages; [
     bitwarden
@@ -129,10 +143,10 @@ in
           extensions = addons;
           isDefault = true;
           inherit search;
-          settings = settings // shyfox-settings.settings;
+          settings = settings // shyfox-settings;
           inherit extraConfig;
-          userChrome = builtins.readFile "${shyfox-settings.source}/chrome/userChrome.css";
-          userContent = builtins.readFile "${shyfox-settings.source}/chrome/userContent.css";
+          userChrome = builtins.readFile "${shyfox}/chrome/userChrome.css";
+          userContent = builtins.readFile "${shyfox}/chrome/userContent.css";
         };
         dev = {
           id = 1;
@@ -149,7 +163,7 @@ in
       };
     };
 
-    home.file.".mozilla/firefox/default/chrome/ShyFox".source = "${shyfox-settings.source}/chrome/ShyFox";
-    home.file.".mozilla/firefox/default/chrome/icons".source = "${shyfox-settings.source}/chrome/icons";
+    home.file.".mozilla/firefox/default/chrome/ShyFox".source = "${shyfox}/chrome/ShyFox";
+    home.file.".mozilla/firefox/default/chrome/icons".source = "${shyfox}/chrome/icons";
   };
 }
