@@ -4,7 +4,7 @@
   rose-pine-moon-modified = buildFirefoxXpiAddon rec {
     pname = "rose_pine_moon_modified";
     version = "1.0";
-    addonId = "{9dfcb52a-5322-4d42-9924-9d3b8871ad90}";
+    addonId = "{32aac792-0421-4e99-917a-c849311377ce}";
     url = "https://addons.mozilla.org/firefox/downloads/file/4263824/${pname}-${version}.xpi";
     sha256 = "sha256-NhYo1XukT/eXL8PGnvHs1okArkhOKYAbrzoapAcCFfA=";
     meta = with lib; {

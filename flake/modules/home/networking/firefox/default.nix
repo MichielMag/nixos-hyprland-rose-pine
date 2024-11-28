@@ -14,6 +14,9 @@ let
     inherit lib;
     inherit (firefox-addons.lib) buildFirefoxXpiAddon;
   };
+  shyfox-settings = pkgs.callPackage ./shyfox.nix {
+    inherit lib;
+  };
   addons = with firefox-addons.packages; [
     bitwarden
     ublock-origin
@@ -62,6 +65,7 @@ let
 
       "extensions.autoDisableScopes" = 0; # Automatically enable extensions
       "extensions.update.enabled" = false;
+
     };
   };
   search = {
@@ -102,20 +106,14 @@ let
     };
   };
   settings = {
-    "gnomeTheme.activeTabContrast" = true;
-    "gnomeTheme.normalWidthTabs" = true;
+
     "browser.search.defaultenginename" = "DuckDuckGo";
     "browser.search.order.1" = "DuckDuckGo";
     "browser.aboutConfig.showWarning" = false;
     "browser.compactmode.show" = true;
+
+    "extensions.activeThemeID" = customAddons.rose-pine-moon-modified.addonId;
   };
-  userChrome = ''
-    @import "firefox-gnome-theme/userChrome.css";
-  '';
-  userContent = ''
-    @import "firefox-gnome-theme/userContent.css";
-  '';
-  extraConfig = builtins.readFile "${inputs.firefox-gnome-theme}/configuration/user.js";
 in
 {
   options.modules.firefox = {
@@ -131,10 +129,10 @@ in
           extensions = addons;
           isDefault = true;
           inherit search;
-          inherit settings;
-          inherit userChrome;
-          inherit userContent;
+          settings = settings // shyfox-settings.settings;
           inherit extraConfig;
+          userChrome = builtins.readFile "${shyfox-settings.source}/chrome/userChrome.css";
+          userContent = builtins.readFile "${shyfox-settings.source}/chrome/userContent.css";
         };
         dev = {
           id = 1;
@@ -150,6 +148,8 @@ in
         };
       };
     };
-    home.file.".mozilla/firefox/default/chrome/firefox-gnome-theme".source = inputs.firefox-gnome-theme;
+
+    home.file.".mozilla/firefox/default/chrome/ShyFox".source = "${shyfox-settings.source}/chrome/ShyFox";
+    home.file.".mozilla/firefox/default/chrome/icons".source = "${shyfox-settings.source}/chrome/icons";
   };
 }
