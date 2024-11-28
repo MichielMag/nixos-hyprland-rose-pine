@@ -55,12 +55,7 @@ let
         Snippets = false;
       };
     Preferences = {
-      # Privacy settings
-      "browser.newtabpage.pinned" = lock-empty-string;
-      "browser.topsites.contile.enabled" = lock-false;
-      "browser.newtabpage.activity-stream.showSponsored" = lock-false;
-      "browser.newtabpage.activity-stream.system.showSponsored" = lock-false;
-      "browser.newtabpage.activity-stream.showSponsoredTopSites" = lock-false;
+
       "browser.in-content.dark-mode" = true; # Use dark mode
       "ui.systemUsesDarkTheme" = true;
 
