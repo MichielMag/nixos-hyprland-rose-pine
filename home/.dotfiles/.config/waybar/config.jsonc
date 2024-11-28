@@ -303,7 +303,7 @@
 			"default": ["󰖀", "󰕾"]
 		},
 		"on-click": "wb-volume -o m",
-		"on-click-right": "pavucontrol -t 3",
+		"on-click-right": "audio-selector-rofi sink",
 		"on-scroll-up": "wb-volume -o i",
 		"on-scroll-down": "wb-volume -o d",
 		"scroll-step": 10,
@@ -315,7 +315,7 @@
 		"format-source": "",
 		"format-source-muted": "",
 		"on-click": "wb-volume -i m",
-		"on-click-right": "pavucontrol -t 3",
+		"on-click-right": "audio-selector-rofi source",
 		"on-scroll-up": "wb-volume -i i",
 		"on-scroll-down": "wb-volume -i d",
 		"tooltip-format": "{format_source} {source_desc} // {source_volume}%",
