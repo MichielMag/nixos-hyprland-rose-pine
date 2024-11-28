@@ -87,7 +87,7 @@
                 extraSpecialArgs = {
                   inherit inputs;
                   inherit spicetify-nix;
-                  addons = pkgs.nur.repos.rycee.firefox-addons;
+                  inherit firefox-addons;
                 };
                 users.michiel = (./. + "/hosts/${hostname}/user.nix");
               };
