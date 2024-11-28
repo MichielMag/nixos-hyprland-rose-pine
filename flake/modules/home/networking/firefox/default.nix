@@ -101,11 +101,20 @@ let
     };
   };
   settings = {
+    "gnomeTheme.activeTabContrast" = true;
+    "gnomeTheme.normalWidthTabs" = true;
     "browser.search.defaultenginename" = "DuckDuckGo";
     "browser.search.order.1" = "DuckDuckGo";
     "browser.aboutConfig.showWarning" = false;
     "browser.compactmode.show" = true;
   };
+  userChrome = ''
+    @import "firefox-gnome-theme/userChrome.css";
+  '';
+  userContent = ''
+    @import "firefox-gnome-theme/userContent.css";
+  '';
+  extraConfig = builtins.readFile "${inputs.firefox-gnome-theme}/configuration/user.js";
 in
 {
   options.modules.firefox = {
@@ -122,6 +131,9 @@ in
           isDefault = true;
           inherit search;
           inherit settings;
+          inherit userChrome;
+          inherit userContent;
+          inherit extraConfig;
         };
         dev = {
           id = 1;
@@ -131,8 +143,12 @@ in
           ];
           inherit search;
           inherit settings;
+          inherit userChrome;
+          inherit userContent;
+          inherit extraConfig;
         };
       };
     };
+    home.file.".mozilla/firefox/default/chrome/firefox-gnome-theme".source = inputs.firefox-gnome-theme;
   };
 }
