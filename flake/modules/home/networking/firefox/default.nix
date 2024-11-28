@@ -25,7 +25,7 @@ let
     "widget.gtk.rounded-bottom-corners.enabled" = true;
     "widget.gtk.ignore-bogus-leave-notify" = true;
   };
-  shyfox = lib.fetchFromGitHub {
+  shyfox = pkgs.fetchFromGitHub {
     owner = "Naezr";
     repo = "ShyFox";
     rev = "6488ff1934c184a7b81770c67f5c3b5e983152e3";

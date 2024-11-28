@@ -95,6 +95,10 @@
                     lib = firefox-addons.lib.${system};
                     packages = firefox-addons.packages.${system};
                   };
+                  meta = {
+                    inherit system;
+                    inherit hostname;
+                  };
                 };
                 users.michiel = (./. + "/hosts/${hostname}/user.nix");
               };
