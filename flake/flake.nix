@@ -46,6 +46,7 @@
       spicetify-nix,
       stylix,
       split-monitor-workspaces,
+      firefox-addons,
       ...
     }@inputs:
     let
