@@ -31,6 +31,7 @@
         enable = true;
         configFiles."4dotnet" = ./.config/onedrive;
       };
+      firefox.enable = true;
 
       # office
       obsidian.enable = true;
@@ -50,10 +51,6 @@
       xdg.enable = true;
       packages.enable = true;
       keyring.enable = true;
-
-      # Work
-      work-packages.enable = true;
-      vm-windows.enable = true;
 
       # Social
       social.enable = true;

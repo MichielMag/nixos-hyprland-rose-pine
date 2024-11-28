@@ -28,10 +28,27 @@ in
   config = mkIf cfg.enable {
     programs.firefox = {
       enable = true;
+      policies = {
+        DisableTelemetry = true;
+        DisableFirexoStudies = true;
+        EnableTrackingProtection = {
+          Value = true;
+          Locked = true;
+          CryptoMining = true;
+          FingerPrinting = true;
+        };
+        OverrideFirstRunPage = "";
+        OverridePostUpdatePage = "";
+        DontCheckDefaultBrowser = true;
+        DisplayBookmarksToolbar = "never";
+        DisplayMenuBar = "default-off";
+        SearchBar = "unified";
+      };
       profiles = {
         default = {
           id = 0;
           extensions = addons;
+          isDefault = true;
         };
         dev = {
           id = 1;
