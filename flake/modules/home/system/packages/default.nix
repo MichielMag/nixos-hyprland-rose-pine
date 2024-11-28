@@ -21,6 +21,7 @@ in
     home.packages = with pkgs; [
       # File Explorers
       dolphin
+      kdePackages.kio-extras
       ark
 
       # Utilities
@@ -84,9 +85,9 @@ in
 
     home.activation = {
       btopActivation = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
-        	run rm -f $HOME/.config/btop/themes/theme.theme;
-		mkdir -p $HOME/.config/btop/themes;
-                run ln -s $HOME/.dotfiles/.config/btop/themes/theme.theme $HOME/.config/btop/themes/theme.theme;
+                	run rm -f $HOME/.config/btop/themes/theme.theme;
+        		mkdir -p $HOME/.config/btop/themes;
+                        run ln -s $HOME/.dotfiles/.config/btop/themes/theme.theme $HOME/.config/btop/themes/theme.theme;
       '';
     };
   };

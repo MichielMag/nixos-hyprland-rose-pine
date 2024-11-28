@@ -119,5 +119,6 @@
 	"github.copilot.chat.edits.enabled": true,
 	"chat.commandCenter.enabled": true,
 	"github.copilot.chat.followUps": "always",
-	"explorer.confirmDelete": false
+	"explorer.confirmDelete": false,
+	"explorer.confirmDragAndDrop": false
 }

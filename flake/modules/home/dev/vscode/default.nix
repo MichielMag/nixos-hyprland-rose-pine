@@ -69,6 +69,7 @@ in
         vscode-marketplace.ms-dotnettools.csdevkit
         vscode-marketplace.ms-dotnettools.csharp
         vscode-marketplace.ms-dotnettools.vscodeintellicode-csharp
+        vscode-marketplace.adrianwilczynski.user-secrets
 
       ];
       package = pkgs.vscode.override {

@@ -10,6 +10,7 @@ let
   cfg = config.modules.rofi;
 
   bwmenu-rofi = pkgs.callPackage ../../../../packages/bwmenu.nix { };
+  audio-selector-rofi = pkgs.writeShellScriptBin "audio-selector-rofi" ''${builtins.readFile ./.scripts/audio-selector-rofi.sh}'';
 in
 {
   options.modules.rofi = {
@@ -21,6 +22,7 @@ in
     home.packages = with pkgs; [
       rofi-wayland
       bwmenu-rofi
+      audio-selector-rofi
     ];
 
     programs.rofi = {
