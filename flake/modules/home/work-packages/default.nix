@@ -28,6 +28,7 @@ in
           });
         };
       })
+      timewarrior
     ];
 
     xdg.desktopEntries = {

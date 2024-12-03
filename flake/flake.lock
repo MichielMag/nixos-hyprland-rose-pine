@@ -122,6 +122,22 @@
         "type": "gitlab"
       }
     },
+    "firefox-gnome-theme": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1733102982,
+        "narHash": "sha256-D23uCJ7ut1WRxIBThaRce7oUDXqQoJIRGtA5p42tPYM=",
+        "owner": "rafaelmardojai",
+        "repo": "firefox-gnome-theme",
+        "rev": "ab31acbc6fecaeea9f25e8ec3cde3dc750c23a0e",
+        "type": "github"
+      },
+      "original": {
+        "owner": "rafaelmardojai",
+        "repo": "firefox-gnome-theme",
+        "type": "github"
+      }
+    },
     "flake-compat": {
       "flake": false,
       "locked": {
@@ -707,6 +723,7 @@
     "root": {
       "inputs": {
         "firefox-addons": "firefox-addons",
+        "firefox-gnome-theme": "firefox-gnome-theme",
         "home-manager": "home-manager",
         "hyprland": "hyprland",
         "nix-vscode-extensions": "nix-vscode-extensions",

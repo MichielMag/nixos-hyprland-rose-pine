@@ -64,9 +64,6 @@ in
       xwayland.enable = true;
       extraConfig = ''
         source = /home/michiel/.config/hypr/conf/hyprland.conf
-        ${lib.optionalString (builtins.pathExists "/home/michiel/.config/hypr/conf/${meta.hostname}.conf") ''
-          source = /home/michiel/.config/hypr/conf/${meta.hostname}.conf
-        ''}
       '';
 
       systemd.variables = [ "--all" ];
