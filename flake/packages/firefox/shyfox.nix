@@ -12,8 +12,8 @@ stdenv.mkDerivation {
   src = fetchFromGitHub {
     owner = "Naezr";
     repo = "ShyFox";
-    rev = "6488ff1934c184a7b81770c67f5c3b5e983152e3";
-    sha256 = "0rs9bxxrw4wscf4a8yl776a8g880m5gcm75q06yx2cn3lw2b7v22";
+    rev = "dd4836fb6f93267de6a51489d74d83d570f0280d";
+    sha256 = "sha256-7H+DU4o3Ao8qAgcYDHVScR3pDSOpdETFsEMiErCQSA8=";
   };
 
   # No build phase needed since we're just installing scripts

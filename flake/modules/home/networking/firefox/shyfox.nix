@@ -16,6 +16,7 @@ let
   };
   shyfox-settings = {
     "toolkit.legacyUserProfileCustomizations.stylesheets" = true; # Enable userChrome.css
+    "sidebar.revamp" = false;
     "svg.context-properties.content.enabled" = true;
     "layout.css.has-selector.enabled" = true;
     "browser.urlbar.suggest.calculator" = true;
@@ -25,18 +26,12 @@ let
     "widget.gtk.rounded-bottom-corners.enabled" = true;
     "widget.gtk.ignore-bogus-leave-notify" = true;
   };
-  shyfox = pkgs.fetchFromGitHub {
-    owner = "Naezr";
-    repo = "ShyFox";
-    rev = "6488ff1934c184a7b81770c67f5c3b5e983152e3";
-    sha256 = "0rs9bxxrw4wscf4a8yl776a8g880m5gcm75q06yx2cn3lw2b7v22";
-  };
   addons = with firefox-addons.packages; [
     bitwarden
     ublock-origin
     ghostery
     sponsorblock
-    sideberry
+    sidebery
     customAddons.rose-pine-moon-modified
   ];
   policies = {
@@ -529,13 +524,14 @@ in
       profiles = {
         default = {
           id = 0;
-          extensions = addons;
+          extensions = addons ++ [
+            customAddons.userchrome-toggle-extended
+          ];
           isDefault = true;
           inherit search;
           settings = settings // shyfox-settings;
-          inherit extraConfig;
-          userChrome = builtins.readFile "${shyfox}/chrome/userChrome.css";
-          userContent = builtins.readFile "${shyfox}/chrome/userContent.css";
+          userChrome = builtins.readFile "${pkgs.shyfox}/chrome/userChrome.css";
+          userContent = builtins.readFile "${pkgs.shyfox}/chrome/userContent.css";
         };
         dev = {
           id = 1;
@@ -545,14 +541,11 @@ in
           ];
           inherit search;
           inherit settings;
-          inherit userChrome;
-          inherit userContent;
-          inherit extraConfig;
         };
       };
     };
 
-    home.file.".mozilla/firefox/default/chrome/ShyFox".source = "${shyfox}/chrome/ShyFox";
-    home.file.".mozilla/firefox/default/chrome/icons".source = "${shyfox}/chrome/icons";
+    home.file.".mozilla/firefox/default/chrome/ShyFox".source = "${pkgs.shyfox}/chrome/ShyFox";
+    home.file.".mozilla/firefox/default/chrome/icons".source = "${pkgs.shyfox}/chrome/icons";
   };
 }

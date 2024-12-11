@@ -116,6 +116,7 @@
                     final.callPackage ./packages/vscode/vscode.nix
                       {
                       };
+                  shyfox = final.callPackage ./packages/firefox/shyfox.nix { };
                 })
                 inputs.nurpkgs.overlay
               ];
