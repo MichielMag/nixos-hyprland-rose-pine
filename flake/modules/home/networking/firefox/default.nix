@@ -19,7 +19,6 @@ let
     ublock-origin
     ghostery
     sponsorblock
-    sidebery
     customAddons.rose-pine-moon-modified
   ];
   policies = {
@@ -72,6 +71,7 @@ let
     "browser.urlbar.suggest.calculator" = true;
     "browser.urlbar.unitConversion.enabled" = true;
     "browser.urlbar.trimHttps" = true;
+    "browser.tabs.inTitlebar" = 0;
     "browser.urlbar.trimURLs" = true;
     "widget.gtk.rounded-bottom-corners.enabled" = true;
     "widget.gtk.ignore-bogus-leave-notify" = true;
