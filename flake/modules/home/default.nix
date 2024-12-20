@@ -35,7 +35,6 @@
     # networking
     ./networking/onedrive
     ./networking/firefox
-    ./networking/firefox/shyfox.nix
 
     # dev
     ./dev/vscode

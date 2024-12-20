@@ -31,7 +31,7 @@
         enable = true;
         configFiles."4dotnet" = ./.config/onedrive;
       };
-      shyfox.enable = true;
+      firefox.enable = true;
 
       # office
       obsidian.enable = true;
