@@ -86,20 +86,17 @@
   };
 
   # Set up user and enable sudo
-  users.users.michiel = {
-    isNormalUser = true;
-    extraGroups = [
-      "input"
-      "wheel"
-      "networkmanager"
-      "ydotool"
-      "video"
-      "render"
-      "pipewire"
-      "docker"
-    ];
-    shell = pkgs.fish;
-  };
+  users.users.michiel.extraGroups = [
+    "input"
+    "wheel"
+    "networkmanager"
+    "ydotool"
+    "video"
+    "render"
+    "pipewire"
+    "docker"
+  ];
+  users.users.michiel.shell = pkgs.fish;
 
   # Set environment variables
   environment.variables = {

@@ -80,7 +80,6 @@
             home-manager.nixosModules.home-manager
             stylix.nixosModules.stylix
             ./modules/nixos/system
-            (pkgs.lib.mkIf gui ./modules/nixos/system/gui)
             ./modules/nixos/stylix
             (./. + "/hosts/${hostname}/hardware-configuration.nix")
             (./. + "/hosts/${hostname}/settings.nix")
