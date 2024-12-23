@@ -114,7 +114,8 @@ let
     };
   };
   settings = {
-
+    "signon.rememberSignons" = false;
+    "services.sync.engine.passwords" = false;
     "browser.search.defaultenginename" = "DuckDuckGo";
     "browser.search.order.1" = "DuckDuckGo";
     "browser.aboutConfig.showWarning" = false;

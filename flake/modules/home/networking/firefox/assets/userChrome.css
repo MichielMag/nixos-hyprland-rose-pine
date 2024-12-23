@@ -141,6 +141,11 @@
 	background: none !important;
 }
 
+#urlbar-container .urlbarView {
+	background-color: var(--toolbar-field-background-color);
+	width: 90vw;
+}
+
 /* Hide urlbar elements when not active */
 
 .urlbar-icon,

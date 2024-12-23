@@ -72,7 +72,7 @@
       # Credits go to sioodmy on this one!
       # https://github.com/sioodmy/dotfiles/blob/main/flake.nix
       mkSystem =
-        pkgs: system: hostname:
+        pkgs: system: hostname: gui:
         pkgs.lib.nixosSystem {
           system = system;
           modules = [
@@ -80,6 +80,7 @@
             home-manager.nixosModules.home-manager
             stylix.nixosModules.stylix
             ./modules/nixos/system
+            (pkgs.lib.mkIf gui ./modules/nixos/system/gui)
             ./modules/nixos/stylix
             (./. + "/hosts/${hostname}/hardware-configuration.nix")
             (./. + "/hosts/${hostname}/settings.nix")
@@ -131,9 +132,9 @@
     in
     {
       nixosConfigurations = {
-        quickemu = mkSystem inputs.nixpkgs "x86_64-linux" "quickemu";
-        thinkpad = mkSystem inputs.nixpkgs "x86_64-linux" "thinkpad";
-        xps13 = mkSystem inputs.nixpkgs "x86_64-linux" "xps13";
+        quickemu = mkSystem inputs.nixpkgs "x86_64-linux" "quickemu" true;
+        thinkpad = mkSystem inputs.nixpkgs "x86_64-linux" "thinkpad" true;
+        xps13 = mkSystem inputs.nixpkgs "x86_64-linux" "xps13" true;
       };
     };
 }
