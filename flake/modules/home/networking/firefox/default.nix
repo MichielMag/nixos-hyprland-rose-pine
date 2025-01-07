@@ -9,6 +9,7 @@
 
 with lib;
 let
+  inherit (lib.attrsets) mapAttrs mapAttrs' nameValuePair;
   cfg = config.modules.firefox;
   customAddons = pkgs.callPackage ./addons.nix {
     inherit lib;
@@ -123,10 +124,139 @@ let
 
     "extensions.activeThemeID" = customAddons.rose-pine-moon-modified.addonId;
   };
+  make-pwa-profiles =
+    cfg:
+    mapAttrs' (
+      name: config:
+      nameValuePair "pwa-${name}" {
+        id = config.profileId;
+        isDefault = false;
+        userChrome = ''
+          @namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
+
+          browser {
+            margin-right: 0px; margin-bottom: 0px;
+          }
+
+          #TabsToolbar {
+            visibility: collapse !important;
+          }
+
+          #nav-bar {
+            margin-top: 0;
+            margin-bottom: -42px;
+            z-index: -100;
+          }
+
+          #main-window[windowtype="navigator:browser"] {
+            background-color: transparent !important;
+          }
+
+          .tab-background[selected="true"] {
+            background: #232136 !important;
+          }
+        '';
+        settings = {
+          "browser.sessionstore.resume_session_once" = false;
+          "browser.sessionstore.resume_from_crash" = false;
+          "browser.cache.disk.enable" = false;
+          "browser.cache.disk.capacity" = 0;
+          "browser.cache.disk.filesystem_reported" = 1;
+          "browser.cache.disk.smart_size.enabled" = false;
+          "browser.cache.disk.smart_size.first_run" = false;
+          "browser.cache.disk.smart_size.use_old_max" = false;
+          "browser.ctrlTab.previews" = true;
+          "browser.tabs.warnOnClose" = false;
+          "plugin.state.flash" = 2;
+          "toolkit.legacyUserProfileCustomizations.stylesheets" = true;
+          "browser.tabs.drawInTitlebar" = false;
+          "browser.tabs.inTitlebar" = 0;
+          "browser.contentblocking.category" = "strict";
+          "network.cookie.lifetimePolicy" = 0;
+        };
+        extensions = [
+          ublock-origin
+          ghostery
+          customAddons.rose-pine-moon-modified
+        ];
+      }
+    ) cfg;
 in
 {
   options.modules.firefox = {
     enable = mkEnableOption "firefox";
+    pwa = mkOption {
+      default = { };
+
+      type =
+        with lib.types;
+        attrsOf (submodule {
+          options = {
+            url = mkOption {
+              type = str;
+              description = "The URL of the webapp to launch.";
+            };
+            profileId = mkOption {
+              type = int;
+              description = "The Firefox profile ID to set.";
+            };
+            #########################
+            # Desktop file settings #
+            #########################
+
+            # Copied from xdg.desktopEntries, with slight modification for default settings
+            name = mkOption {
+              type = nullOr str;
+              default = null;
+              description = "Specific name of the application. Defaults to the capitalized attribute name.";
+            };
+
+            mimeType = mkOption {
+              description = "The MIME type(s) supported by this application.";
+              type = nullOr (listOf str);
+              default = [
+                "text/html"
+                "text/xml"
+                "application/xhtml_xml"
+              ];
+            };
+
+            # Copied verbatim from xdg.desktopEntries.
+            genericName = mkOption {
+              type = nullOr str;
+              default = null;
+              description = "Generic name of the application.";
+            };
+
+            comment = mkOption {
+              type = nullOr str;
+              default = null;
+              description = "Tooltip for the entry.";
+            };
+
+            categories = mkOption {
+              type = nullOr (listOf str);
+              default = null;
+              description = "Categories in which the entry should be shown in a menu.";
+            };
+
+            icon = mkOption {
+              type = nullOr (either str path);
+              default = null;
+              description = "Icon to display in file manager, menus, etc.";
+            };
+
+            prefersNonDefaultGPU = mkOption {
+              type = nullOr bool;
+              default = null;
+              description = ''
+                If true, the application prefers to be run on a more
+                powerful discrete GPU if available.
+              '';
+            };
+          };
+        });
+    };
   };
   config = mkIf cfg.enable {
     programs.firefox = {
@@ -135,9 +265,7 @@ in
       profiles = {
         default = {
           id = 0;
-          extensions = addons ++ [
-            customAddons.userchrome-toggle-extended
-          ];
+          extensions = addons;
           isDefault = true;
           inherit search;
           settings = settings // themed-settings;
@@ -152,7 +280,45 @@ in
           inherit search;
           inherit settings;
         };
-      };
+      } // make-pwa-profiles cfg.pwa;
     };
+    xdg.desktopEntries = mapAttrs (name: cfg: {
+      inherit (cfg)
+        genericName
+        comment
+        categories
+        icon
+        mimeType
+        prefersNonDefaultGPU
+        ;
+
+      name =
+        if cfg.name == null then
+          (toUpper (substring 0 1 name)) + (substring 1 (stringLength name) name)
+        else
+          cfg.name;
+
+      startupNotify = true;
+      terminal = false;
+      type = "Application";
+
+      exec = concatStringsSep " " (
+        [
+          "${config.programs.firefox.package}/bin/firefox"
+          "--class"
+          "PWA-${name}"
+          "-P"
+          "${config.programs.firefox.profiles."pwa-${name}".path}"
+          "--no-remote"
+        ]
+        ++ cfg.extraArgs
+        ++ [ "${cfg.url}" ]
+      );
+
+      settings = {
+        X-MultipleArgs = "false"; # Consider enabling, don't know what this does
+        StartupWMClass = "PWA-${name}";
+      };
+    }) config.programs.firefox.webapps;
   };
 }
