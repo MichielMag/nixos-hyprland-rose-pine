@@ -18,6 +18,7 @@ let
   hypr-handle-open-lid = pkgs.writeShellScriptBin "hypr-handle-open-lid" ''${builtins.readFile ./.scripts/hyprland/handle-open-lid.sh}'';
   hypr-handle-close-lid = pkgs.writeShellScriptBin "hypr-handle-close-lid" ''${builtins.readFile ./.scripts/hyprland/handle-close-lid.sh}'';
   hypr-x-clip-sync = pkgs.writeShellScriptBin "hypr-x-clip-sync" ''${builtins.readFile ./.scripts/util/clip-sync.sh}'';
+  hypr-restore-lockscreen = pkgs.writeShellScriptBin "hypr-restore-lockscreen" ''${builtins.readFile ./.scripts/hyprland/restore-lockscreen.sh}'';
 in
 {
   options.modules.hyprland = {
@@ -42,6 +43,7 @@ in
       hypr-random-wallpaper-loop
       hypr-handle-open-lid
       hypr-handle-close-lid
+      hypr-restore-lockscreen
 
       kdePackages.qtwayland
       polkit-kde-agent
