@@ -62,6 +62,7 @@ in
   modules = {
     evolution.enable = true;
     steam.enable = true;
+    ollama.enable = true;
   };
 
   nixpkgs.config.packageOverrides = pkgs: {

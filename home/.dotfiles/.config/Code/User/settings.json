@@ -34,7 +34,8 @@
 		"editor.codeActionsOnSave": {
 			"source.fixAll.eslint": "explicit"
 		},
-		"editor.formatOnSave": true
+		"editor.formatOnSave": true,
+		"prettier.printWidth": 160
 	},
 	"[typescript]": {
 		"editor.defaultFormatter": "esbenp.prettier-vscode",
@@ -120,5 +121,6 @@
 	"chat.commandCenter.enabled": true,
 	"github.copilot.chat.followUps": "always",
 	"explorer.confirmDelete": false,
-	"explorer.confirmDragAndDrop": false
+	"explorer.confirmDragAndDrop": false,
+	"vsicons.dontShowNewVersionMessage": true
 }

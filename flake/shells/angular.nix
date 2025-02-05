@@ -31,7 +31,9 @@ pkgs.mkShell {
     gl-edge
   ];
   shellHook = ''
+    mkdir -p ${toString ./.}/.nix-node/bin
     mkdir -p ${toString ./.}/.nix-node/lib
+    export PATH="${toString ./.}/.nix-node/bin:$PATH"
   '';
   CYPRESS_RUN_BINARY = "${cypress}/bin/Cypress";
   ELECTRON_OZONE_PLATFORM_HINT = "auto";

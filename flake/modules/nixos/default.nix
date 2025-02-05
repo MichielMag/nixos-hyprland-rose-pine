@@ -9,6 +9,7 @@
   imports = [
     ./office/evolution
     ./gaming/steam
+    ./ai/ollama
   ];
 
 }
