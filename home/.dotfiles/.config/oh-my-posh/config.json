@@ -1,151 +1,162 @@
 {
-	"$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
-	"palette": {
-		"rp-m-base": "#232136",
-		"rp-m-surface": "#2a273f",
-		"rp-m-overlay": "#393552",
-		"rp-m-muted": "#6e6a86",
-		"rp-m-subtle": "#908caa",
-		"rp-m-text": "#e0def4",
-		"rp-m-love": "#eb6f92",
-		"rp-m-gold": "#f6c177",
-		"rp-m-rose": "#ea9a97",
-		"rp-m-pine": "#3e8fb0",
-		"rp-m-foam": "#9ccfd8",
-		"rp-m-iris": "#c4a7e7",
-		"rp-m-hl-low": "#2a283e",
-		"rp-m-hl-med": "#44415a",
-		"rp-m-hl-high": "#56526e"
-	},
-	"blocks": [
-		{
-			"alignment": "left",
-			"newline": true,
-			"segments": [
-				{
-					"background": "p:rp-m-rose",
-					"foreground": "p:rp-m-overlay",
-					"properties": {
-						"alpine": "\uf300",
-						"arch": "\uf303",
-						"centos": "\uf304",
-						"debian": "\uf306",
-						"elementary": "\uf309",
-						"fedora": "\uf30a",
-						"gentoo": "\uf30d",
-						"linux": "\ue712",
-						"macos": "\ue711",
-						"manjaro": "\uf312",
-						"mint": "\uf30f",
-						"opensuse": "\uf314",
-						"raspbian": "\uf315",
-						"ubuntu": "\uf31c",
-						"windows": "\ue70f"
-					},
-					"style": "diamond",
-					"leading_diamond": "\u256d\u2500\ue0b2",
-					"template": " {{ if .WSL }}WSL at {{ end }}{{.Icon}} ",
-					"type": "os"
-				},
-				{
-					"background": "p:rp-m-gold",
-					"foreground": "p:rp-m-hl-low",
-					"style": "powerline",
-					"powerline_symbol": "\ue0b0",
-					"template": " {{ .UserName }} ",
-					"type": "session"
-				},
-				{
-					"background": "p:rp-m-iris",
-					"foreground": "p:rp-m-hl-high",
-					"properties": {
-						"style": "agnoster_short",
-						"max_depth": 3,
-						"folder_icon": "\u2026",
-						"folder_separator_icon": " <transparent>\ue0b1</> "
-					},
-					"style": "powerline",
-					"powerline_symbol": "\ue0b0",
-					"template": " {{ .Path }} ",
-					"type": "path"
-				},
-				{
-					"background": "p:rp-m-pine",
-					"foreground": "p:rp-m-text",
-					"background_templates": [
-						"{{ if or (.Working.Changed) (.Staging.Changed) }}p:rp-m-foam{{ end }}",
-						"{{ if and (gt .Ahead 0) (gt .Behind 0) }}{{ end }}",
-						"{{ if gt .Ahead 0 }}p:rp-m-gold{{ end }}",
-						"{{ if gt .Behind 0 }}p:rp-m-love{{ end }}"
-					],
-					"foreground_templates": [
-						"{{ if or (.Working.Changed) (.Staging.Changed) }}p:rp-m-hl-high{{ end }}",
-						"{{ if and (gt .Ahead 0) (gt .Behind 0) }}{ end }}",
-						"{{ if gt .Ahead 0 }}p:rp-m-hl-high{{ end }}",
-						"{{ if gt .Behind 0 }}p:rp-m-hl-high{{ end }}"
-					],
-					"properties": {
-						"branch_max_length": 25,
-						"fetch_stash_count": true,
-						"fetch_status": true,
-						"branch_icon": "\uf418 ",
-						"branch_identical_icon": "\uf444",
-						"branch_gone_icon": "\ueab8"
-					},
-					"style": "diamond",
-					"leading_diamond": "<transparent,background>\ue0b0</>",
-					"template": " {{ .HEAD }}{{if .BranchStatus }} {{ .BranchStatus }}{{ end }}{{ if .Working.Changed }} <transparent>\ue0b1</> <#121318>\uf044 {{ .Working.String }}</>{{ end }}{{ if .Staging.Changed }} <transparent>\ue0b1</> <#121318>\uf046 {{ .Staging.String }}</>{{ end }}{{ if gt .StashCount 0 }} <transparent>\ue0b1</> <#121318>\ueb4b {{ .StashCount }}</>{{ end }} ",
-					"trailing_diamond": "\ue0b0",
-					"type": "git"
-				}
-			],
-			"type": "prompt"
-		},
-		{
-			"alignment": "right",
-			"segments": [
-				{
-					"background": "p:rp-m-foam",
-					"foreground": "p:rp-m-hl-med",
-					"properties": {
-						"style": "austin",
-						"always_enabled": true
-					},
-					"invert_powerline": true,
-					"style": "powerline",
-					"powerline_symbol": "\ue0b2",
-					"template": " \ueba2 {{ .FormattedMs }} ",
-					"type": "executiontime"
-				},
-				{
-					"background": "p:rp-m-love",
-					"foreground": "p:rp-m-text",
-					"properties": {
-						"time_format": "15:04:05"
-					},
-					"invert_powerline": true,
-					"style": "diamond",
-					"template": " \uf073 {{ .CurrentDate | date .Format }} ",
-					"trailing_diamond": "\ue0b0",
-					"type": "time"
-				}
-			],
-			"type": "prompt"
-		},
-		{
-			"alignment": "left",
-			"newline": true,
-			"segments": [
-				{
-					"foreground": "p:rp-m-rose",
-					"style": "plain",
-					"template": "\u2570\u2500 {{ if .Root }}#{{else}}${{end}}",
-					"type": "text"
-				}
-			],
-			"type": "prompt"
-		}
-	],
-	"final_space": true,
-	"version": 2
+  "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
+  "palette": {
+    "rp-m-base": "#232136",
+    "rp-m-foam": "#9ccfd8",
+    "rp-m-gold": "#f6c177",
+    "rp-m-hl-high": "#56526e",
+    "rp-m-hl-low": "#2a283e",
+    "rp-m-hl-med": "#44415a",
+    "rp-m-iris": "#c4a7e7",
+    "rp-m-love": "#eb6f92",
+    "rp-m-muted": "#6e6a86",
+    "rp-m-overlay": "#393552",
+    "rp-m-pine": "#3e8fb0",
+    "rp-m-rose": "#ea9a97",
+    "rp-m-subtle": "#908caa",
+    "rp-m-surface": "#2a273f",
+    "rp-m-text": "#e0def4"
+  },
+  "blocks": [
+    {
+      "type": "prompt",
+      "alignment": "left",
+      "segments": [
+        {
+          "properties": {
+            "alpine": "\uf300",
+            "arch": "\uf303",
+            "cache_duration": "none",
+            "centos": "\uf304",
+            "debian": "\uf306",
+            "elementary": "\uf309",
+            "fedora": "\uf30a",
+            "gentoo": "\uf30d",
+            "linux": "\ue712",
+            "macos": "\ue711",
+            "manjaro": "\uf312",
+            "mint": "\uf30f",
+            "opensuse": "\uf314",
+            "raspbian": "\uf315",
+            "ubuntu": "\uf31c",
+            "windows": "\ue70f"
+          },
+          "leading_diamond": "\u256d\u2500\ue0b2",
+          "template": " {{ if .WSL }}WSL at {{ end }}{{.Icon}} ",
+          "foreground": "p:rp-m-overlay",
+          "background": "p:rp-m-rose",
+          "type": "os",
+          "style": "diamond"
+        },
+        {
+          "properties": {
+            "cache_duration": "none"
+          },
+          "template": " {{ .UserName }} ",
+          "foreground": "p:rp-m-hl-low",
+          "powerline_symbol": "\ue0b0",
+          "background": "p:rp-m-gold",
+          "type": "session",
+          "style": "powerline"
+        },
+        {
+          "properties": {
+            "cache_duration": "none",
+            "folder_icon": "\u2026",
+            "folder_separator_icon": " <transparent>\ue0b1</> ",
+            "max_depth": 3,
+            "style": "agnoster_short"
+          },
+          "template": " {{ .Path }} ",
+          "foreground": "p:rp-m-hl-high",
+          "powerline_symbol": "\ue0b0",
+          "background": "p:rp-m-iris",
+          "type": "path",
+          "style": "powerline"
+        },
+        {
+          "properties": {
+            "branch_gone_icon": "\ueab8",
+            "branch_icon": "\uf418 ",
+            "branch_identical_icon": "\uf444",
+            "branch_max_length": 25,
+            "cache_duration": "none",
+            "fetch_stash_count": true,
+            "fetch_status": true
+          },
+          "leading_diamond": "<transparent,background>\ue0b0</>",
+          "trailing_diamond": "\ue0b0",
+          "template": " {{ .HEAD }}{{if .BranchStatus }} {{ .BranchStatus }}{{ end }}{{ if .Working.Changed }} <transparent>\ue0b1</> <#121318>\uf044 {{ .Working.String }}</>{{ end }}{{ if .Staging.Changed }} <transparent>\ue0b1</> <#121318>\uf046 {{ .Staging.String }}</>{{ end }}{{ if gt .StashCount 0 }} <transparent>\ue0b1</> <#121318>\ueb4b {{ .StashCount }}</>{{ end }} ",
+          "foreground": "p:rp-m-text",
+          "background": "p:rp-m-pine",
+          "type": "git",
+          "style": "diamond",
+          "foreground_templates": [
+            "{{ if or (.Working.Changed) (.Staging.Changed) }}p:rp-m-hl-high{{ end }}",
+            "{{ if and (gt .Ahead 0) (gt .Behind 0) }}{ end }}",
+            "{{ if gt .Ahead 0 }}p:rp-m-hl-high{{ end }}",
+            "{{ if gt .Behind 0 }}p:rp-m-hl-high{{ end }}"
+          ],
+          "background_templates": [
+            "{{ if or (.Working.Changed) (.Staging.Changed) }}p:rp-m-foam{{ end }}",
+            "{{ if and (gt .Ahead 0) (gt .Behind 0) }}{{ end }}",
+            "{{ if gt .Ahead 0 }}p:rp-m-gold{{ end }}",
+            "{{ if gt .Behind 0 }}p:rp-m-love{{ end }}"
+          ]
+        }
+      ],
+      "newline": true
+    },
+    {
+      "type": "prompt",
+      "alignment": "right",
+      "segments": [
+        {
+          "properties": {
+            "always_enabled": true,
+            "cache_duration": "none",
+            "style": "austin"
+          },
+          "template": " \ueba2 {{ .FormattedMs }} ",
+          "foreground": "p:rp-m-hl-med",
+          "powerline_symbol": "\ue0b2",
+          "background": "p:rp-m-foam",
+          "type": "executiontime",
+          "style": "powerline",
+          "invert_powerline": true
+        },
+        {
+          "properties": {
+            "cache_duration": "none",
+            "time_format": "15:04:05"
+          },
+          "trailing_diamond": "\ue0b0",
+          "template": " \uf073 {{ .CurrentDate | date .Format }} ",
+          "foreground": "p:rp-m-text",
+          "background": "p:rp-m-love",
+          "type": "time",
+          "style": "diamond",
+          "invert_powerline": true
+        }
+      ]
+    },
+    {
+      "type": "prompt",
+      "alignment": "left",
+      "segments": [
+        {
+          "properties": {
+            "cache_duration": "none"
+          },
+          "template": "\u2570\u2500 {{ if .Root }}#{{else}}${{end}}",
+          "foreground": "p:rp-m-rose",
+          "type": "text",
+          "style": "plain"
+        }
+      ],
+      "newline": true
+    }
+  ],
+  "version": 3,
+  "final_space": true
 }

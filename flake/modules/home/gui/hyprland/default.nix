@@ -73,9 +73,12 @@ in
       systemd.extraCommands = [
         "${pkgs.gnome-keyring}/bin/gnome-keyring-daemon --start --components=secrets,pkcs11,ssh"
       ];
+
+      package = null;
+      portalPackage = null;
       plugins = with pkgs; [
         # hyprlandPlugins.hyprexpo
-        hyprlandPlugins.hyprgrass
+        # hyprlandPlugins.hyprgrass
         split-monitor-workspaces
         # hyprlandPlugins.hyprtrails
       ];

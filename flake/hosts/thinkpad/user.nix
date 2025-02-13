@@ -28,7 +28,7 @@
 
       # networking
       onedrive = {
-        enable = true;
+        enable = false;
         configFiles."4dotnet" = ./.config/onedrive;
       };
 

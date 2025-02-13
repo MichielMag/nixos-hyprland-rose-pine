@@ -132,7 +132,13 @@
   programs.fish.enable = true;
   programs.thunar.enable = true;
   programs.dconf.enable = true;
-  programs.hyprland.enable = true;
+  programs.hyprland = {
+    enable = true;
+    package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
+    # make sure to also set the portal package, so that they are in sync
+    portalPackage =
+      inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland;
+  };
   programs.ydotool = {
     enable = true;
     group = "ydotool";
@@ -197,7 +203,7 @@
     XDG_CURRENT_DESKTOP = "Hyprland";
   };
 
-  # Security 
+  # Security
   security = {
     sudo.enable = true;
     protectKernelImage = true;

@@ -58,9 +58,6 @@ in
       # Simple calculator
       gnome-calculator
 
-      # Passwordmanager
-      bitwarden-cli
-
       # Gaming mouse GUI
       piper
     ];
