@@ -123,5 +123,6 @@
 	"explorer.confirmDelete": false,
 	"explorer.confirmDragAndDrop": false,
 	"vsicons.dontShowNewVersionMessage": true,
-	"github.copilot.nextEditSuggestions.enabled": true
+	"github.copilot.nextEditSuggestions.enabled": true,
+	"git.openRepositoryInParentFolders": "never"
 }

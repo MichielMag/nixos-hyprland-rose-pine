@@ -1,0 +1,22 @@
+// https://gitlab.gnome.org/GNOME/gtk/-/blob/gtk-3-24/gtk/theme/Adwaita/_colors-public.scss
+@import '../theme.scss';
+$fg-color: #{'@text'};
+$bg-color: #{'@base'};
+
+window.Bar {
+	background: transparent;
+	color: $fg-color;
+	font-weight: bold;
+
+	> centerbox {
+		background: $bg-color;
+		border-radius: 10px;
+		margin: 8px;
+	}
+
+	button {
+		border-radius: 8px;
+		margin: 2px;
+		min-width: 400px;
+	}
+}

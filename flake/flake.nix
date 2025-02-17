@@ -39,6 +39,7 @@
       url = "github:rafaelmardojai/firefox-gnome-theme";
       flake = false;
     };
+    # ags.url = "github:aylur/ags";
   };
 
   # All outputs for the system (configs)
@@ -112,10 +113,8 @@
                     config.allowUnfree = true;
                   };
                   vscode-marketplace = inputs.nix-vscode-extensions.extensions.${system}.vscode-marketplace;
-                  vscode =
-                    final.callPackage ./packages/vscode/vscode.nix
-                      {
-                      };
+                  vscode = final.callPackage ./packages/vscode/vscode.nix {
+                  };
                   shyfox = final.callPackage ./packages/firefox/shyfox.nix { };
                 })
                 inputs.nurpkgs.overlay
