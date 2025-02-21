@@ -2,11 +2,18 @@
 @import '../theme.scss';
 $fg-color: #{'@text'};
 $bg-color: #{'@base'};
-
+$overlay: #{'@overlay'};
+window {
+	font-size: 3rem;
+}
 window.Bar {
+	min-height: 1em;
 	background: transparent;
 	color: $fg-color;
 	font-weight: bold;
+
+	* {
+	}
 
 	> centerbox {
 		background: $bg-color;
@@ -15,8 +22,12 @@ window.Bar {
 	}
 
 	button {
-		border-radius: 8px;
+		font-size: 0.3em;
 		margin: 2px;
 		min-width: 400px;
+
+		:before {
+			content: ' ';
+		}
 	}
 }

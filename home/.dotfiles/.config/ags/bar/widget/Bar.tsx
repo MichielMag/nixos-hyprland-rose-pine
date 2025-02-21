@@ -22,6 +22,7 @@ export default function Bar(gdkmonitor: Gdk.Monitor) {
 			application={App}
 		>
 			<centerbox>
+				<div className="title" label={title} />
 				<button onClicked="echo hello" halign={Gtk.Align.CENTER}>
 					<label label={titleBind} />
 				</button>
