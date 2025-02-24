@@ -116,6 +116,7 @@
                   vscode = final.callPackage ./packages/vscode/vscode.nix {
                   };
                   shyfox = final.callPackage ./packages/firefox/shyfox.nix { };
+                  godot_4 = final.callPackage ./packages/godot/package.nix { };
                 })
                 inputs.nurpkgs.overlay
               ];

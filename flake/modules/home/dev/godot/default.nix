@@ -16,7 +16,9 @@ in
   };
   config = mkIf cfg.enable {
     home.packages = with pkgs; [
-      godot_4
+      (godot_4.override {
+        withMono = true;
+      })
     ];
   };
 }
