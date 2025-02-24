@@ -42,6 +42,7 @@
     ./dev/direnv
     ./dev/insomnia
     ./dev/jetbrains-rider
+    ./dev/godot
 
     # office
     ./office/obsidian
