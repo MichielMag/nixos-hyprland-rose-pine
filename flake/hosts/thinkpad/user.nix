@@ -25,6 +25,7 @@
 
       # graphics
       gimp.enable = true;
+      krita.enable = true;
 
       # networking
       onedrive = {

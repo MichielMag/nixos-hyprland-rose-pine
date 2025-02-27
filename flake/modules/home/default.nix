@@ -32,6 +32,7 @@
     # graphics
     ./graphics/gimp
     ./graphics/krita
+    ./graphics/blockbench
 
     # networking
     ./networking/onedrive

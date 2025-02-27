@@ -20,5 +20,26 @@ in
         withMono = true;
       })
     ];
+
+    xdg.desktopEntries = {
+      "org.godotengine.Godot4-mono" = {
+        name = "Godot Engine 4";
+        type = "Application";
+        genericName = "Libre game engine";
+        icon = "godot";
+        exec = "godot4-mono --display-driver wayland %f";
+        terminal = false;
+        mimeType = [ "Libre game engine" ];
+        categories = [
+          "Development"
+          "IDE"
+        ];
+        settings = {
+          StartupWMClass = "Godot";
+          PrefersNonDefaultGPU = "true";
+        };
+      };
+    };
+
   };
 }
