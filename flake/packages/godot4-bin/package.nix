@@ -165,7 +165,7 @@ let
           bin/godot.${withPlatform}.${withTarget}.${arch}.mono --headless --generate-mono-glue modules/mono/glue
       fi
       echo "Building C#/.NET Assemblies"
-      python modules/mono/build_scripts/build_assemblies.py --godot-output-dir bin --precision=${withPrecision}
+      python modules/mono/build_scripts/build_assemblies.py --godot-output-dir bin --precision=${withPrecision} --push-nupkgs-local bin/nupkgs
     '';
 
     runtimeDependencies =

@@ -31,6 +31,7 @@
 
     # graphics
     ./graphics/gimp
+    ./graphics/krita
 
     # networking
     ./networking/onedrive

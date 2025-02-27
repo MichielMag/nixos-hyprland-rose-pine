@@ -105,6 +105,11 @@
               };
               nixpkgs.config.allowUnfree = true;
 
+              # Temp solution for godot 4.3
+              nixpkgs.config.permittedInsecurePackages = [
+                "dotnet-sdk-6.0.428"
+              ];
+
               nixpkgs.overlays = [
                 (final: prev: {
                   split-monitor-workspaces = split-monitor-workspaces.packages.${system}.split-monitor-workspaces;
@@ -116,7 +121,6 @@
                   vscode = final.callPackage ./packages/vscode/vscode.nix {
                   };
                   shyfox = final.callPackage ./packages/firefox/shyfox.nix { };
-                  godot_4 = final.callPackage ./packages/godot/package.nix { };
                 })
                 inputs.nurpkgs.overlay
               ];
