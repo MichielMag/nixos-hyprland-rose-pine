@@ -26,6 +26,7 @@
       # graphics
       gimp.enable = true;
       krita.enable = true;
+      blockbench.enable = true;
 
       # networking
       onedrive = {

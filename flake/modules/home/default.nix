@@ -30,9 +30,9 @@
     ./gui/ulauncher
 
     # graphics
-    ./graphics/gimp
-    ./graphics/krita
-    ./graphics/blockbench
+    ./creative/gimp
+    ./creative/krita
+    ./creative/blockbench
 
     # networking
     ./networking/onedrive

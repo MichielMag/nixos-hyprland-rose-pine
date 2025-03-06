@@ -104,7 +104,6 @@
 
 	"git.confirmSync": false,
 	"git.enableSmartCommit": true,
-	"window.menuBarVisibility": "toggle",
 	"nix.enableLanguageServer": true,
 	"nix.serverPath": "nil",
 	"nix.serverSettings": {
@@ -124,5 +123,8 @@
 	"explorer.confirmDragAndDrop": false,
 	"vsicons.dontShowNewVersionMessage": true,
 	"github.copilot.nextEditSuggestions.enabled": true,
-	"git.openRepositoryInParentFolders": "never"
+	"git.openRepositoryInParentFolders": "never",
+	"godotTools.editorPath.godot4": "godot4-mono",
+	"window.customTitleBarVisibility": "never",
+	"window.titleBarStyle": "custom"
 }
