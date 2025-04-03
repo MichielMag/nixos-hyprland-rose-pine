@@ -33,6 +33,7 @@
     ./creative/gimp
     ./creative/krita
     ./creative/blockbench
+    ./creative/lmms
 
     # networking
     ./networking/onedrive

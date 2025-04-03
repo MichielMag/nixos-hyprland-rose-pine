@@ -60,6 +60,8 @@ in
         vscode-extensions.github.copilot
         vscode-extensions.github.copilot-chat
 
+        vscode-extensions.ms-vscode-remote.remote-ssh
+
         vscode-marketplace.ms-vscode.vscode-copilot-data-analysis
         vscode-marketplace.ms-vscode.vscode-websearchforcopilot
         vscode-marketplace.ms-vscode.vscode-commander

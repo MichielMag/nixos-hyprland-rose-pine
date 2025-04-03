@@ -118,9 +118,7 @@
                     config.allowUnfree = true;
                   };
                   vscode-marketplace = inputs.nix-vscode-extensions.extensions.${system}.vscode-marketplace;
-                  vscode = final.callPackage ./packages/vscode/vscode.nix {
-                  };
-                  shyfox = final.callPackage ./packages/firefox/shyfox.nix { };
+                  vscode = final.callPackage ./packages/vscode/vscode.nix { };
                 })
                 inputs.nurpkgs.overlay
               ];

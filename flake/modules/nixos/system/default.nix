@@ -25,6 +25,7 @@
     nvtopPackages.full
     freerdp
     wget
+    gparted
     #networkmanager
   ];
 
@@ -150,6 +151,7 @@
   programs.nix-ld = {
     enable = true;
   };
+  programs.partition-manager.enable = true;
 
   # Set up user and enable sudo
   users.users.michiel = {
@@ -207,7 +209,7 @@
   security = {
     sudo.enable = true;
     protectKernelImage = true;
-
+    polkit.enable = true;
     pam.services = {
       swaylock = { };
       ly = {

@@ -23,10 +23,11 @@
       wlsunset.enable = true;
       ulauncher.enable = true;
 
-      # graphics
+      # creative
       gimp.enable = true;
       krita.enable = true;
       blockbench.enable = true;
+      #lmms.enable = true;
 
       # networking
       onedrive = {
