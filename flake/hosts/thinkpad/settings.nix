@@ -63,6 +63,8 @@ in
     evolution.enable = true;
     steam.enable = true;
     ollama.enable = false;
+    nemo.enable = true;
+
   };
 
   nixpkgs.config.packageOverrides = pkgs: {

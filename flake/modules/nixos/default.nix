@@ -10,6 +10,7 @@
     ./office/evolution
     ./gaming/steam
     ./ai/ollama
+    ./gui/nemo
   ];
 
 }
