@@ -20,6 +20,7 @@ in
       nemo-preview
       nemo-fileroller
       nemo-emblems
+      nemo-seahorse
     ];
   };
 }
