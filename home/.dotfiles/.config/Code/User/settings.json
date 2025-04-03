@@ -126,5 +126,36 @@
 	"git.openRepositoryInParentFolders": "never",
 	"godotTools.editorPath.godot4": "godot4-mono",
 	"window.customTitleBarVisibility": "never",
-	"window.titleBarStyle": "custom"
+	"window.titleBarStyle": "custom",
+	"[dockercompose]": {
+		"editor.defaultFormatter": "ms-azuretools.vscode-docker"
+	},
+	"database-client.autoSync": true,
+	"mssql.connectionGroups": [
+		{
+			"name": "ROOT",
+			"id": "5ADB33F6-FB88-4893-BC1C-BDA85712D88A"
+		}
+	],
+	"mssql.connections": [
+		{
+			"server": "localhost",
+			"database": "",
+			"authenticationType": "SqlLogin",
+			"user": "SA",
+			"password": "",
+			"emptyPasswordInput": false,
+			"savePassword": true,
+			"profileName": "Localhost",
+			"id": "FF1B7878-C3E0-4BD2-B48D-477862A578E4",
+			"encrypt": "Mandatory",
+			"trustServerCertificate": true,
+			"groupId": "5ADB33F6-FB88-4893-BC1C-BDA85712D88A",
+			"profileSource": 0,
+			"displayName": "Localhost"
+		}
+	],
+	"[sql]": {
+		"editor.defaultFormatter": "inferrinizzard.prettier-sql-vscode"
+	}
 }
