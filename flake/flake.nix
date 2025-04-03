@@ -39,6 +39,7 @@
       url = "github:rafaelmardojai/firefox-gnome-theme";
       flake = false;
     };
+    # ags.url = "github:aylur/ags";
   };
 
   # All outputs for the system (configs)
@@ -104,6 +105,11 @@
               };
               nixpkgs.config.allowUnfree = true;
 
+              # Temp solution for godot 4.3
+              nixpkgs.config.permittedInsecurePackages = [
+                "dotnet-sdk-6.0.428"
+              ];
+
               nixpkgs.overlays = [
                 (final: prev: {
                   split-monitor-workspaces = split-monitor-workspaces.packages.${system}.split-monitor-workspaces;
@@ -112,11 +118,7 @@
                     config.allowUnfree = true;
                   };
                   vscode-marketplace = inputs.nix-vscode-extensions.extensions.${system}.vscode-marketplace;
-                  vscode =
-                    final.callPackage ./packages/vscode/vscode.nix
-                      {
-                      };
-                  shyfox = final.callPackage ./packages/firefox/shyfox.nix { };
+                  vscode = final.callPackage ./packages/vscode/vscode.nix { };
                 })
                 inputs.nurpkgs.overlay
               ];

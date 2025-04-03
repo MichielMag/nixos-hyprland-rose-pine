@@ -30,7 +30,10 @@
     ./gui/ulauncher
 
     # graphics
-    ./graphics/gimp
+    ./creative/gimp
+    ./creative/krita
+    ./creative/blockbench
+    ./creative/lmms
 
     # networking
     ./networking/onedrive
@@ -42,6 +45,7 @@
     ./dev/direnv
     ./dev/insomnia
     ./dev/jetbrains-rider
+    ./dev/godot
 
     # office
     ./office/obsidian

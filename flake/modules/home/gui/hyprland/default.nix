@@ -17,7 +17,8 @@ let
   hypr-random-wallpaper-loop = pkgs.writeShellScriptBin "hypr-random-wallpaper-loop" ''${builtins.readFile ./.scripts/hyprland/random-wallpaper-loop.sh}'';
   hypr-handle-open-lid = pkgs.writeShellScriptBin "hypr-handle-open-lid" ''${builtins.readFile ./.scripts/hyprland/handle-open-lid.sh}'';
   hypr-handle-close-lid = pkgs.writeShellScriptBin "hypr-handle-close-lid" ''${builtins.readFile ./.scripts/hyprland/handle-close-lid.sh}'';
-  hypr-x-clip-sync = pkgs.writeShellScriptBin "hypr-x-clip-sync" ''${builtins.readFile ./.scripts/util/clip-sync.sh}'';
+  clipsync = pkgs.writeShellScriptBin "clipsync" ''${builtins.readFile ./.scripts/util/clip-sync.sh}'';
+  hypr-restore-lockscreen = pkgs.writeShellScriptBin "hypr-restore-lockscreen" ''${builtins.readFile ./.scripts/hyprland/restore-lockscreen.sh}'';
 in
 {
   options.modules.hyprland = {
@@ -29,6 +30,7 @@ in
 
     home.packages = with pkgs; [
       clipnotify
+      xclip
 
       hypridle
       hyprland-monitor-attached
@@ -37,11 +39,12 @@ in
 
       hyprlock
 
-      hypr-x-clip-sync
+      clipsync
       hypr-random-wallpaper
       hypr-random-wallpaper-loop
       hypr-handle-open-lid
       hypr-handle-close-lid
+      hypr-restore-lockscreen
 
       kdePackages.qtwayland
       polkit-kde-agent
@@ -70,9 +73,12 @@ in
       systemd.extraCommands = [
         "${pkgs.gnome-keyring}/bin/gnome-keyring-daemon --start --components=secrets,pkcs11,ssh"
       ];
+
+      package = null;
+      portalPackage = null;
       plugins = with pkgs; [
         # hyprlandPlugins.hyprexpo
-        hyprlandPlugins.hyprgrass
+        # hyprlandPlugins.hyprgrass
         split-monitor-workspaces
         # hyprlandPlugins.hyprtrails
       ];

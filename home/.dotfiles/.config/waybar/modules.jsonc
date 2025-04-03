@@ -288,6 +288,15 @@
 		"interval": 86400
 	},
 
+	"idle_inhibitor": {
+		"format": "{icon}",
+		"rotate": "{r_deg}",
+		"format-icons": {
+			"activated": "󰥔 ",
+			"deactivated": "󰯙 "
+		}
+	},
+
 	// Padding
 	"custom/paddw": {
 		"format": " ",

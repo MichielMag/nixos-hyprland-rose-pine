@@ -219,7 +219,8 @@ tooltip {
 	padding-left: 3px;
 }
 
-#custom-arch {
+#custom-arch,
+#idle_inhibitor {
 	color: @gold;
 	background: @arch;
 	font-size: 11pt;

@@ -44,9 +44,6 @@ in
       enable = true;
       mutableExtensionsDir = true;
       extensions = with pkgs; [
-        vscode-extensions.github.copilot
-        vscode-extensions.github.copilot-chat
-
         vscode-extensions.jock.svg
 
         vscode-extensions.mvllow.rose-pine
@@ -60,6 +57,11 @@ in
         vscode-extensions.jnoortheen.nix-ide
         vscode-extensions.eamodio.gitlens
 
+        vscode-extensions.github.copilot
+        vscode-extensions.github.copilot-chat
+
+        vscode-extensions.ms-vscode-remote.remote-ssh
+
         vscode-marketplace.ms-vscode.vscode-copilot-data-analysis
         vscode-marketplace.ms-vscode.vscode-websearchforcopilot
         vscode-marketplace.ms-vscode.vscode-commander
@@ -71,6 +73,12 @@ in
         vscode-marketplace.ms-dotnettools.vscodeintellicode-csharp
         vscode-marketplace.adrianwilczynski.user-secrets
 
+        vscode-marketplace.neikeq.godot-csharp-vscode
+        vscode-marketplace.alfish.godot-files
+        vscode-marketplace.geequlim.godot-tools
+        vscode-marketplace.altamkp.godot-snippets-vscode-csharp
+        vscode-marketplace.altamkp.godot-docs-vscode-csharp
+        vscode-marketplace.ms-vscode.mono-debug
       ];
       package = pkgs.vscode.override {
         commandLineArgs = "--use-gl=egl --enable-features=WebRTCPipeWireCapturer";

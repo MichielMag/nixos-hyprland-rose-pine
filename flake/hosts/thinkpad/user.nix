@@ -23,12 +23,15 @@
       wlsunset.enable = true;
       ulauncher.enable = true;
 
-      # graphics
+      # creative
       gimp.enable = true;
+      krita.enable = true;
+      blockbench.enable = true;
+      #lmms.enable = true;
 
       # networking
       onedrive = {
-        enable = true;
+        enable = false;
         configFiles."4dotnet" = ./.config/onedrive;
       };
 
@@ -45,6 +48,7 @@
       };
       insomnia.enable = true;
       jetbrains-rider.enable = true;
+      godot.enable = true;
       #bruno.enable = true; # Won't work in wayland for now
 
       # system

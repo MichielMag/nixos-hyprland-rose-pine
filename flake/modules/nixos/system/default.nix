@@ -25,6 +25,7 @@
     nvtopPackages.full
     freerdp
     wget
+    gparted
     #networkmanager
   ];
 
@@ -132,7 +133,13 @@
   programs.fish.enable = true;
   programs.thunar.enable = true;
   programs.dconf.enable = true;
-  programs.hyprland.enable = true;
+  programs.hyprland = {
+    enable = true;
+    package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
+    # make sure to also set the portal package, so that they are in sync
+    portalPackage =
+      inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland;
+  };
   programs.ydotool = {
     enable = true;
     group = "ydotool";
@@ -144,6 +151,7 @@
   programs.nix-ld = {
     enable = true;
   };
+  programs.partition-manager.enable = true;
 
   # Set up user and enable sudo
   users.users.michiel = {
@@ -197,11 +205,11 @@
     XDG_CURRENT_DESKTOP = "Hyprland";
   };
 
-  # Security 
+  # Security
   security = {
     sudo.enable = true;
     protectKernelImage = true;
-
+    polkit.enable = true;
     pam.services = {
       swaylock = { };
       ly = {

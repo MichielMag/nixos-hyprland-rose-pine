@@ -270,6 +270,7 @@ in
           inherit search;
           settings = settings // themed-settings;
           userChrome = builtins.readFile ./assets/userChrome.css;
+          userContent = builtins.readFile ./assets/userContent.css;
         };
         dev = {
           id = 1;

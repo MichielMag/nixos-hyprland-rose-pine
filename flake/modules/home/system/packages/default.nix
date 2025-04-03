@@ -21,7 +21,12 @@ in
     home.packages = with pkgs; [
       # File Explorers
       dolphin
+      kdePackages.kio
+      kdePackages.kio-zeroconf
+      kdePackages.kio-fuse
       kdePackages.kio-extras
+      kdePackages.kdegraphics-thumbnailers
+      kdePackages.qtsvg
       ark
 
       # Utilities
@@ -52,9 +57,6 @@ in
 
       # Simple calculator
       gnome-calculator
-
-      # Passwordmanager
-      bitwarden-cli
 
       # Gaming mouse GUI
       piper
