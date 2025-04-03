@@ -174,7 +174,7 @@ let
           "browser.contentblocking.category" = "strict";
           "network.cookie.lifetimePolicy" = 0;
         };
-        extensions = [
+        extensions = with firefox-addons.packages; [
           ublock-origin
           ghostery
           customAddons.rose-pine-moon-modified
@@ -311,7 +311,6 @@ in
           "${config.programs.firefox.profiles."pwa-${name}".path}"
           "--no-remote"
         ]
-        ++ cfg.extraArgs
         ++ [ "${cfg.url}" ]
       );
 
@@ -319,6 +318,6 @@ in
         X-MultipleArgs = "false"; # Consider enabling, don't know what this does
         StartupWMClass = "PWA-${name}";
       };
-    }) config.programs.firefox.webapps;
+    }) cfg.pwa;
   };
 }

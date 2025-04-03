@@ -31,7 +31,17 @@
         enable = true;
         configFiles."4dotnet" = ./.config/onedrive;
       };
-      firefox.enable = true;
+      firefox = {
+        enable = true;
+        pwa = {
+          "whatsapp" = {
+            url = "https://web.whatsapp.com";
+            profileId = 2;
+            name = "WhatsApp Web";
+            genericName = "WhatsApp Instant Messaging";
+          };
+        };
+      };
 
       # office
       obsidian.enable = true;
@@ -57,7 +67,6 @@
 
       # Media
       media.enable = true;
-
     };
   };
 }
