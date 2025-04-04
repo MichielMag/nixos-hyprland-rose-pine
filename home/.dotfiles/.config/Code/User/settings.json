@@ -142,7 +142,7 @@
 			"server": "localhost",
 			"database": "",
 			"authenticationType": "SqlLogin",
-			"user": "SA",
+			"user": "api",
 			"password": "",
 			"emptyPasswordInput": false,
 			"savePassword": true,

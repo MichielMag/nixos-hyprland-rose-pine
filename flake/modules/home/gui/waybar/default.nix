@@ -15,6 +15,7 @@ let
   wb-ssid = pkgs.writeShellScriptBin "wb-ssid" ''${builtins.readFile ./.scripts/essid.sh}'';
   wb-volume = pkgs.writeShellScriptBin "wb-volume" ''${builtins.readFile ./.scripts/volume.sh}'';
   wb-logout = pkgs.writeShellScriptBin "wb-logout" ''${builtins.readFile ./.scripts/wlogout.sh}'';
+  wb-toggle = pkgs.writeShellScriptBin "wb-toggle" ''${builtins.readFile ./.scripts/toggle-bar.sh}'';
 in
 {
   options.modules.waybar = {
@@ -38,6 +39,7 @@ in
       wb-ssid
       wb-volume
       wb-logout
+      wb-toggle
     ];
 
     home.activation = {

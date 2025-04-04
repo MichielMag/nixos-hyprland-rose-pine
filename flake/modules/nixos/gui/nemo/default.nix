@@ -17,10 +17,8 @@ in
   config = mkIf cfg.enable {
     environment.systemPackages = with pkgs; [
       nemo-with-extensions
-      nemo-preview
       nemo-fileroller
       nemo-emblems
-      nemo-seahorse
     ];
   };
 }
