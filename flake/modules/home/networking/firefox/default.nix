@@ -62,7 +62,7 @@ let
 
       "extensions.autoDisableScopes" = 0; # Automatically enable extensions
       "extensions.update.enabled" = false;
-      "extensions.activeThemeID" = customAddons.rose-pine-moon-modified.addonId;
+      "extensions.activeThemeID" = customAddons.rose-pine-moon-update.addonId;
     };
   };
   themed-settings = {
@@ -122,7 +122,7 @@ let
     "browser.aboutConfig.showWarning" = false;
     "browser.compactmode.show" = true;
 
-    "extensions.activeThemeID" = customAddons.rose-pine-moon-modified.addonId;
+    "extensions.activeThemeID" = customAddons.rose-pine-moon-update.addonId;
   };
   make-pwa-profiles =
     cfg:
@@ -177,7 +177,7 @@ let
         extensions = with firefox-addons.packages; [
           ublock-origin
           ghostery
-          customAddons.rose-pine-moon-modified
+          customAddons.rose-pine-moon-update
         ];
       }
     ) cfg;
