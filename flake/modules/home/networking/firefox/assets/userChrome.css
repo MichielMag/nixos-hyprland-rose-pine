@@ -853,7 +853,9 @@ tab-group .tabbrowser-tab {
 	height: 100%;
 	align-content: center;
 }
-
+#urlbar-container:has(#urlbar[open]) {
+	background: var(--toolbar-field-focus-background-color);
+}
 /* Increase urlbar width when its open (v2) */
 #urlbar[open] {
 	margin-top: var(--urlbar-container-height) !important;
