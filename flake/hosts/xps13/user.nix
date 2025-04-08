@@ -27,10 +27,10 @@
       gimp.enable = true;
 
       # networking
-      onedrive = {
-        enable = true;
-        configFiles."4dotnet" = ./.config/onedrive;
-      };
+      #onedrive = {
+      #  enable = true;
+      #  configFiles."4dotnet" = ./.config/onedrive;
+      #};
       firefox = {
         enable = true;
         pwa = {
