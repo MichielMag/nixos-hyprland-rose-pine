@@ -27,11 +27,21 @@
       gimp.enable = true;
 
       # networking
-      onedrive = {
+      #onedrive = {
+      #  enable = true;
+      #  configFiles."4dotnet" = ./.config/onedrive;
+      #};
+      firefox = {
         enable = true;
-        configFiles."4dotnet" = ./.config/onedrive;
+        pwa = {
+          "whatsapp" = {
+            url = "https://web.whatsapp.com";
+            profileId = 2;
+            name = "WhatsApp Web";
+            genericName = "WhatsApp Instant Messaging";
+          };
+        };
       };
-      firefox.enable = true;
 
       # office
       obsidian.enable = true;
@@ -57,7 +67,6 @@
 
       # Media
       media.enable = true;
-
     };
   };
 }
