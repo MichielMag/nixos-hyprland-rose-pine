@@ -157,5 +157,8 @@
 	],
 	"[sql]": {
 		"editor.defaultFormatter": "inferrinizzard.prettier-sql-vscode"
-	}
+	},
+	"github.copilot.chat.codesearch.enabled": true,
+	"github.copilot.chat.agent.thinkingTool": true,
+	"chat.agent.enabled": true
 }
