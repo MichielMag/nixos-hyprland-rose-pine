@@ -138,9 +138,10 @@ let
             margin-right: 0px; margin-bottom: 0px;
           }
 
-          #TabsToolbar {
-            visibility: collapse !important;
+          #nav-bar, #identity-box, #tabbrowser-tabs, #TabsToolbar {
+              visibility: collapse !important;
           }
+
 
           #nav-bar {
             margin-top: 0;
