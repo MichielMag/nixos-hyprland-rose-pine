@@ -40,6 +40,12 @@
             name = "WhatsApp Web";
             genericName = "WhatsApp Instant Messaging";
           };
+          "teams" = {
+            url = "https://teams.live.com";
+            profileId = 3;
+            name = "Teams";
+            genericName = "Teams Instant Messaging";
+          };
         };
       };
 
