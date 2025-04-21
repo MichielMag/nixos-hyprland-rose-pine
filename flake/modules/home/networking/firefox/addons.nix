@@ -6,7 +6,7 @@
     version = "1.0";
     addonId = "{a046d296-3ec9-40f8-a15c-db401fb7d8e7}";
     url = "https://addons.mozilla.org/firefox/downloads/file/4150630/${pname}-${version}.xpi";
-    sha256 = "sha256-NhYo1XukT/eXL8PGnvHs1okArkhOKYAbrzoapAcCFfA=";
+    sha256 = "sha256-mrAplSCo5w9b6YPzNySGBr0mhApFVNezjbk6IT0hUt0=";
     meta = with lib; {
       homepage = "https://addons.mozilla.org/en-US/firefox/addon/rose-pine-moon-update/";
       description = "rose pine moon with better colouring and more vivid.";

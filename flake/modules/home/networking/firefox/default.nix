@@ -20,7 +20,7 @@ let
     ublock-origin
     ghostery
     sponsorblock
-    customAddons.rose-pine-moon-modified
+    customAddons.rose-pine-moon-update
   ];
   policies = {
     DisableTelemetry = true;
