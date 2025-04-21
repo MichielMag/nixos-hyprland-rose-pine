@@ -35,6 +35,7 @@
     ./creative/blockbench
     ./creative/lmms
     ./creative/freecad
+    ./creative/sweethome3d
 
     # networking
     ./networking/onedrive
