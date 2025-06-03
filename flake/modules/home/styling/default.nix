@@ -38,7 +38,7 @@ in
       rose-pine-cursor
       rose-pine-icon-theme
       rose-pine-gtk-theme
-      papirus-icon-theme
+      zafiro-icons
     ];
 
     #home.file.".config/Kvantum" = {
@@ -77,14 +77,31 @@ in
         name = "Nordic";
         package = pkgs.nordic;
       };
+      font = {
+        name = "JetBrains Mono Regular";
+        package = pkgs.jetbrains-mono;
+      };
       iconTheme = {
-        name = "Papirus";
-        package = pkgs.papirus-icon-theme;
+        name = "Zafiro-icons-Dark";
+        package = pkgs.zafiro-icons;
       };
       cursorTheme = {
         name = "BreezeX-RosePine-Linux";
         package = pkgs.rose-pine-cursor;
         size = 24;
+      };
+      gtk3 = {
+        bookmarks = [
+          "file://${config.xdg.userDirs.documents}"
+          "file://${config.xdg.userDirs.download} downloads"
+          "file://${config.xdg.userDirs.pictures}"
+          "file://${config.xdg.userDirs.extraConfig.source}"
+        ];
+      };
+    };
+    dconf.settings = {
+      "org/gnome/desktop/wm/preferences" = {
+        button-layout = "appmenu";
       };
     };
     #programs.gnome-shell = {

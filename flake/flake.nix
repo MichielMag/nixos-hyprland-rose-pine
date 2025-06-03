@@ -110,6 +110,7 @@
                 useUserPackages = true;
                 useGlobalPkgs = true;
                 extraSpecialArgs = {
+                  username = "michiel";
                   inherit inputs;
                   inherit spicetify-nix;
                   firefox-addons = {

@@ -21,9 +21,9 @@ in
     home.packages = with pkgs; [
       # File Explorers
       nautilus
-      #code-nautilus
+      sushi
+      code-nautilus
       file-roller
-      nemo
 
       # Utilities
 

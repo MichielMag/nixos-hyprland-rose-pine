@@ -2,11 +2,13 @@
   inputs,
   pkgs,
   config,
+  username,
   ...
 }:
 
 {
   home.stateVersion = "21.03";
+  home.homeDirectory = "/home/${username}";
   imports = [
 
     inputs.spicetify-nix.homeManagerModules.default

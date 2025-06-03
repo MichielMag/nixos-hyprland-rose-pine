@@ -284,6 +284,7 @@
     fontconfig = {
       hinting.autohint = true;
       defaultFonts = {
+        monospace = [ "JetBrains Mono Regular" ];
         emoji = [ "OpenMoji Color" ];
       };
     };
