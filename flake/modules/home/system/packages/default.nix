@@ -20,14 +20,10 @@ in
 
     home.packages = with pkgs; [
       # File Explorers
-      dolphin
-      kdePackages.kio
-      kdePackages.kio-zeroconf
-      kdePackages.kio-fuse
-      kdePackages.kio-extras
-      kdePackages.kdegraphics-thumbnailers
-      kdePackages.qtsvg
-      ark
+      nautilus
+      #code-nautilus
+      file-roller
+      nemo
 
       # Utilities
 

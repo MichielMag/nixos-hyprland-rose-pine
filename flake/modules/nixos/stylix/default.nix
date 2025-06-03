@@ -27,9 +27,9 @@
     };
   };
 
-  stylix.enable = true;
-  stylix.autoEnable = false;
-  stylix.image = ./.config/stylix/wallpaper.png;
+  #stylix.enable = false;
+  #stylix.autoEnable = false;
+  #stylix.image = ./.config/stylix/wallpaper.png;
 
   console.colors = [
     "232136" # base00-hex

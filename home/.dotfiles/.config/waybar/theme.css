@@ -12,10 +12,10 @@ hvr - hover
 @define-color foreground @text;
 
 /* Workspace Button Colors */
-@define-color active-bg @rose;
-@define-color active-fg @highlightLow;
-@define-color hover-bg @pine;
-@define-color hover-fg @highlightLow;
+@define-color active-bg @highlightMed;
+@define-color active-fg @text;
+@define-color hover-bg @highlightLow;
+@define-color hover-fg @text;
 
 /* Wlogout Colors */
 @define-color bar-bg #11111b;

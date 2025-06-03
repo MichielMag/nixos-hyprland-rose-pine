@@ -1,11 +1,11 @@
 
 * {
-	bg: #232136;
-	cur: #2a273f;
-	fgd: #e0def4;
+	bg: #2e3440;
+	cur: #4c566a;
+	fgd: #eceff4;
 	cmt: #6e6a86;
-	cya: #9ccfd8;
-	grn: #3e8fb0;
+	cya: #88c0d0;
+	grn: #5e81ac;
 	ora: #ea9a97;
 	pur: #c4a7e7;
 	red: #eb6f92;
@@ -22,7 +22,7 @@
 	selected-urgent-background: @urgent-background;
 	selected-active-background: @active-background;
 	separatorcolor: @active-background;
-	bordercolor: @ora;
+	bordercolor: @cya;
 	
 	text-color: @fgd;
 }

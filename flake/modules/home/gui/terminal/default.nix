@@ -26,7 +26,7 @@ in
 
     programs.kitty = {
       enable = true;
-      themeFile = "rose-pine-moon";
+      themeFile = "Nord";
       shellIntegration.enableFishIntegration = true;
       font = {
         name = "JetBrainsMono Nerd Font";
