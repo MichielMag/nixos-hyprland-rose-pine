@@ -8,7 +8,7 @@
 {
   # Remove unecessary preinstalled packages
   environment.defaultPackages = [
-
+    inputs.rose-pine-hyprcursor.packages.${pkgs.system}.default
   ];
 
   # Laptop-specific packages (the other ones are installed in `packages.nix`)
@@ -108,7 +108,7 @@
     XDG_CURRENT_DESKTOP = "Hyprland";
   };
 
-  # Security 
+  # Security
   security = {
     pam.services = {
       swaylock = { };
@@ -154,4 +154,5 @@
 
   # Gaming mouse config
   services.ratbagd.enable = true;
+
 }
