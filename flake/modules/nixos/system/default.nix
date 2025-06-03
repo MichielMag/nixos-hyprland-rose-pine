@@ -290,26 +290,19 @@
   };
 
   console.colors = [
-    "232136" # base00-hex
-
-    "eb6f92" # red
-    "3e8fb0" # green
-    "f6c177" # yellow
-    "9ccfd8" # blue
-    "c4a7e7" # magenta
-    "ea9a97" # cyan
-
-    "e0def4" # base05-hex
-    "6e6a86" # base03-hex
-
-    "f6c177" # red
-    "3e8fb0" # green
-    "eb6f92" # yellow
-    "9ccfd8" # blue
-    "c4a7e7" # magenta
-    "ea9a97" # cyan
-
-    "e0def4" # base06-hex
+    "2E3440"
+    "3B4252"
+    "4C566A"
+    "D8DEE9"
+    "E5E9F0"
+    "ECEFF4"
+    "8FBCBB"
+    "88C0D0"
+    "81A1C1"
+    "BF616A"
+    "EBCB8B"
+    "A3BE8C"
+    "B48EAD"
   ];
 
 }
