@@ -28,6 +28,7 @@
       krita.enable = true;
       blockbench.enable = true;
       #lmms.enable = true;
+      freecad.enable = true;
 
       # networking
       onedrive = {

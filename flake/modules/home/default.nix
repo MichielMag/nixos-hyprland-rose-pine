@@ -29,11 +29,13 @@
     ./gui/wlsunset
     ./gui/ulauncher
 
-    # graphics
+    # creative
     ./creative/gimp
     ./creative/krita
     ./creative/blockbench
     ./creative/lmms
+    ./creative/freecad
+    ./creative/sweethome3d
 
     # networking
     ./networking/onedrive
