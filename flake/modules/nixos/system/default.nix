@@ -43,10 +43,10 @@
   services = {
     dbus.enable = true;
     libinput.enable = true;
-    displayManager.ly = {
-      enable = true;
-      settings.animation = "matrix";
-    };
+    #displayManager.ly = {
+    #  enable = true;
+    #  settings.animation = "matrix";
+    #};
     xserver = {
       enable = true;
       desktopManager = {
@@ -57,6 +57,11 @@
         "displaylink"
         "modesetting"
       ];
+      displayManager.gdm = {
+        enable = true;
+        wayland = true;
+        autoSuspend = false;
+      };
     };
   };
 

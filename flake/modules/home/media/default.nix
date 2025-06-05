@@ -23,8 +23,8 @@ in
 
     programs.spicetify = {
       enable = true;
-      theme = spicePkgs.themes.ziro;
-      colorScheme = "rose-pine-moon";
+      theme = spicePkgs.themes.text;
+      colorScheme = "Nord";
     };
 
     xdg.desktopEntries = {

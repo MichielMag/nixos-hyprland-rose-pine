@@ -100,9 +100,8 @@ in
       };
     };
     dconf.settings = {
-      "org/gnome/desktop/wm/preferences" = {
-        button-layout = "appmenu";
-      };
+      "org/gnome/desktop/wm/preferences".button-layout = "appmenu";
+      "org/gnome/desktop/interface".color-scheme = "prefer-dark";
     };
     #programs.gnome-shell = {
     #    enable = true;
