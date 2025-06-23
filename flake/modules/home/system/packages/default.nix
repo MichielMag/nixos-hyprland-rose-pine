@@ -49,10 +49,15 @@ in
       lrun
 
       # Simple text editor
-      gedit
+      gnome-text-editor
 
       # Simple calculator
       gnome-calculator
+
+      # Mailing
+      geary
+      gnome-online-accounts
+      gnome-online-accounts-gtk
 
       # Gaming mouse GUI
       piper

@@ -67,10 +67,6 @@ in
 
   };
 
-  nixpkgs.config.packageOverrides = pkgs: {
-    intel-vaapi-driver = pkgs.intel-vaapi-driver.override { enableHybridCodec = true; };
-  };
-
   environment.defaultPackages = with pkgs; [
     nvidia-offload
     libva-utils

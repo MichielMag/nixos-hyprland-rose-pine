@@ -66,6 +66,9 @@
           permittedInsecurePackages = [
             "dotnet-sdk-6.0.428"
           ];
+          packageOverrides = pkgs: {
+            intel-vaapi-driver = pkgs.intel-vaapi-driver.override { enableHybridCodec = true; };
+          };
         };
         overlays = [
           (final: prev: {

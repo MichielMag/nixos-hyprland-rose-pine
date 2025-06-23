@@ -43,6 +43,8 @@
   services = {
     dbus.enable = true;
     libinput.enable = true;
+    gnome.gnome-online-accounts.enable = true;
+    accounts-daemon.enable = true;
     #displayManager.ly = {
     #  enable = true;
     #  settings.animation = "matrix";

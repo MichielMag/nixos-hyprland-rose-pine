@@ -32,10 +32,10 @@
       sweethome3d.enable = true;
 
       # networking
-      onedrive = {
-        enable = false;
-        configFiles."4dotnet" = ./.config/onedrive;
-      };
+      #onedrive = {
+      #  enable = false;
+      #  configFiles."4dotnet" = ./.config/onedrive;
+      #};
 
       # office
       obsidian.enable = true;
@@ -50,7 +50,7 @@
       };
       insomnia.enable = true;
       jetbrains-rider.enable = true;
-      godot.enable = true;
+      #godot.enable = true;
       #bruno.enable = true; # Won't work in wayland for now
 
       # system
@@ -67,6 +67,24 @@
 
       # Media
       media.enable = true;
+
+      firefox = {
+        enable = true;
+        pwa = {
+          "whatsapp" = {
+            url = "https://web.whatsapp.com";
+            profileId = 2;
+            name = "WhatsApp Web";
+            genericName = "WhatsApp Instant Messaging";
+          };
+          "teams" = {
+            url = "https://teams.live.com";
+            profileId = 3;
+            name = "Teams";
+            genericName = "Teams Instant Messaging";
+          };
+        };
+      };
 
     };
   };
