@@ -62,23 +62,20 @@ in
 
         vscode-extensions.ms-vscode-remote.remote-ssh
 
+        vscode-extensions.angular.ng-template
+
         vscode-marketplace.ms-vscode.vscode-copilot-data-analysis
         vscode-marketplace.ms-vscode.vscode-websearchforcopilot
         vscode-marketplace.ms-vscode.vscode-commander
         vscode-marketplace.ms-vscode.vscode-copilot-vision
+        vscode-marketplace.ms-vscode.vscode-node-azure-pack
+        vscode-marketplace.ms-azuretools.vscode-bicep
 
         vscode-marketplace.ms-dotnettools.vscode-dotnet-runtime
         vscode-marketplace.ms-dotnettools.csdevkit
         vscode-marketplace.ms-dotnettools.csharp
         vscode-marketplace.ms-dotnettools.vscodeintellicode-csharp
         vscode-marketplace.adrianwilczynski.user-secrets
-
-        vscode-marketplace.neikeq.godot-csharp-vscode
-        vscode-marketplace.alfish.godot-files
-        vscode-marketplace.geequlim.godot-tools
-        vscode-marketplace.altamkp.godot-snippets-vscode-csharp
-        vscode-marketplace.altamkp.godot-docs-vscode-csharp
-        vscode-marketplace.ms-vscode.mono-debug
       ];
       package = pkgs.vscode.override {
         commandLineArgs = "--use-gl=egl --enable-features=WebRTCPipeWireCapturer";

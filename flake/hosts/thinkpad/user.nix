@@ -29,6 +29,7 @@
       blockbench.enable = true;
       #lmms.enable = true;
       freecad.enable = true;
+      sweethome3d.enable = true;
 
       # networking
       onedrive = {

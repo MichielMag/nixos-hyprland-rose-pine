@@ -90,4 +90,15 @@ in
     "9.9.9.9"
     "149.112.112.112"
   ];
+  networking.hosts = {
+    "127.0.0.1" = [
+      "localhost"
+      "latest-inframapp.localhost.local"
+      "demo-inframapp.localhost.local"
+      "latest-sequencer.localhost.local"
+      "demo-sequencer.localhost.local"
+      "latest.localhost.local"
+      "demo.localhost.local"
+    ];
+  };
 }

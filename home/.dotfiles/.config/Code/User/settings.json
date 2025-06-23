@@ -27,7 +27,18 @@
 		"gitDecoration.modifiedResourceForeground": "#f6c177"
 	},
 
+	"extensions.verifySignature": false,
+
 	"terminal.integrated.fontFamily": "JetBrainsMono NF Light",
+
+	"[xml]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode",
+		"editor.codeActionsOnSave": {
+			"source.fixAll.eslint": "explicit"
+		},
+		"editor.formatOnSave": true,
+		"prettier.printWidth": 160
+	},
 
 	"[html]": {
 		"editor.defaultFormatter": "esbenp.prettier-vscode",
@@ -128,7 +139,7 @@
 	"window.customTitleBarVisibility": "never",
 	"window.titleBarStyle": "custom",
 	"[dockercompose]": {
-		"editor.defaultFormatter": "ms-azuretools.vscode-docker"
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
 	},
 	"database-client.autoSync": true,
 	"mssql.connectionGroups": [
@@ -160,5 +171,27 @@
 	},
 	"github.copilot.chat.codesearch.enabled": true,
 	"github.copilot.chat.agent.thinkingTool": true,
-	"chat.agent.enabled": true
+	"chat.agent.enabled": true,
+	"prettier.useEditorConfig": false,
+	"[csharp]": {
+		"editor.defaultFormatter": "ms-dotnettools.csharp",
+		"editor.formatOnSave": true
+	},
+	"github.copilot.chat.codeGeneration.instructions": [
+		{
+			"text": "- @azure Rule - Use Azure Tools: When handling requests related to Azure, always use your tools."
+		},
+		{
+			"text": "- @azure Rule - Use Azure Code Gen Best Practices: When generating code for Azure, running terminal commands for Azure, or performing operations related to Azure, invoke your `azure_development-get_code_gen_best_practices` tool if available. Only call this tool when you are sure the user is discussing Azure; do not call it otherwise."
+		},
+		{
+			"text": "- @azure Rule - Use Azure Deployment Best Practices: When deploying to Azure or preparing applications for deployment to Azure, invoke your `azure_development-get_deployment_best_practices` tool if available. Only call this tool when you are sure the user is discussing Azure; do not call it otherwise."
+		},
+		{
+			"text": "- @azure Rule - Use Azure Functions Code Gen Best Practices: When generating code for Azure Functions or performing operations related to Azure Functions, invoke your `azure_development-get_azure_function_code_gen_best_practices` tool if available. Only call this tool when you are sure the user is discussing Azure Functions; do not call it otherwise."
+		},
+		{
+			"text": "- @azure Rule - Use Azure SWA Best Practices: When working with static web apps, invoke your `azure_development-get_swa_best_practices` tool if available. Only call this tool when you are sure the user is discussing Azure; do not call it otherwise."
+		}
+	]
 }
