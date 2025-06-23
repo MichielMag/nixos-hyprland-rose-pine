@@ -136,8 +136,7 @@
 	"github.copilot.nextEditSuggestions.enabled": true,
 	"git.openRepositoryInParentFolders": "never",
 	"godotTools.editorPath.godot4": "godot4-mono",
-	"window.customTitleBarVisibility": "never",
-	"window.titleBarStyle": "custom",
+	"window.titleBarStyle": "native",
 	"[dockercompose]": {
 		"editor.defaultFormatter": "esbenp.prettier-vscode"
 	},
@@ -194,5 +193,7 @@
 			"text": "- @azure Rule - Use Azure SWA Best Practices: When working with static web apps, invoke your `azure_development-get_swa_best_practices` tool if available. Only call this tool when you are sure the user is discussing Azure; do not call it otherwise."
 		}
 	],
-	"@azure.argTenant": ""
+	"@azure.argTenant": "",
+	"window.menuBarVisibility": "toggle",
+	"window.customTitleBarVisibility": "never"
 }
