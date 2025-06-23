@@ -47,7 +47,7 @@ in
       hypr-restore-lockscreen
 
       kdePackages.qtwayland
-      polkit-kde-agent
+      kdePackages.polkit-kde-agent-1
 
       pyprland
 

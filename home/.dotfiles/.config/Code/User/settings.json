@@ -125,7 +125,7 @@
 	"git.autofetch": true,
 	"github.experimental.multipleAccounts": true,
 	"workbench.iconTheme": "vscode-icons",
-	"workbench.colorTheme": "Rosé Pine Moon (no italics)",
+	"workbench.colorTheme": "Nord",
 	"workbench.panel.showLabels": false,
 	"github.copilot.chat.edits.enabled": true,
 	"chat.commandCenter.enabled": true,
@@ -193,5 +193,6 @@
 		{
 			"text": "- @azure Rule - Use Azure SWA Best Practices: When working with static web apps, invoke your `azure_development-get_swa_best_practices` tool if available. Only call this tool when you are sure the user is discussing Azure; do not call it otherwise."
 		}
-	]
+	],
+	"@azure.argTenant": ""
 }

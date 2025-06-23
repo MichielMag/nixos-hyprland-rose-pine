@@ -43,10 +43,10 @@
   services = {
     dbus.enable = true;
     libinput.enable = true;
-    displayManager.ly = {
-      enable = true;
-      settings.animation = "matrix";
-    };
+    #displayManager.ly = {
+    #  enable = true;
+    #  settings.animation = "matrix";
+    #};
     xserver = {
       enable = true;
       desktopManager = {
@@ -57,6 +57,11 @@
         "displaylink"
         "modesetting"
       ];
+      displayManager.gdm = {
+        enable = true;
+        wayland = true;
+        autoSuspend = false;
+      };
     };
   };
 
@@ -271,4 +276,39 @@
 
   # Gaming mouse config
   services.ratbagd.enable = true;
+
+  # Install fonts
+  fonts = {
+    packages = with pkgs; [
+      jetbrains-mono
+      roboto
+      openmoji-color
+      nerd-fonts.jetbrains-mono
+    ];
+
+    fontconfig = {
+      hinting.autohint = true;
+      defaultFonts = {
+        monospace = [ "JetBrains Mono Regular" ];
+        emoji = [ "OpenMoji Color" ];
+      };
+    };
+  };
+
+  console.colors = [
+    "2E3440"
+    "3B4252"
+    "4C566A"
+    "D8DEE9"
+    "E5E9F0"
+    "ECEFF4"
+    "8FBCBB"
+    "88C0D0"
+    "81A1C1"
+    "BF616A"
+    "EBCB8B"
+    "A3BE8C"
+    "B48EAD"
+  ];
+
 }
