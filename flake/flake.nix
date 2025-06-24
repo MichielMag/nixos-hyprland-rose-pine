@@ -90,6 +90,7 @@
             };
             #vscode-marketplace = inputs.nix-vscode-extensions.extensions.${system}.vscode-marketplace;
             vscode = final.callPackage ./packages/vscode/vscode.nix { };
+            hypr-dock = final.callPackage ./packages/hypr-dock/package.nix { };
           })
           inputs.nurpkgs.overlays.default
           inputs.nix-vscode-extensions.overlays.default
