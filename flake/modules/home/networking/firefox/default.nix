@@ -20,7 +20,6 @@ let
     ublock-origin
     ghostery
     sponsorblock
-    customAddons.rose-pine-moon-update
   ];
   policies = {
     DisableTelemetry = true;
@@ -62,7 +61,6 @@ let
 
       "extensions.autoDisableScopes" = 0; # Automatically enable extensions
       "extensions.update.enabled" = false;
-      "extensions.activeThemeID" = customAddons.rose-pine-moon-update.addonId;
     };
   };
   themed-settings = {
@@ -79,18 +77,20 @@ let
   };
   search = {
     force = true;
-    default = "DuckDuckGo";
+    default = "ddg";
     order = [
-      "DuckDuckGo"
+      "ddg"
       "MyNixOS"
       "Nixpkgs"
     ];
     engines = {
-      "Google".metaData.hidden = true;
-      "Bing".metaData.hidden = true;
-      "eBay".metaData.hidden = true;
-      "Amazon.com".metaData.hidden = true;
-      "Wikipedia (en)".metaData.hidden = true;
+      "google".metaData.hidden = true;
+      "ecosia".metaData.hidden = true;
+      "qwant".metaData.hidden = true;
+      "bing".metaData.hidden = true;
+      "ebay".metaData.hidden = true;
+      "amazondotcom-us".metaData.hidden = true;
+      "wikipedia".metaData.hidden = true;
       "MyNixOS" = {
         urls = lib.singleton {
           template = "https://mynixos.com/search";
@@ -117,12 +117,10 @@ let
   settings = {
     "signon.rememberSignons" = false;
     "services.sync.engine.passwords" = false;
-    "browser.search.defaultenginename" = "DuckDuckGo";
-    "browser.search.order.1" = "DuckDuckGo";
+    "browser.search.defaultenginename" = "ddg";
+    "browser.search.order.1" = "ddg";
     "browser.aboutConfig.showWarning" = false;
     "browser.compactmode.show" = true;
-
-    "extensions.activeThemeID" = customAddons.rose-pine-moon-update.addonId;
   };
   make-pwa-profiles =
     cfg:

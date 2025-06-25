@@ -33,7 +33,7 @@ in
         type = "Application";
         genericName = "Music Player";
         icon = "spotify-client";
-        exec = "spotify --use-gl=egl %U";
+        exec = "spotify --use-gl=egl --enable-features=UseOzonePlatform --ozone-platform=wayland %U";
         terminal = false;
         mimeType = [ "x-scheme-handler/spotify" ];
         categories = [

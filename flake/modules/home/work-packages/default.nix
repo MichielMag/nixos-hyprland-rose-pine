@@ -33,7 +33,7 @@ in
 
     xdg.desktopEntries = {
       teams-for-linux = {
-        exec = "teams-for-linux --use-gl=egl --enable-features=WebRTCPipeWireCapturer %U";
+        exec = "teams-for-linux --use-gl=egl --enable-features=WebRTCPipeWireCapturer --enable-features=UseOzonePlatform --ozone-platform=wayland %U";
         icon = "teams-for-linux";
         name = "Microsoft Teams for Linux";
         comment = "Unofficial Microsoft Teams client for Linux using Electron";
@@ -47,7 +47,7 @@ in
         name = "Slack";
         comment = "Slack Desktop";
         genericName = "Slack Client for Linux";
-        exec = "slack --use-gl=egl %U";
+        exec = "slack --use-gl=egl --enable-features=UseOzonePlatform --ozone-platform=wayland %U";
         icon = "slack";
         type = "Application";
         startupNotify = true;

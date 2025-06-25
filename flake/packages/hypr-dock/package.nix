@@ -3,9 +3,10 @@
   stdenv,
   fetchFromGitHub,
   pkgs,
+  buildGoModule,
 }:
 
-stdenv.mkDerivation {
+buildGoModule (finalAttrs: {
   pname = "hypr-dock";
   version = "1.0.5"; # Adjust version as needed
 
@@ -13,20 +14,12 @@ stdenv.mkDerivation {
     owner = "lotos-linux";
     repo = "hypr-dock";
     rev = "e5ff4dbe913d019bc300921a00d035f8f11a5011";
-    sha256 = "";
+    sha256 = "sha256-fMBJaupB5fDlpv+w92/cqP5OLS0UVWCUvG9QOG9vioI=";
   };
 
-  # List runtime dependencies
-  propagatedBuildInputs = [
-  ];
-
-  # No build phase needed since we're just installing scripts
-  dontBuild = true;
+  vendorHash = "sha256-KoDPQHfmYzZ/7wQAq4TKq3bIlnDLoMgH9oc4noNlSb0=";
 
   installPhase = ''
-    # Create necessary directories
-    make get
-    make build
 
     # Install the main executable
     install -Dm755 bin/hypr-dock $out/bin/hypr-dock
@@ -40,9 +33,7 @@ stdenv.mkDerivation {
       }"
   '';
 
-  nativeBuildInputs = [
-    pkgs.gnumake
-    pkgs.go
+  finalAttrs.nativeBuildInputs = [
     pkgs.gtk3
     pkgs.gtk-layer-shell
   ];
@@ -54,4 +45,4 @@ stdenv.mkDerivation {
     platforms = platforms.unix;
     maintainers = with maintainers; [ ]; # Add maintainers if desired
   };
-}
+})

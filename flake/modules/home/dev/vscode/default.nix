@@ -78,7 +78,7 @@ in
         vscode-marketplace.adrianwilczynski.user-secrets
       ];
       package = pkgs.vscode.override {
-        commandLineArgs = "--use-gl=egl --enable-features=WebRTCPipeWireCapturer";
+        commandLineArgs = "--use-gl=egl --enable-features=WebRTCPipeWireCapturer --enable-features=UseOzonePlatform --ozone-platform=wayland";
       };
     };
   };

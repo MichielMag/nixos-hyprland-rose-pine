@@ -39,6 +39,8 @@ in
 
       hyprlock
 
+      #hypr-dock
+
       clipsync
       hypr-random-wallpaper
       hypr-random-wallpaper-loop
