@@ -48,6 +48,8 @@ in
       hypr-handle-close-lid
       hypr-restore-lockscreen
 
+      nwg-dock-hyprland
+
       kdePackages.qtwayland
       kdePackages.polkit-kde-agent-1
 

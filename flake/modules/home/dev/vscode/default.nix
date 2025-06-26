@@ -46,7 +46,6 @@ in
       extensions = with pkgs; [
         vscode-extensions.jock.svg
 
-        vscode-extensions.mvllow.rose-pine
         vscode-extensions.vscode-icons-team.vscode-icons
 
         vscode-extensions.mkhl.direnv
@@ -76,6 +75,8 @@ in
         vscode-marketplace.ms-dotnettools.csharp
         vscode-marketplace.ms-dotnettools.vscodeintellicode-csharp
         vscode-marketplace.adrianwilczynski.user-secrets
+
+        vscode-marketplace.arcticicestudio.nord-visual-studio-code
       ];
       package = pkgs.vscode.override {
         commandLineArgs = "--use-gl=egl --enable-features=WebRTCPipeWireCapturer --enable-features=UseOzonePlatform --ozone-platform=wayland";

@@ -74,6 +74,7 @@
           "whatsapp" = {
             url = "https://web.whatsapp.com";
             profileId = 2;
+            icon = "whatsapp";
             name = "WhatsApp Web";
             genericName = "WhatsApp Instant Messaging";
           };
@@ -81,6 +82,7 @@
             url = "https://teams.live.com";
             profileId = 3;
             name = "Teams";
+            icon = "teams-for-linux";
             genericName = "Teams Instant Messaging";
           };
         };
