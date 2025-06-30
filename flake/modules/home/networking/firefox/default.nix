@@ -62,6 +62,14 @@ let
       "extensions.autoDisableScopes" = 0; # Automatically enable extensions
       "extensions.update.enabled" = false;
     };
+    Permissions = {
+      Notifications = {
+        Allow = [
+          "https://web.whatsapp.com"
+          "https://teams.live.com"
+        ];
+      };
+    };
   };
   themed-settings = {
     "toolkit.legacyUserProfileCustomizations.stylesheets" = true; # Enable userChrome.css
@@ -306,7 +314,9 @@ in
         [
           "${config.programs.firefox.package}/bin/firefox"
           "--class"
-          "PWA-${name}"
+          "\"${name} pwa\""
+          "--name"
+          "\"${name} pwa\""
           "-P"
           "${config.programs.firefox.profiles."pwa-${name}".path}"
           "--no-remote"
@@ -316,7 +326,7 @@ in
 
       settings = {
         X-MultipleArgs = "false"; # Consider enabling, don't know what this does
-        StartupWMClass = "PWA-${name}";
+        StartupWMClass = "${name} pwa";
       };
     }) cfg.pwa;
   };

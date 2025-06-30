@@ -26,7 +26,7 @@ in
       file-roller
 
       # Utilities
-
+      ncdu
       dconf-editor
 
       # Audio Control

@@ -39,16 +39,12 @@ in
 
       hyprlock
 
-      #hypr-dock
-
       clipsync
       hypr-random-wallpaper
       hypr-random-wallpaper-loop
       hypr-handle-open-lid
       hypr-handle-close-lid
       hypr-restore-lockscreen
-
-      nwg-dock-hyprland
 
       kdePackages.qtwayland
       kdePackages.polkit-kde-agent-1
