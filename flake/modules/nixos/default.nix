@@ -11,6 +11,7 @@
     ./gaming/steam
     ./ai/ollama
     ./gui/nemo
+    ./virtualization/waydroid
   ];
 
 }

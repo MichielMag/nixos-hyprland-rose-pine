@@ -30,6 +30,7 @@
     ./gui/wlogout
     ./gui/wlsunset
     ./gui/ulauncher
+    ./gui/nwg-dock-hyprland
 
     # creative
     ./creative/gimp

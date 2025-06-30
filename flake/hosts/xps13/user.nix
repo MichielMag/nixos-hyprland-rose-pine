@@ -22,6 +22,7 @@
       wlogout.enable = true;
       wlsunset.enable = true;
       ulauncher.enable = true;
+      nwg-dock-hyprland.enable = true;
 
       # graphics
       gimp.enable = true;
@@ -37,12 +38,14 @@
           "whatsapp" = {
             url = "https://web.whatsapp.com";
             profileId = 2;
+            icon = "whatsapp";
             name = "WhatsApp Web";
             genericName = "WhatsApp Instant Messaging";
           };
           "teams" = {
             url = "https://teams.live.com";
             profileId = 3;
+            icon = "teams-for-linux";
             name = "Teams";
             genericName = "Teams Instant Messaging";
           };

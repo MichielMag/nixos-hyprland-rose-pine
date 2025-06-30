@@ -22,6 +22,7 @@
       wlogout.enable = true;
       wlsunset.enable = true;
       ulauncher.enable = true;
+      nwg-dock-hyprland.enable = true;
 
       # creative
       gimp.enable = true;

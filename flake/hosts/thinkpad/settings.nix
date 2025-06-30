@@ -64,7 +64,7 @@ in
     steam.enable = true;
     ollama.enable = false;
     nemo.enable = true;
-
+    waydroid.enable = true;
   };
 
   environment.defaultPackages = with pkgs; [
