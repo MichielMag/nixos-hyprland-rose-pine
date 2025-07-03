@@ -16,10 +16,16 @@ in
   };
   config = mkIf cfg.enable {
     home.packages = with pkgs; [
-      whatsapp-for-linux
       telegram-desktop
       signal-desktop
       betterdiscordctl
     ];
+    firefox.pwa."whatsapp" = {
+      url = "https://web.whatsapp.com";
+      profileId = 2;
+      icon = "whatsapp";
+      name = "WhatsApp Web";
+      genericName = "WhatsApp Instant Messaging";
+    };
   };
 }

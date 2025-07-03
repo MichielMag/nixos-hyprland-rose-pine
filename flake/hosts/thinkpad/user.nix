@@ -40,6 +40,7 @@
 
       # office
       obsidian.enable = true;
+      libreoffice.enable = true;
 
       # dev
       vscode.enable = true;
@@ -72,13 +73,6 @@
       firefox = {
         enable = true;
         pwa = {
-          "whatsapp" = {
-            url = "https://web.whatsapp.com";
-            profileId = 2;
-            icon = "whatsapp";
-            name = "WhatsApp Web";
-            genericName = "WhatsApp Instant Messaging";
-          };
           "teams" = {
             url = "https://teams.live.com";
             profileId = 3;

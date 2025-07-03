@@ -55,6 +55,7 @@
     # office
     ./office/obsidian
     ./office/outlook-pwa
+    ./office/libreoffice
 
     # system
     ./system/xdg
