@@ -2,7 +2,7 @@
 
 window {
 	background: @surface;
-	border-radius: 10px;
+	border-radius: 6px;
 	border-style: solid;
 	border-width: 1px;
 	border-color: @highlightLow;

@@ -20,7 +20,7 @@ in
       signal-desktop
       betterdiscordctl
     ];
-    firefox.pwa."whatsapp" = {
+    modules.firefox.pwa."whatsapp" = {
       url = "https://web.whatsapp.com";
       profileId = 2;
       icon = "whatsapp";
