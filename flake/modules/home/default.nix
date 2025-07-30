@@ -70,7 +70,8 @@
     ./social
 
     # Media
-    ./media
+    ./media/spotify
+    ./media/tidal
 
     # Styling
     ./styling

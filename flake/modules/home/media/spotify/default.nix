@@ -8,12 +8,12 @@
 
 with lib;
 let
-  cfg = config.modules.media;
+  cfg = config.modules.spotify;
   spicePkgs = spicetify-nix.legacyPackages.${pkgs.system};
 in
 {
-  options.modules.media = {
-    enable = mkEnableOption "media";
+  options.modules.spotify = {
+    enable = mkEnableOption "spotify";
   };
   config = mkIf cfg.enable {
     home.packages = with pkgs; [
