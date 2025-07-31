@@ -2,7 +2,6 @@
   pkgs,
   lib,
   config,
-  spicetify-nix,
   ...
 }:
 
@@ -18,7 +17,8 @@ in
     home.packages = with pkgs; [
       cava
       mpv
-      high-tide
+      # tidal-hifi
+      tidal-luna
     ];
   };
 }

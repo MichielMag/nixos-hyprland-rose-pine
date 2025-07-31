@@ -40,6 +40,7 @@
       url = "github:rafaelmardojai/firefox-gnome-theme";
       flake = false;
     };
+    tidaLuna.url = "github:Inrixia/TidaLuna";
     # ags.url = "github:aylur/ags";
   };
 
@@ -52,6 +53,7 @@
       spicetify-nix,
       split-monitor-workspaces,
       firefox-addons,
+      tidaLuna,
       ...
     }@inputs:
     let
@@ -82,6 +84,7 @@
                 pkgs.pkg-config
               ];
             });
+            tidal-luna = tidaLuna.packages.${system}.default;
             split-monitor-workspaces = split-monitor-workspaces.packages.${system}.split-monitor-workspaces;
             stable = import inputs.nixpkgs-stable {
               system = final.system;

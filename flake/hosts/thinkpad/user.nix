@@ -68,7 +68,8 @@
       social.enable = true;
 
       # Media
-      media.enable = true;
+      spotify.enable = true;
+      tidal.enable = true;
 
       firefox = {
         enable = true;

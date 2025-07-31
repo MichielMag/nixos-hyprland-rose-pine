@@ -75,7 +75,7 @@
       social.enable = true;
 
       # Media
-      media.enable = true;
+      spotify.enable = true;
     };
   };
 }
