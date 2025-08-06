@@ -45,6 +45,7 @@
     ./networking/firefox
 
     # dev
+    ./dev/arduino
     ./dev/vscode
     ./dev/git
     ./dev/direnv

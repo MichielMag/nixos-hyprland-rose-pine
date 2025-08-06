@@ -181,7 +181,7 @@ let
           "browser.contentblocking.category" = "strict";
           "network.cookie.lifetimePolicy" = 0;
         };
-        extensions = with firefox-addons.packages; [
+        extensions.packages = with firefox-addons.packages; [
           ublock-origin
           ghostery
           customAddons.rose-pine-moon-update
@@ -272,7 +272,7 @@ in
       profiles = {
         default = {
           id = 0;
-          extensions = addons;
+          extensions.packages = addons;
           isDefault = true;
           inherit search;
           settings = settings // themed-settings;
@@ -281,7 +281,7 @@ in
         };
         dev = {
           id = 1;
-          extensions = addons ++ [
+          extensions.packages = addons ++ [
             firefox-addons.packages.angular-devtools
             firefox-addons.packages.reduxdevtools
           ];

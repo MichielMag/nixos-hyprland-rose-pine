@@ -176,6 +176,28 @@
 		"editor.defaultFormatter": "ms-dotnettools.csharp",
 		"editor.formatOnSave": true
 	},
+	"editor.tokenColorCustomizations": {
+		"textMateRules": [
+			{
+				"scope": "entity.name.type.interface",
+				"settings": {
+					"foreground": "#ebcb8b"
+				}
+			},
+			{
+				"scope": "entity.name.type.struct",
+				"settings": {
+					"foreground": "#b48ead"
+				}
+			},
+			{
+				"scope": "entity.name.type.type-parameter",
+				"settings": {
+					"foreground": "#a3be8c"
+				}
+			}
+		]
+	},
 	"github.copilot.chat.codeGeneration.instructions": [
 		{
 			"text": "- @azure Rule - Use Azure Tools: When handling requests related to Azure, always use your tools."
@@ -195,5 +217,7 @@
 	],
 	"@azure.argTenant": "",
 	"window.menuBarVisibility": "toggle",
-	"window.customTitleBarVisibility": "never"
+	"window.customTitleBarVisibility": "never",
+	"terminal.external.linuxExec": "kitty",
+	"terminal.integrated.defaultProfile.linux": "fish"
 }

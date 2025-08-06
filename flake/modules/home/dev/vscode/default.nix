@@ -43,7 +43,7 @@ in
     programs.vscode = {
       enable = true;
       mutableExtensionsDir = true;
-      extensions = with pkgs; [
+      profiles.default.extensions = with pkgs; [
         vscode-extensions.jock.svg
 
         vscode-extensions.vscode-icons-team.vscode-icons

@@ -9,16 +9,18 @@
 with lib;
 let
   cfg = config.modules.godot;
+  godotFix = pkgs.godot.override {
+    withMono = true;
+    withWayland = true;
+  };
 in
 {
   options.modules.godot = {
     enable = mkEnableOption "godot";
   };
   config = mkIf cfg.enable {
-    home.packages = with pkgs; [
-      (godot_4.override {
-        withMono = true;
-      })
+    home.packages = [
+      godotFix
     ];
 
     xdg.desktopEntries = {

@@ -49,6 +49,11 @@
     #  enable = true;
     #  settings.animation = "matrix";
     #};
+    displayManager.gdm = {
+      enable = true;
+      wayland = true;
+      autoSuspend = false;
+    };
     xserver = {
       enable = true;
       desktopManager = {
@@ -59,11 +64,7 @@
         "displaylink"
         "modesetting"
       ];
-      displayManager.gdm = {
-        enable = true;
-        wayland = true;
-        autoSuspend = false;
-      };
+
     };
   };
 
@@ -172,6 +173,7 @@
       "render"
       "pipewire"
       "docker"
+      "dialout"
     ];
     shell = pkgs.fish;
   };

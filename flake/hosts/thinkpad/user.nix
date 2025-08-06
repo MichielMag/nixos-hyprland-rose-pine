@@ -43,6 +43,7 @@
       libreoffice.enable = true;
 
       # dev
+      arduino.enable = true;
       vscode.enable = true;
       direnv.enable = true;
       git = {
