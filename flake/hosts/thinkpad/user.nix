@@ -53,7 +53,7 @@
       };
       insomnia.enable = true;
       jetbrains-rider.enable = true;
-      #godot.enable = true;
+      godot.enable = true;
       #bruno.enable = true; # Won't work in wayland for now
 
       # system

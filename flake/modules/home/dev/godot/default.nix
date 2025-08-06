@@ -9,10 +9,6 @@
 with lib;
 let
   cfg = config.modules.godot;
-  godotFix = pkgs.godot.override {
-    withMono = true;
-    withWayland = true;
-  };
 in
 {
   options.modules.godot = {
@@ -20,7 +16,7 @@ in
   };
   config = mkIf cfg.enable {
     home.packages = [
-      godotFix
+      pkgs.godot_4_4-mono
     ];
 
     xdg.desktopEntries = {
