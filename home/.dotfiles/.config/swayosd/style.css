@@ -3,7 +3,7 @@
 window#osd {
 	padding: 12px 20px;
 	border-radius: 999px;
-	border: 1px solid @rose;
+	border: 1px solid @nord12;
 	background: @base;
 }
 window#osd #container {
@@ -12,7 +12,7 @@ window#osd #container {
 
 window#osd image,
 window#osd label {
-	color: @rose;
+	color: @nord8;
 }
 
 window#osd progressbar:disabled,
