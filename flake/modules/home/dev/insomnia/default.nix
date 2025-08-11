@@ -21,7 +21,7 @@ in
 
     xdg.desktopEntries."insomnia" = {
       name = "insomnia";
-      exec = "insomnia --use-gl=egl %U";
+      exec = "insomnia --use-gl=egl --enable-features=UseOzonePlatform --ozone-platform=wayland %U";
       icon = "insomnia";
       comment = "Opensource API Client for Exploring and Testing APIs";
       categories = [ "Development" ];

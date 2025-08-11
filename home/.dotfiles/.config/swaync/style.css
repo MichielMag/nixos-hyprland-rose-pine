@@ -188,7 +188,7 @@
 	.notification-row
 	.notification-background
 	.notification.critical {
-	border: 1px solid @love;
+	border: 1px solid @nord8;
 }
 
 .control-center

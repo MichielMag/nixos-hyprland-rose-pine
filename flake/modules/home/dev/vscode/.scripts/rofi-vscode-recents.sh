@@ -64,7 +64,7 @@ if [ ! -z "$selected_name" ]; then
             selected_folder="${folders[$i]}"
             # Remove any protocol prefix for VSCode
             clean_folder=$(echo "$selected_folder" | sed 's|^[^:]*://||')
-            direnv exec "$clean_folder" code "$clean_folder"
+            direnv-code-external "$clean_folder"
             break
         fi
     done

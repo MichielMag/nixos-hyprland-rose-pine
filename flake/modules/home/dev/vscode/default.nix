@@ -9,6 +9,7 @@ with lib;
 let
   cfg = config.modules.vscode;
   code-recent = pkgs.writeShellScriptBin "code-recent" ''${builtins.readFile ./.scripts/rofi-vscode-recents.sh}'';
+  direnv-code-external = pkgs.writeShellScriptBin "direnv-code-external" ''${builtins.readFile ./.scripts/direnv-code-external.sh}'';
   dotnet-full =
     with pkgs.dotnetCorePackages;
     combinePackages [
@@ -26,6 +27,7 @@ in
       nil
       nixfmt-rfc-style
       code-recent
+      direnv-code-external
       dotnet-full
       icu.dev
       icu
@@ -33,10 +35,10 @@ in
 
     home.activation = {
       vscodeActivation = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
-        				run rm -f $HOME/.config/Code/User/settings.json;
-                run ln -s $HOME/.dotfiles/.config/Code/User/settings.json $HOME/.config/Code/User/settings.json;
-                run rm -f $HOME/.vscode/argv.json;
-                run ln -s $HOME/.dotfiles/.vscode/argv.json $HOME/.vscode/argv.json;
+        run rm -f $HOME/.config/Code/User/settings.json;
+        run ln -s $HOME/.dotfiles/.config/Code/User/settings.json $HOME/.config/Code/User/settings.json;
+        run rm -f $HOME/.vscode/argv.json;
+        run ln -s $HOME/.dotfiles/.vscode/argv.json $HOME/.vscode/argv.json;
       '';
     };
 
