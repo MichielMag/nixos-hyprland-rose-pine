@@ -100,7 +100,7 @@
 		"editor.defaultFormatter": "esbenp.prettier-vscode",
 		"editor.formatOnSave": true
 	},
-	"[yaml]": {
+	"[yaml][yml]": {
 		"editor.insertSpaces": true,
 		"editor.tabSize": 2,
 		"editor.autoIndent": "advanced",
@@ -185,6 +185,12 @@
 				}
 			},
 			{
+				"scope": "entity.name.type.enum",
+				"settings": {
+					"foreground": "#d08770"
+				}
+			},
+			{
 				"scope": "entity.name.type.struct",
 				"settings": {
 					"foreground": "#b48ead"
@@ -194,6 +200,24 @@
 				"scope": "entity.name.type.type-parameter",
 				"settings": {
 					"foreground": "#a3be8c"
+				}
+			},
+			{
+				"scope": "variable.other.property",
+				"settings": {
+					"foreground": "#eceff4"
+				}
+			},
+			{
+				"scope": "variable.parameter",
+				"settings": {
+					"foreground": "#e5e9f0"
+				}
+			},
+			{
+				"scope": "variable.other",
+				"settings": {
+					"foreground": "#d8dee9"
 				}
 			}
 		]
@@ -229,5 +253,6 @@
 	"window.customTitleBarVisibility": "never",
 	"terminal.external.linuxExec": "kitty",
 	"terminal.integrated.defaultProfile.linux": "fish",
-	"diffEditor.ignoreTrimWhitespace": false
+	"diffEditor.ignoreTrimWhitespace": false,
+	"editor.renderWhitespace": "none"
 }
