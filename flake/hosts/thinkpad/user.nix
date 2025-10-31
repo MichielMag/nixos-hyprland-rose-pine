@@ -54,6 +54,7 @@
       insomnia.enable = true;
       jetbrains-rider.enable = true;
       godot.enable = true;
+      ldtk.enable = true;
       #bruno.enable = true; # Won't work in wayland for now
 
       # system

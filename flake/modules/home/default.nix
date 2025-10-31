@@ -52,6 +52,7 @@
     ./dev/insomnia
     ./dev/jetbrains-rider
     ./dev/godot
+    ./dev/ldtk
 
     # office
     ./office/obsidian
