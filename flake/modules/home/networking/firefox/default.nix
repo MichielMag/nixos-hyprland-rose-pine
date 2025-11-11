@@ -276,7 +276,7 @@ in
           isDefault = true;
           inherit search;
           settings = settings // themed-settings;
-          userChrome = builtins.readFile ./assets/userChrome.css;
+          userChrome = builtins.readFile ./cascade/userChrome.css;
           userContent = builtins.readFile ./assets/userContent.css;
         };
         dev = {
