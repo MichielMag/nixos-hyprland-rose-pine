@@ -78,6 +78,8 @@
     # Styling
     ./styling
 
+    ./virtualization/bottles
+
     {
       config.xdg.configFile."nixpkgs/config.nix".text = ''
         {

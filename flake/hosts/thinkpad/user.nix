@@ -86,6 +86,9 @@
         };
       };
 
+      #virtualization
+      bottles.enable = true;
+
     };
   };
 }

@@ -12,7 +12,6 @@
     ./ai/ollama
     ./gui/nemo
     ./virtualization/waydroid
-    ./virtualization/bottles
   ];
 
 }
