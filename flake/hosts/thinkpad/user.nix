@@ -70,7 +70,6 @@
       social.enable = true;
 
       # Media
-      spotify.enable = true;
       tidal.enable = true;
 
       firefox = {
@@ -85,9 +84,6 @@
           };
         };
       };
-
-      #virtualization
-      bottles.enable = true;
 
     };
   };

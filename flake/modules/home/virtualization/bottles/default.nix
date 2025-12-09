@@ -15,8 +15,7 @@ in
     enable = mkEnableOption "bottles";
   };
   config = mkIf cfg.enable {
-    virtualisation.bottles.enable = true;
-    environment.systemPackages = with pkgs; [
+    home.packages = with pkgs; [
       bottles-unwrapped
     ];
   };
