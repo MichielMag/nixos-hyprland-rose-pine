@@ -153,8 +153,8 @@
     group = "ydotool";
   };
   programs.ssh = {
-    startAgent = true;
-    agentTimeout = "1h";
+    #startAgent = true;
+    #agentTimeout = "1h";
   };
   programs.nix-ld = {
     enable = true;

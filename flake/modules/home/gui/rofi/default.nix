@@ -19,13 +19,12 @@ in
   config = mkIf cfg.enable {
 
     home.packages = with pkgs; [
-      rofi-wayland
+      rofi
       audio-selector-rofi
     ];
 
     programs.rofi = {
       enable = true;
-      package = pkgs.rofi-wayland;
     };
 
     home.activation = {

@@ -33,8 +33,6 @@ in
       libsForQt5.qt5ct
       libsForQt5.qtstyleplugin-kvantum
       qt6Packages.qtstyleplugin-kvantum
-      #kvantumPackage
-      papirus-icon-theme
       rose-pine-cursor
       rose-pine-icon-theme
       rose-pine-gtk-theme
