@@ -10,7 +10,7 @@
   imports = [ ../../modules/nixos/default.nix ];
 
   modules = {
-    evolution.enable = true;
+    #evolution.enable = true;
   };
 
   networking.nameservers = [
